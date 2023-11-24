@@ -1,0 +1,121 @@
+:root {
+  /* 标题 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #779649 0%, #c4eb84 50%, #779649 100%);
+
+  /* 图标背景 */
+  --vp-home-hero-image-background-image: linear-gradient(115deg, #ffb700 50%, #779649 50%);
+  --vp-home-hero-image-filter: blur(90px);
+
+  --vp-c-gray-1: #dddde3;
+  --vp-c-gray-2: #e4e4e9;
+  --vp-c-gray-3: #ebebef;
+  --vp-c-gray-soft: rgba(142, 150, 170, 0.14);
+
+  --vp-c-indigo-1: #648236;
+  --vp-c-indigo-2: #779649;
+  --vp-c-indigo-3: #779649;
+  --vp-c-indigo-soft: rgba(119, 150, 73, 0.14);
+
+  --vp-c-green-1: #18794e;
+  --vp-c-green-2: #299764;
+  --vp-c-green-3: #30a46c;
+  --vp-c-green-soft: rgba(16, 185, 129, 0.14);
+
+  --vp-c-yellow-1: #915930;
+  --vp-c-yellow-2: #946300;
+  --vp-c-yellow-3: #9f6a00;
+  --vp-c-yellow-soft: rgba(234, 179, 8, 0.14);
+
+  --vp-c-red-1: #b8272c;
+  --vp-c-red-2: #d5393e;
+  --vp-c-red-3: #e0575b;
+  --vp-c-red-soft: rgba(244, 63, 94, 0.14);
+
+  --vp-c-sponsor: #db2777;
+
+  --vp-custom-block-tip-bg: #ece4fb;
+
+  /* BLOSSOM 样式 */
+  --bl-img-box-shadow: 0 0 5px 2px #d9d9d9;
+  --bl-img-drop-shadow: 0 0 5px #9e9e9e;
+  --bl-preview-blockquote-color: #7d7d7d;
+  --bl-preview-blockquote-bg-color: #f0f0f0;
+  --bl-preview-blockquote-border-color: #bebebe;
+  --bl-preview-blockquote-bg-green: #edf8db;
+  --bl-preview-blockquote-border-green: #bed609;
+  --bl-preview-blockquote-bg-yellow: #faf0d5;
+  --bl-preview-blockquote-border-yellow: #efc75e;
+  --bl-preview-blockquote-bg-red: #fbe6e9;
+  --bl-preview-blockquote-border-red: #ff9090;
+  --bl-preview-blockquote-bg-blue: #dfeefd;
+  --bl-preview-blockquote-border-blue: #81bbf8;
+  --bl-preview-blockquote-bg-purple: #ece4fb;
+  --bl-preview-blockquote-border-purple: #ba9bf2;
+  --bl-preview-blockquote-bg-black: rgba(0, 0, 0, 0.7);
+  --bl-preview-blockquote-border-black: #000000;
+}
+
+:root.dark {
+  --vp-c-gray-1: #dddde3;
+  --vp-c-gray-2: #e4e4e9;
+  --vp-c-gray-3: #585858;
+  --vp-c-gray-soft: rgba(142, 150, 170, 0.14);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #779649 0%, #c4eb84 30%, #779649 100%);
+
+  /* 图标背景 */
+  --vp-home-hero-image-background-image: linear-gradient(115deg, #ffb700 50%, #779649 50%);
+  --vp-home-hero-image-filter: blur(170px);
+
+  --vp-custom-block-tip-bg: #4f387a;
+
+  /* BLOSSOM 样式 */
+  --bl-img-box-shadow: 0 0 5px 3px #000000;
+  --bl-img-drop-shadow: 0 0 5px #000000;
+  --bl-preview-blockquote-color: #b9b9b9;
+  --bl-preview-blockquote-bg-color: #3a3a3a;
+  --bl-preview-blockquote-border-color: #6e6e6e;
+  --bl-preview-blockquote-bg-green: #385b00;
+  --bl-preview-blockquote-border-green: #7c8c00;
+  --bl-preview-blockquote-bg-yellow: #644900;
+  --bl-preview-blockquote-border-yellow: #956b00;
+  --bl-preview-blockquote-bg-red: #4f000c;
+  --bl-preview-blockquote-border-red: #9a0000;
+  --bl-preview-blockquote-bg-blue: #00366c;
+  --bl-preview-blockquote-border-blue: #004fa3;
+  --bl-preview-blockquote-bg-purple: #240065;
+  --bl-preview-blockquote-border-purple: #4600c8;
+  --bl-preview-blockquote-bg-black: #181818;
+  --bl-preview-blockquote-border-black: #000000;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar:hover {
+  width: 7px;
+  height: 7px;
+}
+
+/* 定义滑块 内阴影+圆角 */
+::-webkit-scrollbar-thumb {
+  background-color: #77964964;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #7796499b;
+}
+
+.vp-doc blockquote {
+  padding: 16px;
+  background-color: var(--bl-preview-blockquote-bg-color);
+  border-radius: 8px;
+}
+
+.vp-doc blockquote p {
+  font-size: 14px;
+}
