@@ -76,6 +76,10 @@ nohup java -jar ./backend-blossom.jar --server.port=9999 --project.iaas.blos.dom
 echo "backend-blossom 正在启动,请查看日志 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓"
 ```
 
+<!--@include: ./backend-after-check.md-->
+
+<!--@include: ./backend-after-download.md-->
+
 <style scoped>
 .jar {
   width:100%;

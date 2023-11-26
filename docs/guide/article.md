@@ -12,9 +12,9 @@ onMounted(() => {
 <br/>
 <bl-theme-img light-img="../imgs/article/article_light.png" dark-img="../imgs/article/article_dark.png"/>
 
-文章编辑是 Blossom 的核心功能，主要依赖于 [Codemirror6](https://github.com/codemirror/dev) 和 [Markedjs](https://github.com/markedjs/marked)
+文章编辑是 Blossom 的核心功能，主要依赖于 [Codemirror6](https://github.com/codemirror/dev) 和 [Markedjs](https://github.com/markedjs/marked)。
 
-目前文章编辑器为双屏预览的方式，所见即所得正在研究开发中。
+目前文章编辑器为双屏预览的方式，所见即所得正在开发中(基于 [Prosemirror](https://github.com/ProseMirror/prosemirror))。
 
 ## 移动端样式 {#m}
 
@@ -29,28 +29,26 @@ onMounted(() => {
 <bl-img src="../imgs/article/workbench_1.png" width="200px"/>
 <bl-img src="../imgs/article/workbench_2.png" width="200px" style="margin-top: 10px"/>
 
-操作台分为两页，第一页从左向右分别为：
+操作台位于页面左上角，分为两页，第一页从左向右分别为：
 
-1.  显示文章的排序
-2.  只显示专题文章
-3.  刷新文章列表
-4.  查看知识网络
-5.  只显示公开文章
-6.  只显示收藏文章
-7.  添加文档
+1.  显示文章的排序。
+2.  只显示专题文章。
+3.  刷新文章列表。
+4.  查看知识网络。
+5.  只显示公开文章。
+6.  只显示收藏文章。
+7.  添加文档。
 
 第二页为查看服务器文章备份记录。
 
-其中添加[添加文档]()与[查看知识网络]()将在下文中详细说明。
+其中添加[添加文档](./article#folder-article)与[查看知识网络](./article#references)将在下文中详细说明。
 
 ## 文档菜单 {#tree-menu}
 
 <br/>
 <bl-img src="../imgs/article/tree_menu.png" width="200px"/>
 
-档菜单是由「文件夹」与「文章」构成的树状菜单，可以使用快捷键`ALT + 1`来切换显示/隐藏。该快捷键与 Jetbrains 系列的产品相同，暂不支持修改。
-
-MacOS 使用快捷键 `CMD + 1`
+档菜单是由「文件夹」与「文章」构成的树状菜单，可以使用快捷键 `Alt/Cmd + 1` 来切换显示/隐藏。该快捷键与 Jetbrains 系列的产品相同，暂不支持修改。
 
 ### 文档标题 {#tree-menu-title}
 
@@ -101,12 +99,12 @@ MacOS 使用快捷键 `CMD + 1`
 
 <bl-img src="../imgs/article/qrcode.png" width="330px"/>
 
-## 文章和文件夹 {#folder&article}
+## 文件夹和文章 {#folder-article}
 
-<br/>
-<bl-img src="../imgs/article/article_add.png" width="450px"/>
+在文档中右键编辑，或点击操作台的新增按钮会进入如下页面。
+<bl-img src="../imgs/article/article_add.png" width="400px"/>
 
-绿色部分为文章或文件夹的基本信息，其中右侧显式的四项内容为：
+<span style="color:#779649;font-weight: bold;">绿色部分</span>为文章或文件夹的基本信息，其中右侧显式的四项内容为：
 
 - 版本：文章每次保存版本号都会增加。
 - 字数：文章的字数统计，只会统计中英文。
@@ -115,11 +113,13 @@ MacOS 使用快捷键 `CMD + 1`
 
 ---
 
-红色部分为文章的操作功能，从左到右依次为：
+### 如何将文章公开？ {#article-open}
 
-- 公开文章：公开的文章可以通过[博客功能]()在公网进行访问。
+上图的<span style="color:#B72929;font-weight: bold;">红色部分</span>为文章的操作功能，从左到右依次为：
+
+- 公开文章：公开的文章可以让任何人通过[博客](./deploy/blog)在公网进行访问。
 - 取消公开：取消文章的公网访问权限。
-- 同步文章：将公网访问的内容同步为最新编辑的内容。
+- 同步文章：文章在编辑后会作为草稿，只允许通过客户端访问，如果要在博客中查看最新内容，需要通过该操作进行同步。
 - 收藏文章：收藏的文章会在首页显示，也可以在收藏列表中查询。
 
 当文章需要同步时，鼠标移动到同步按钮上会提示相差版本号，如下图所示。
@@ -130,19 +130,26 @@ MacOS 使用快捷键 `CMD + 1`
 
 <bl-img src="../imgs/article/article_sync1.png" width="230px"/>
 
-在下方的标签中，你可以添加任意标签，但有两种标签具有特殊意义：
+### 如何创建专题？ {#create-subject}
 
-- subject: 代表该文件夹是一个专题，文件夹会以特殊的样式显示。
-- toc：代表该文章是所在专题的目录，在首页的专题列表中点击某个专题时，会跳转到该目录文章，如果专题下没有 toc 标签的文章时，点击专题会无法跳转。
+你可以为文章添加任意标签，但有两种标签具有特殊意义：
+
+- `subject`：代表该文件夹是一个专题，文件夹会以特殊的样式显示。
+- `toc`：代表该文章是所在专题的目录，在首页的专题列表中点击某个专题时，会跳转到该目录文章。如果没有 `toc` 标签的文章则点击专题时无法跳转。
+
+主色调，图标，封面，描述等配置都会作用在首页和博客的专题列表中。
 
 ---
 
+### 设置文章图片上传地址
+
 底部的黄色框为该文件夹下编写文章时，相关图片会上传到哪个路径。仅文件夹可以设置上传路径，文章无法指定上传路径。
 
-:::warning 注意：
-如果一个文件夹下已经上传过图片，那么修改文件夹路径并不会变更之前上传的图片位置。图片仍然在原路径中。所以通常在上传过图片后就不建议修改该值了。
+:::danger 注意：
 
-当然，你可能会觉得管理图片路径会十分麻烦，那么你也可以不修改该值，这样图片会全部上传到服务器指定的图片根目录下。只需要注意图片不要重名即可。
+1. 如果一个文件夹下已经上传过图片，那么修改文件夹路径并不会变更之前上传的图片位置。图片仍然在原路径中。所以通常在上传过图片后就不建议修改该值了。
+2. 你可能会觉得管理图片路径会十分麻烦，那么你也可以不修改该值，这样图片会全部上传到服务器指定的图片根目录下。只需要注意图片不要重名即可。
+3. 作者并不建议在文章路径中包含 Emoji，中文，特殊字符，如果你需要使用，请务必做好测试。
 :::
 
 ## 文章引用网络 {#references}
@@ -196,18 +203,75 @@ MacOS 使用快捷键 `CMD + 1`
 
 右键点击 Markdown 编辑部分会弹出菜单：
 
-1. 复制选中内容
-2. 在光标位置黏贴内容
-3. 插入图片，会弹出选择图片页面
-4. 格式化选中的表格
-5. 打开在线 Katex 编辑器, 便于校验 katex 的正确性
-6. 打开在线 Mermaid 编辑器, 便于校验 Mermaid 的正确性
-7. 打开 Emoji 网站
+1. 复制选中内容。
+2. 在光标位置黏贴内容。
+3. 插入图片，会弹出选择图片页面。
+4. 格式化选中的表格。
+5. 打开在线 Katex 编辑器, 便于校验 Katex 的正确性。
+6. 打开在线 Mermaid 编辑器, 便于校验 Mermaid 的正确性。
+7. 打开 Emoji 网站。
 
 ## 临时内容 {#linshi}
 
 <bl-img src="../imgs/article/linshi.png" width="250px" :shadow="false"/>
 
-左下角为临时内容，临时内容可以保存需要频繁复制黏贴的内容，例如你可以保存一些常用在文章中的表情或者标签，如：①②。并且临时内容可以与便签联动，这部分可见[便签](./note)。
+左下角为临时内容，临时内容可以保存需要频繁复制黏贴的内容，例如你可以保存一些常用在文章中的表情或者标签，如：`①②③④⑤🟢🟡🟠`。并且临时内容可以与便签联动，操作方式可见[便签](./note#content)。
 
 你可以点击标签的右上角来最小化临时内容页面。
+
+## 工具栏 {#tools}
+
+<bl-img src="../imgs/article/tool.png" width="700px"/>
+
+工具栏与大多数编辑器一样，是一些变更格式的操作按钮，目前暂不支持修改快捷键 🌟。
+
+可以使用 `Shift + Alt/Cmd + F` 来格式化 Markdown 文档。
+
+## 番茄钟 {#tomato}
+
+工具栏中包含一个番茄时钟的功能，如下图：
+
+<bl-img src="../imgs/article/tomato.png" width="250px" :shadow="false"/>
+
+当点击开始后，工具栏会增加一个逐渐缩短的背景色，用于提醒番茄钟的剩余时长。
+
+<bl-img src="../imgs/article/tomato.gif" width="700px"/>
+
+## 浮动目录 {#toc}
+
+<bl-img src="../imgs/article/toc.jpg" width="300px" :shadow="false"/>
+
+文章的浮动目录，可以使用快捷键 `Alt/Cmd + 2` 来切换显示/隐藏。也可以拖拽移动位置。
+
+目录下方是文章使用的图片，点击可以放大，方便查看你的图片是否失效，以及图片是否正确。
+
+## 状态栏 {#status}
+
+<bl-img src="../imgs/article/status.png" width="700px" />
+
+底部状态栏会显示一些基础的文章信息。
+
+右侧编辑记录可以查看编辑历史记录，引用网络可以查看与当前编辑文章相关的的知识网络。
+
+## 笔记备份 {#backup}
+
+笔记会每日进行备份，并压缩为 zip 文件保存在你配置的路径下。你可以在操作台的第二页找到查看备份文件的按钮。
+
+<bl-img src="../imgs/article/workbench_2.png" width="200px" style="margin-top: 10px"/>
+
+笔记备份有多种格式
+
+1. 备份 Markdown：将所有文章以 Markdown 格式备份
+2. 备份本地 Markdown：将所有文章以本地 Markdown 格式备份，并同时备份所有图片。
+3. 备份 Html：将所有文章以 Html 格式备份
+4. 备份本地 Html：将所有文章以本地 Html 格式备份，并同时备份所有图片。
+
+:::tip 提示
+本地格式即所有图片的网络链接都会修改为本地图片路径，这样文章可以在无网情况下查看，也可以直接在如 VS Code，typora 等本地编辑器中打开。
+:::
+
+<bl-img src="../imgs/article/backup.png" width="700px" />
+
+点击对应文件后的下载按钮可以下载备份压缩包，压缩包中会包含一个 log.txt 文件，记录了本次备份的信息，如下图:
+
+<bl-img src="../imgs/article/backup_log.png" width="700px" />

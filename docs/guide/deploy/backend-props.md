@@ -19,16 +19,16 @@ onMounted(() => {
 
 ### 配置用户所在的地理位置 {#sys-user-location}
 
-用户表 base_user.location 字段代表该用户所处的地区位置，该位置会用来查询该用户所属地区的天气，如果你要使用天气功能，那么你需要为用户配置该字段信息。更具体的文档可见: 和风天气
+用户表 `base_user.location` 字段代表该用户所处的地区位置，该位置会用来查询该用户所属地区的天气，如果你要使用天气功能，那么你需要为用户配置该字段信息。更具体的文档可见: 和风天气
 
 > 全国所有地区的位置文档：[China-City-List-latest.csv](https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv)
 
 ### 配置系统参数 {#sys-params}
 
-系统参数表 base_sys_param 用于配置系统相关参数。要变更这些参数，你需要修改 base_sys_param.param_value 字段，下面是参数的详细说明：
+系统参数表 `base_sys_param` 用于配置系统相关参数。要变更这些参数，你需要修改 `base_sys_param.param_value` 字段，下面是参数的详细说明：
 
 :::tip 提示
-大部分配置可以在客户端的[服务器配置]()页面中进行设置，无需修改数据库。
+大部分配置可以在客户端的[服务器配置](../setting#server)页面中进行设置，无需修改数据库。
 :::
 
 - `WEB_ARTICLE_URL`：如果你使用博客功能进行公网访问，那么此处需要配置你博客的访问地址。通常你只需要替换域名部分。默认值`https://www.domain.com/blossom/#/articles?articleId=`

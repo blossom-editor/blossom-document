@@ -2,19 +2,22 @@
 export default {
   base: '/blossom-ndoc/',
   title: 'Blossom',
-  description: 'Just playing around.',
+  description: 'Blossom 云端双链笔记软件,全权掌握,不再宕机。',
+  lang: 'zh-CN',
   /* prettier-ignore */
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/imgs/logo/logo.svg' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/imgs/logo/favicon.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/blossom-ndoc/imgs/blossom/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/blossom-ndoc/imgs/blossom/favicon.png' }],
     ['meta', { name: 'theme-color', content: '#779649' }],
     ['meta', { name: 'og:type', content: 'website' }],
-    ['meta', { name: 'og:locale', content: 'zhCN' }],
+    ['meta', { name: 'og:locale', content: 'zh_cn' }],
     ['meta', { name: 'og:site_name', content: 'Blossom' }],
   ],
+  locales: {},
+
   themeConfig: {
     siteTitle: 'Blossom',
-    logo: '/imgs/logo/logo.svg',
+    logo: '/imgs/blossom/logo.svg',
     /*
      * 右侧文件索引
      */
@@ -42,7 +45,7 @@ export default {
      */
     nav: [
       {
-        text: 'v1.9.0',
+        text: 'v1.8.1',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
           { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' }
@@ -60,10 +63,11 @@ export default {
       {
         text: '关于',
         items: [
-          { text: '下载地址', link: 'https://github.com/blossom-editor/blossom/releases' },
+          { text: '下载地址', link: '/guide/about/download' },
           { text: '源码仓库', link: 'https://github.com/blossom-editor/blossom' },
           { text: '源码仓库（国内）', link: 'https://gitee.com/blossom-editor/blossom' },
           { text: '博客样例', link: 'https://www.wangyunf.com/blossom/#/home' },
+          { text: '接口 API 文档', link: '<a href="/guide/api/index.html" target="_self">Link to pure.html</a>' },
           {
             items: [
               { text: '博客', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20243' },
@@ -137,15 +141,15 @@ export default {
      * 底部页脚
      */
     footer: {
-      message: 'Blossom 官方文档.'
-      // copyright: "Copyright © 2019-present Evan You",
+      message: '在 MIT 许可下发布',
+      copyright: 'Blossom 官方文档，By 小贼贼子'
     },
     /**
      * 修改本页
      */
     editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
-      text: 'Edit this page on GitHub'
+      pattern: 'https://github.com/blossom-editor/blossom-document/edit/main/docs/:path',
+      text: '在 Github 修改本页'
     },
     /**
      * 文档最后更新

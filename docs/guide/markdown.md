@@ -15,7 +15,7 @@ Markdown 由于是一个纯文本格式的文档规范，它语法简单易用�
 
 所以 Blossom 的语法拓展是在原生语法之上进行格式约定，这不是完美的解决方案，但是可以让你的 Markdown 在任何编辑器中都能正常显示。
 
-## 思维导图支持 {#markmap}
+## 思维导图支持 <Badge type="danger" text="非兼容语法" />{#markmap}
 
 可以使用 Markdown 标题来构建思维导图。需要在代码块中表明使用 markmap 渲染，然后在代码块内使用 markdown 语法的标题即可。
 
@@ -43,7 +43,7 @@ Markdown 中的图片是无法控制宽高的，通常图片的显示大小就�
 
 例如：一个普通的图片引用如下，该图片会被渲染为下图
 
-<bl-img src="../imgs/common/luban.png" width="300px" :shadow="false"/>
+<bl-img src="../imgs/blossom/luban.png" width="300px" :shadow="false"/>
 
 ```markdown
 ![图片名称](https://www.wangyunf.com/bl/pic/luban.png)
@@ -51,7 +51,7 @@ Markdown 中的图片是无法控制宽高的，通常图片的显示大小就�
 
 ---
 
-<bl-img src="../imgs/common/luban.png" width="200px" :shadow="false"/>
+<bl-img src="../imgs/blossom/luban.png" width="200px" :shadow="false"/>
 
 如果你想控制图片的宽度，可以在图片名称后增加`##w200##`，图片的宽度就为 200 像素。
 
@@ -65,7 +65,7 @@ Markdown 中的图片是无法控制宽高的，通常图片的显示大小就�
 
 ---
 
-<bl-img src="../imgs/common/luban.png" width="200px" />
+<bl-img src="../imgs/blossom/luban.png" width="200px" />
 
 如果你想为图片增加阴影，可以在图片名称后增加`##shadow##`。
 
@@ -77,7 +77,7 @@ Markdown 中的图片是无法控制宽高的，通常图片的显示大小就�
 在 Blossom 中，所有的图片都是 4 像素圆角的
 :::
 
-## 视频拓展 {#video}
+## 视频拓展 <Badge type="danger" text="非兼容语法" />{#video}
 
 视频功能是在多行代码块的基础上拓展的，目前支持的视频源如下
 
@@ -193,18 +193,18 @@ Markdown 的表格在内容较多时会难以编写, 所以基于表格布局时
 
 上方的内容将被渲染成
 
-<bl-img src="../imgs/common/luban.png" width="150px" />
+<bl-img src="../imgs/blossom/luban.png" width="150px" />
 <div style="width: 100%;display:flex;flex-direction: column;align-items: center;margin-top:10px;">
   <div style="display:inline-block;width: 100%; text-align:center;"><span style="font-weight: bold;">这是我捡到的一只蠢猫</span>, 它叫鲁班</div>
   <div style="display:inline-block;width: 100%; text-align:center;">它把自己从<span style="font-weight: bold;">5</span>斤吃到了<span style="font-weight: bold;">15</span>斤</div>
   <div style="display:inline-block;width: 100%; text-align:center;">但是我很喜欢它 😸</div>
 </div>
 
-## 双链引用 {#references}
+## 双链引用{#references}
 
-该部分请查阅[文章编辑](./article#article-references)。
+该部分请查阅[文章编辑](./article#references)。
 
-## Katex 数学公式 {#katex}
+## Katex 数学公式 <Badge type="danger" text="非兼容语法" />{#katex}
 
 数学公式依赖于 [Katex](https://github.com/KaTeX/KaTeX)。
 
@@ -244,7 +244,7 @@ Markdown 的表格在内容较多时会难以编写, 所以基于表格布局时
 
 <bl-img src="../imgs/article/katex_block.png" width="550px" :shadow="false"/>
 
-## Mermaid 图表 {#mermaid}
+## Mermaid 图表 <Badge type="danger" text="非兼容语法" />{#mermaid}
 
 非行内公式在代码块的基础上进行拓展，在```后填写 mermaid，来指定代码块内容为 Mermaid 语法，如下:
 

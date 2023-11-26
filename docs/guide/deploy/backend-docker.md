@@ -11,7 +11,7 @@ onMounted(() => {
 使用 Dockerhub 公共镜像
 </div>
 
-Blossom 依赖 MYSQL8。
+Blossom 依赖 `JDK8` + `Mysql8`
 
 ## 【可选】拉取 MySQL 镜像并启动 {#pull-mysql}
 
@@ -92,29 +92,10 @@ docker run -d --name blossom-backend -p 9999:9999 -v /home/bl/:/home/bl/ jasmine
 注意修改配置项 `-v /home/bl/:/home/bl/` 的文件挂载路径，**否则容器删除的同时会删除保存的图片信息**。
 :::
 
-## 查看配置项是否正确 {#check-prop}
+<!--@include: ./backend-after-docker-check.md-->
 
-你可以输入以下命令，在容器日志中查看你修改后的配置项是否正常生效：
+<!--@include: ./backend-after-download.md-->
 
-```bash
-docker logs blossom-backend
-```
-
-在启动日志的最上方会显示你配置的各项参数。
-
-<bl-img src="../../imgs/deploy/backend-before-check.png" width="700px"/>
-
-## 检查是否启动成功 {#check-start}
-
-你可以输入以下命令，在容器日志中查看容器是否启动成功：
-
-```bash
-docker logs blossom-backend
-```
-
-如果日志的最底部显示以下内容，则说明容器启动成功。
-
-<bl-img src="../../imgs/deploy/backend-success.png" width="700px"/>
 
 <style scoped>
 .docker {

@@ -1,17 +1,33 @@
 <script setup lang="ts">
+import { VPTeamMembers } from 'vitepress/theme'
 import { onMounted } from 'vue'
 import { info } from '../../scripts/stat-api'
 
 onMounted(() => {
   info()
 })
+
+const members = [
+  {
+    avatar: 'https://www.wangyunf.com/bl/pic/home/bl/img/U1/pic/luban.png',
+    name: '小贼贼子',
+    title: '作者',
+    links: [
+      { icon: 'github', link: 'https://github.com/yyx990803' }
+    ]
+  }
+]
 </script>
 
 # 成为 Blossom 的赞助者 🤝
 
 <br/>
 <br/>
-<bl-img src="../../imgs/logo/logo.svg" width="150px" :shadow="false" :drop-shadow="true"/>
+<bl-img src="../../imgs/blossom/logo.svg" width="150px" :shadow="false" :drop-shadow="true"/>
+
+<!-- <div style="text-align:center;">
+<VPTeamMembers size="small" :members="members" />
+</div> -->
 
 你好！我是 Blossom 笔记软件的作者，是一名正在探索中的全职独立开发者，你可以叫我小贼。
 
@@ -23,7 +39,7 @@ Blossom 是一个 MIT 协议开源的笔记软件。MIT 是一个非常宽松的
 
 但该项目设计，开发，测试需要大量的时间和精力，作为个人开发者不得不寻找一些其他方式来维持生活，如果你愿意赞助我的工作，将非常有助于该项目的成长，并激励我长期持续下去！
 
-作为赞助者，你的名字将出现在 Blossom 的 README 中，
+你可以通过以下几种方式赞助 Blossom。
 
 <div class="sponsor">
   <div class="item">
@@ -31,7 +47,7 @@ Blossom 是一个 MIT 协议开源的笔记软件。MIT 是一个非常宽松的
     <div class="name">微信</div>
   </div>
 
-  <div class="item">
+  <div class="item middle">
     <bl-img src="../../imgs/blossom/ali.png" />
     <div class="name">支付宝</div>
   </div>
@@ -42,23 +58,29 @@ Blossom 是一个 MIT 协议开源的笔记软件。MIT 是一个非常宽松的
   </div>
 </div>
 
+**无论使用哪种赞助方式，作为赞助者，你的名字都将出现在 Blossom 的 README 中**。如果你不希望展示你的名字，你也可以在赞助时留言，或通过 QQ 群(522359970)与邮箱(kuamax888@qq.com)联系我。
+
 <style scoped>
+
 .sponsor {
-  display:flex;flex-direction: row;justify-content: space-around;overflow:scroll;
-  padding: 10px;
-  margin-bottom:20px;
+display:flex;flex-direction: row;justify-content: space-between;overflow:scroll;
+padding: 16px 16px 10px 16px;
 }
 
 .sponsor .item {
-  min-width:30%;
-  margin-right:10px;
+max-width:31%;
+}
+
+.sponsor .middle {
+margin-left:10px;
+margin-right:10px;
 }
 
 .sponsor .item .name {
-  width: 100%;
-  font-size: 18px;
-  color: #9E9E9E;
-  text-align: center;
-  margin-top: 10px;
+width: 100%;
+font-size: 16px;
+color: #9E9E9E;
+text-align: center;
+margin-top: 10px;
 }
 </style>
