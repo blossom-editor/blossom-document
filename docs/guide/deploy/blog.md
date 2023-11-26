@@ -12,7 +12,7 @@ onMounted(() => {
 <br/>
 <bl-img src="../../imgs/blog/home.png"/>
 
-<div style="display:flex;flex-direction: row;justify-content: flex-start;overflow:scroll;padding:  10px;margin-top:20px;">
+<div style="display:flex;flex-direction: row;justify-content: flex-start;overflow-x:scroll;padding:  10px;margin-top:20px;">
 <div style="min-width:33%;margin-right:10px;"><bl-img src="../../imgs/blog/home_m.png" width="230px" /></div>
 <div style="min-width:33%;margin-right:10px;"><bl-img src="../../imgs/blog/article_m.png" width="230px" /></div>
 <div style="min-width:33%;margin-right:10px;"><bl-img src="../../imgs/plan/plan_m.png" width="230px" /></div>
@@ -22,67 +22,103 @@ onMounted(() => {
 
 博客除了可以访问公开文章之外，更提供了各项功能的移动端访问入口。
 
+博客由于需要修改一些相关配置，所以无法提供即用的包，所以需要你自行配置并打包。你至少需要 `NodeJS 18` 及以上。
+
 ## 登录博客 {#login}
 
 在使用`v1.9.0`及以上版本时，可以在左上角 logo 上连续点击 7 次以上，即会跳转至博客的登录页面。博客中的各项功能和交互逻辑大多是用来适配移动端页面。
 
-## 如何部署？ {#how-to-deploy}
+## 修改博客配置 {#how-to-deploy}
 
-### 修改配置
+博客源码在项目的 blossom-web 目录下，你需要修改 `blossom-web\src\assets\constants\blossom.ts` 文件中的以下内容：
 
-博客由于需要修改一些相关配置，所以无法提供即用的包，所以需要你自行配置并打包。你至少需要 `NodeJS 18` 及以上。
+- `DOMAIN.PRD`：填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同。
+- `DOMAIN.USER_ID`：将该值填写你开放为博客的用户 ID。
 
-博客源码在项目的 blossom-web 目录下，你需要修改 `blossom-web\src\assets\constants\blossom.ts` 下的内容，注意，下方代码中，**标识为红色的第 24 行与 26 行需要修改**，否则将无法正常使用。
+需要修改的内容在下方标识为<span style="background-color:#F5DCE1">红色底色</span>。
 
-```typescript:line-numbers{24,26}
-const blossom: any = {
+<!--
+// [!code warning]
+// [!code error]
+ -->
+
+```typescript:line-numbers
+const blossom = {
   /**
    * 基础配置
    */
   SYS: {
-    // 【可修改】修改该值可以改变网页左上角名称, 你可以改为你的名称 // [!code warning]
+    // 修改该值可以改变网页左上角名称, 你可以改为你的名称
     NAME: 'Blossom',
-    SHORT_NAME: 'BLOSSOM-WEB',
+    // 博客左上角 LOGO 文件名称, 文件需要放在 src/assets/imgs/logo/ 路径下
+    LOGO: 'blossom_logo.png',
     // 版本
-    VERSION: 'v1.7.0',
+    VERSION: 'v1.9.0',
     // 公网安备号
     GONG_WANG_AN_BEI: 'X公网安备 XXXXXXXXXX号',
-    // 【可修改】ICP 备案号 // [!code warning]
+    // ICP 备案号
     ICP_BEI_AN_HAO: '京ICP备123123123号',
     // 邮箱
-    EMAIL: '491548320@qq.com'
+    EMAIL: ''
   },
   /**
-   * 填写服务器的地址
+   * 博客样式，当前可设置样式如下：
+   * 1. 左上角 LOGO 样式
+   * 2. 专题文件夹的特殊样式显示
+   */
+  THEME: {
+    LOGO_STYLE: {
+      // 左上角 LOGO 的圆角设置
+      'border-radius': '50%'
+    },
+    // 是否以特殊样式显示专题文件夹
+    SUBJECT_TITLE: true
+  },
+  /**
+   * 服务器的地址
    */
   DOMAIN: {
-    LOC: 'http://127.0.0.1:9999/',
-    // 【需修改】将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同 // [!code error]
+    // 将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同 // [!code error]
     PRD: 'https://www.wangyunf.com/bl/', // [!code error]
-    // 【需修改】将该值填写你开放为博客的用户ID // [!code error]
+    // 将该值填写你开放为博客的用户ID // [!code error]
     USER_ID: 1 // [!code error]
   },
   /**
-   * 【可修改】可以填写你自己的网站，该信息回展示顶部的【更多】按钮中，以及首页的【我的所有文章】下 // [!code warning]
-   * NAME: 网站名称 // [!code warning]
-   * URL: 网站地址 // [!code warning]
-   * LOGO: 网站LOGO, 放在 src/assets/imgs/linklogo/ 路径下 // [!code warning]
+   * 可以填写你自己的网站，该信息会展示在右上角的【更多】按钮中，以及首页的【所有文章】下
+   * NAME: 网站名称
+   * URL: 网站地址
+   * LOGO: 网站LOGO, 放在 src/assets/imgs/linklogo/ 路径下
    */
   LINKS: [
     // 下方是一个示例
     // {
     //   NAME: '我的个人主页',
     //   URL: 'https://www.wangyunf.com',
-    //   // 请将 logo 放入到 src/assets/imgs/linklogo/
     //   LOGO: 'luban.png'
     // }
   ]
 }
 
 export default blossom
+
 ```
 
-### 打包 {#build}
+## 其他配置项说明
+
+博客提供了一些其他可选的个性化配置项供修改。
+
+### 基础配置
+
+- `SYS.NAME`：博客左上角的名称。
+- `SYS.LOGO`：博客左上角的 Logo 文件名，对应文件需要放在 `src/assets/imgs/logo/` 路径下。
+- `SYS.ICP_BEI_AN_HAO`：如果博客作为域名的默认访问页面，则可能需要配置域名的备案号。。
+
+### 样式配置
+
+- `THEME.LOGO_STYLE`：博客左上角 Logo 的样式。你可以在此设置圆角或图片阴影等任何样式。
+- `THEME.SUBJECT_TITLE`：文章列表中是否已特殊样式显示专题。
+
+## 打包 {#build}
 
 使用 npm 打包代码。
 
@@ -93,7 +129,7 @@ npm run build
 
 打包后在 `blossom-web/dist/` 目录下会生成打包结果文件，需要将相关文件上传至服务器。
 
-### Nginx 配置 {#nginx}
+## Nginx 配置 {#nginx}
 
 如果你使用 Nginx，可参考以下方式配置。
 

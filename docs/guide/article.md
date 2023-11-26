@@ -18,7 +18,7 @@ onMounted(() => {
 
 ## 移动端样式 {#m}
 
-<div style="display:flex;flex-direction: row;justify-content: flex-start;overflow:scroll;padding: 20px;">
+<div style="display:flex;flex-direction: row;justify-content: flex-start;overflow-x:scroll;padding: 20px;">
 <div style="min-width:50%;margin-right:10px;"><bl-img src="../imgs/article/m.png" width="300px" /></div>
 <div style="min-width:50%;margin-right:10px;"><bl-img src="../imgs/article/m_menu.png" width="300px" /></div>
 <div style="min-width:50%;"><bl-img src="../imgs/article/m_toc.png" width="300px" /></div>
@@ -150,7 +150,7 @@ onMounted(() => {
 1. 如果一个文件夹下已经上传过图片，那么修改文件夹路径并不会变更之前上传的图片位置。图片仍然在原路径中。所以通常在上传过图片后就不建议修改该值了。
 2. 你可能会觉得管理图片路径会十分麻烦，那么你也可以不修改该值，这样图片会全部上传到服务器指定的图片根目录下。只需要注意图片不要重名即可。
 3. 作者并不建议在文章路径中包含 Emoji，中文，特殊字符，如果你需要使用，请务必做好测试。
-:::
+   :::
 
 ## 文章引用网络 {#references}
 

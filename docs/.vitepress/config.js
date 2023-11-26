@@ -141,8 +141,8 @@ export default {
      * 底部页脚
      */
     footer: {
-      message: '在 MIT 许可下发布',
-      copyright: 'Blossom 官方文档，By 小贼贼子'
+      message: 'Blossom 官方文档',
+      copyright: '在 MIT 许可下发布'
     },
     /**
      * 修改本页
