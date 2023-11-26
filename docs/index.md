@@ -48,27 +48,30 @@ features:
     PC 客户端
   </div>
   <bl-theme-img light-img="./imgs/home/home_light.png" dark-img="./imgs/home/home_dark.png" width="1250px"/>
+
+
+  <div class="text" style="margin-top:100px;">
+    网页移动端
+  </div>
+
+  <div class="img-container" >
+    <div class="item"><bl-img src="./imgs/blog/home_m.png" /></div>
+    <div class="item"><bl-img src="./imgs/blog/article_m.png" /></div>
+    <div class="item"><bl-img src="./imgs/plan/plan_m.png" /></div>
+    <div class="item"><bl-img src="./imgs/todo/todo_m.png" /></div>
+    <div class="item"><bl-img src="./imgs/note/note_m.png" /></div>
+  </div>
+
+  <div class="text" style="margin-bottom:20px;">
+    网页PC端
+  </div>
+
+  <bl-img src="./imgs/blog/home.png" width="1000px" />
 </p>
 
-<div class="text" style="margin-top:100px;">
-  网页移动端
-</div>
-
-<div class="img-container" style="padding:  10px;">
-  <div class="item"><bl-img src="./imgs/blog/home_m.png" width="230px" /></div>
-  <div class="item"><bl-img src="./imgs/blog/article_m.png" width="230px" /></div>
-  <div class="item"><bl-img src="./imgs/plan/plan_m.png" width="230px" /></div>
-  <div class="item"><bl-img src="./imgs/todo/todo_m.png" width="230px" /></div>
-  <div class="item"><bl-img src="./imgs/note/note_m.png" width="230px" /></div>
-</div>
-
-<div class="text" style="margin-bottom:20px;">
-  网页PC端
-</div>
-
-<bl-img src="./imgs/blog/home.png" width="1000px" />
 
 <p class="module-container">
+
 <div class="text">
   <p>作为一个独立开发者，我目前的核心工作就是维护 Blossom。</p>
   <p>但开源项目的收益很难维持生活。</p>
@@ -81,7 +84,7 @@ features:
     <div class="name">微信</div>
   </div>
 
-  <div class="item middle">
+  <div class="item">
     <bl-img src="./imgs/blossom/ali.png" />
     <div class="name">支付宝</div>
   </div>
@@ -91,6 +94,7 @@ features:
     <div class="name">爱发电</div>
   </div>
 </div>
+
 </p>
 
 <style scoped>
