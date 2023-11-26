@@ -1,13 +1,13 @@
 // .vitepress/config.js
 export default {
-  base: '/blossom-ndoc/',
+  base: '/blossom-doc/',
   title: 'Blossom',
   description: 'Blossom 云端双链笔记软件,全权掌握,不再宕机。',
   lang: 'zh-CN',
   /* prettier-ignore */
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/blossom-ndoc/imgs/blossom/logo.svg' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/blossom-ndoc/imgs/blossom/favicon.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/blossom-doc/imgs/blossom/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/blossom-doc/imgs/blossom/favicon.png' }],
     ['meta', { name: 'theme-color', content: '#779649' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:locale', content: 'zh_cn' }],
