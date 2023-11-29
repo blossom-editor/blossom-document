@@ -7,11 +7,9 @@ onMounted(() => {
 })
 </script>
 
-<div class="docker">
-使用 Dockerhub 公共镜像
-</div>
+<div class="docker">使用 Dockerhub 公共镜像</div>
 
-Blossom 依赖 `JDK8` + `Mysql8`
+Blossom 依赖 `JDK8` + `Mysql8`。如果你拉取镜像缓慢，也可以通过[百度网盘下载](../about/download#baidu)镜像文件。
 
 ## 【可选】拉取 MySQL 镜像并启动 {#pull-mysql}
 

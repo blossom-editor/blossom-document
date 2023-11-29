@@ -7,13 +7,11 @@ onMounted(() => {
 })
 </script>
 
-<div class="docker">
-使用 Docker Compose
-</div>
+<div class="docker">使用 Docker Compose</div>
 
-Blossom 依赖 `JDK8` + `Mysql8`
+Blossom 依赖 `JDK8` + `Mysql8`。如果你拉取镜像缓慢，也可以通过[百度网盘下载](../about/download#baidu)镜像文件。
 
-该方式适合没有安装过 MYSQL 的场景，可以使用 Docker Compose 连同 MySQL 一起拉取构建，这是最简单快捷的部署方式。
+该方式适合没有安装过 MYSQL 的场景，会连同 MySQL 一起部署，这是最简单快捷的部署方式。
 
 ## 确认是否安装 Docker Compose {#check-docker-compose}
 

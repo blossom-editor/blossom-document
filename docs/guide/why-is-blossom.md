@@ -19,8 +19,8 @@ Blossom 是一个需要私有部署的笔记软件，虽然本身定位是一个
 
 <bl-img src="../imgs/home/device.png" :shadow="false"/>
 
-- <span style="color:#779649;font-weight: bold;">客户端</span>：目前支持 Windows 端和 ARM 架构的 Mac 端，以及作为网页端部署。
-- <span style="color:#EAB412;font-weight: bold;">移动端</span>：拥有一个响应式网页移动端，主要适配移动端页面和操作逻辑，同时也作为博客供所有人访问。
+- <span style="color:#779649;font-weight: bold;">客户端</span>：支持 Windows 端和 ARM 架构的 Mac 端，以及作为网页端部署。
+- <span style="color:#EAB412;font-weight: bold;">移动端</span>：响应式网页移动端，主要为移动端设计，同时也作为博客供所有人访问。
 - <span style="color:#307DEF;font-weight: bold;">服务端</span>：服务端支持在 Docker 中进行部署。
 
 ::: tip 提示

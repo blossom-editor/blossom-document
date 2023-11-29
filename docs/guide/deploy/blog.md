@@ -48,17 +48,17 @@ const blossom = {
    * 基础配置
    */
   SYS: {
-    // 修改该值可以改变网页左上角名称, 你可以改为你的名称
+    // 修改该值可以改变网页左上角名称, 你可以改为你的名称 // [!code warning]
     NAME: 'Blossom',
-    // 博客左上角 LOGO 文件名称, 文件需要放在 src/assets/imgs/logo/ 路径下
+    // 博客左上角 LOGO 文件名称, 文件需要放在 src/assets/imgs/logo/ 路径下 // [!code warning]
     LOGO: 'blossom_logo.png',
     // 版本
     VERSION: 'v1.9.0',
-    // 公网安备号
+    // 公网安备号 // [!code warning]
     GONG_WANG_AN_BEI: 'X公网安备 XXXXXXXXXX号',
-    // ICP 备案号
+    // ICP 备案号 // [!code warning]
     ICP_BEI_AN_HAO: '京ICP备123123123号',
-    // 邮箱
+    // 邮箱 // [!code warning]
     EMAIL: ''
   },
   /**
@@ -68,10 +68,10 @@ const blossom = {
    */
   THEME: {
     LOGO_STYLE: {
-      // 左上角 LOGO 的圆角设置
+      // 左上角 LOGO 的圆角设置 // [!code warning]
       'border-radius': '50%'
     },
-    // 是否以特殊样式显示专题文件夹
+    // 是否以特殊样式显示专题文件夹 // [!code warning]
     SUBJECT_TITLE: true
   },
   /**

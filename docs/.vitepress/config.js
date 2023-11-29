@@ -45,7 +45,11 @@ export default {
      */
     nav: [
       {
-        text: 'v1.9.0.dev',
+        text: '在线客户端',
+        link: 'https://www.wangyunf.com/blossom-demo/#/settingindex'
+      },
+      {
+        text: 'v1.9.0',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
           { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' }
@@ -57,7 +61,13 @@ export default {
           { text: '使用 Docker 公共镜像', link: '/guide/deploy/backend-docker' },
           { text: '使用 Docker Compose', link: '/guide/deploy/backend-docker-compose' },
           { text: 'Jar 包部署', link: '/guide/deploy/backend-jar' },
-          { text: 'Idea 源码部署', link: '/guide/deploy/backend-idea' }
+          { text: 'Idea 源码部署', link: '/guide/deploy/backend-idea' },
+          {
+            items: [{ text: '客户端部署', link: '/guide/deploy/client' }]
+          },
+          {
+            items: [{ text: '博客部署', link: '/guide/deploy/blog' }]
+          }
         ]
       },
       {
@@ -116,10 +126,11 @@ export default {
               { text: '使用 Docker 公共镜像', link: '/guide/deploy/backend-docker' },
               { text: '使用 Docker Compose', link: '/guide/deploy/backend-docker-compose' },
               { text: 'Jar 包部署', link: '/guide/deploy/backend-jar' },
-              { text: 'Idea 源码部署', link: '/guide/deploy/backend-idea' }
+              { text: 'Idea 源码部署', link: '/guide/deploy/backend-idea' },
+              { text: '后台配置项', link: '/guide/deploy/backend-props' }
             ]
           },
-          { text: '后台配置项', link: '/guide/deploy/backend-props' },
+          { text: '网页客户端部署', link: '/guide/deploy/client' },
           { text: '博客/移动端页面部署', link: '/guide/deploy/blog' },
           { text: 'Mac OS 安装客户端', link: '/guide/deploy/macos' },
           { text: 'FAQ 常见问题', link: '/guide/deploy/faq' }
