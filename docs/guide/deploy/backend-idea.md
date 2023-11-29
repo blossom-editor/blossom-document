@@ -67,6 +67,6 @@ echo "backend-blossom 正在启动,请查看日志 ↓↓↓↓↓↓↓↓↓�
   font-size: 40px;
   line-height: 60px;
   padding-left:20px;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 </style>

@@ -1,0 +1,210 @@
+<style>
+  body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  /* 宽 / 长 = 0.54 */
+  .macbook {
+    padding: 5% 6%;
+    margin: 0 auto;
+    /* max-width: 100%; */
+    width: 1800px;
+    margin-left: 0;
+    padding-left: 100px;
+  }
+
+  .screen {
+    background: #000;
+    border-radius: 3% 3% 0.5% 0.5% / 5%;
+    margin: 0 auto;
+    /* for aspect ratio */
+    position: relative;
+    width: 78%;
+  }
+
+  .screen:before {
+    border: 2px solid #cacacc;
+    border-radius: 3% 3% 0.5% 0.5% / 5%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
+    content: '';
+    display: block;
+    /* for aspect ratio ~67:100 */
+    padding-top: 59%;
+  }
+
+  .screen:after {
+    content: '';
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
+    position: absolute;
+    bottom: 0.75%;
+    left: 0.5%;
+    padding-top: 1%;
+    width: 100%;
+  }
+
+  .viewport {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 4.3% 3.2%;
+  }
+
+  .base {
+    /* for aspect ratio */
+    position: relative;
+    width: 99%;
+  }
+
+  .base:before {
+    content: '';
+    display: block;
+    /* for aspect ratio ~33:1000*/
+    padding-top: 3.3%;
+    /* stylin */
+    background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4b4b4f 84%, #262627 89%, rgba(0, 0, 0, 0.01) 98%);
+    border-radius: 0 0 10% 10%/ 0 0 50% 50%;
+  }
+
+  .base::after {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(255, 255, 255, 0.8) 0.5%,
+      rgba(0, 0, 0, 0.4) 3.3%,
+      transparent 15%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 85%,
+      rgba(0, 0, 0, 0.4) 96.7%,
+      rgba(255, 255, 255, 0.8) 99.5%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    content: '';
+    height: 53%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .notch {
+    background: #ddd;
+    border-radius: 0 0 7% 7% / 0 0 95% 95%;
+    box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3.5%;
+    z-index: 2;
+    /* for aspect ratio */
+    position: relative;
+    width: 14%;
+  }
+
+  .notch:before {
+    content: '';
+    display: block;
+    /* for aspect ratio ~1:10 */
+    padding-top: 10%;
+  }
+
+  /* Screenshot Hover Scroll Additions
+      -------------------------------------------------------------- */
+
+  .macbook .viewport {
+    transition: background-position 3s ease;
+    background-position: 0 0;
+    background-size: 100% auto;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .macbook:hover .viewport {
+    background-position: 0 100%;
+  }
+
+  .macbook .viewport:after {
+    background: #999ba0;
+    background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .iphone,
+  .ipad {
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-family: 'SF Pro Display', Helvetica Neue, Arial, sans-serif;
+    letter-spacing: -0.022em;
+    font-size: 2.5vmin;
+    background-color: #000;
+    background-size: auto 200%, cover;
+    background-repeat: no-repeat, no-repeat;
+    border: solid #111;
+    margin-bottom: 2em;
+    position: relative;
+    box-shadow: 0 0.5em 15px rgba(0, 0, 0, 0.2), 0 0 0 0.5px #000 inset;
+    transition: all 0.1s linear, line-height 0s linear;
+    background-position: 50% 100%, center;
+    transform-origin: bottom center;
+    &:hover {
+      color: transparent;
+      text-shadow: 0 0 0em transparent;
+      background-position: 50% -100%, center center;
+      transition: all 0.15s linear, line-height 5s linear;
+      line-height: 0vmin;
+    }
+  }
+
+  /* 宽 / 长 = 0.511 */
+  .iphone {
+    width: 288.95px;
+    height: 584.44px;
+    line-height: 51.4455445545vmin;
+    border-width: 1.5207920792vmin;
+    border-radius: 30px;
+    /* line-height: 2.165*$unit;
+    	border-width: $unit/15.625;
+    	border-radius: $unit/5.86; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0), #00000024), url(https://www.wangyunf.com/bl/pic/home/bl/img/U1/blossom/blog_home.png);
+    z-index: 200;
+    position: absolute;
+    bottom: 100px;
+    right: 30px;
+  }
+
+  /* 宽 / 长 = 0.7 */
+  .ipad {
+    margin-left: 2em;
+    height: 714px;
+    width: 500px;
+    line-height: 85.8vmin;
+    border-width: 3vmin;
+    border-radius: 4.2857142857vmin;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), #00000024), url(https://www.wangyunf.com/bl/pic/home/bl/img/U1/blossom/blog_pad.png);
+    z-index: 100;
+    position: absolute;
+    bottom: 150px;
+    right: 250px;
+  }
+</style>
+
+<body>
+  <div class="macbook">
+    <div class="screen">
+      <div class="viewport" style="background-image: url('https://www.wangyunf.com/bl/pic/home/bl/img/U1/blossom/1080p_light.png')"></div>
+    </div>
+    <div class="base"></div>
+    <div class="notch"></div>
+  </div>
+
+  <figure class="iphone"></figure>
+  <figure class="ipad"></figure>
+</body>

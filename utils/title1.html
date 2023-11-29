@@ -1,0 +1,297 @@
+<style>
+  :root {
+    --color-bg-color: #fff;
+    --color-heading: #779649;
+    --color-heading-shadow: #afafaf;
+
+    /* --color-bg-color: #1e1e1e;
+    --color-heading: #899911;
+    --color-heading-shadow: #000000; */
+  }
+
+  body {
+    background-color: var(--color-bg-color);
+    /* background-image: linear-gradient(to bottom right, #FFFFFF, #F2EEFF); */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .title {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    width: 100%;
+    height: calc(100% - 600px);
+  }
+
+  .content .content-title {
+    font-size: 130px;
+    margin-top: 100px;
+    color: #7B7B7B;
+    text-shadow: 3px 3px 5px #B3B3B3;
+    text-align: center;
+  }
+
+
+  .content .content-text {
+    font-size: 50px;
+    margin-top: 10px;
+    color: #2B2B2B;
+    text-shadow: 3px 3px 5px #B3B3B3;
+    /* text-align: left; */
+    padding-left: 400px;
+  }
+
+  .row {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .label {
+    color: #AD8CF2;
+    display: inline-block;
+    width: 320px;
+  }
+
+  li {}
+
+  li::marker {
+    color: #AD8CF2;
+  }
+</style>
+
+<style>
+  .key {
+    font-size: 250px;
+    display: inline-block;
+    letter-spacing: 5px;
+    transition: transform 0.2s;
+
+    margin: 0;
+    font-family: 'Jetbrains Mono';
+    font-weight: 700;
+    color: var(--color-heading);
+    text-shadow: 0 1px 0 var(--color-heading-shadow),
+      0 2px 0 var(--color-heading-shadow),
+      0 3px 0 var(--color-heading-shadow),
+      0 4px 0 var(--color-heading-shadow),
+      0 5px 0 var(--color-heading-shadow),
+      0 6px 0 var(--color-heading-shadow),
+      /* 0 7px 0 var(--color-heading-shadow), */
+      /* 0 8px 0 var(--color-heading-shadow), */
+
+      0 0 5px rgba(10, 0, 0, .05),
+      0 1px 3px rgba(10, 0, 0, .2),
+      0 3px 5px rgba(10, 0, 0, .2),
+      0 5px 10px rgba(10, 0, 0, .2),
+      0 10px 10px rgba(10, 0, 0, .2),
+      0 20px 20px rgba(10, 0, 0, .3);
+  }
+
+  img {
+    width: 190px;
+    height: 190px;
+    filter: drop-shadow(0 10px 3px var(--color-heading-shadow));
+  }
+
+  @keyframes pressDown1 {
+
+    30%,
+    40%,
+    100% {
+      transform: translateY(0);
+    }
+
+    35% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes pressDown2 {
+
+    70%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+
+    75% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes pressDown3 {
+
+    30%,
+    40%,
+    100% {
+      transform: translateY(0);
+    }
+
+    35% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes pressDown4 {
+
+    40%,
+    50%,
+    100% {
+      transform: translateY(0);
+    }
+
+    45% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes pressDown5 {
+
+    20%,
+    30%,
+    100% {
+      transform: translateY(0);
+    }
+
+    25% {
+      transform: translateY(10px);
+    }
+  }
+
+  /* @keyframes pressDown6 {
+
+    60%,
+    70%,
+    100% {
+      transform: translateY(0);
+    }
+
+    65% {
+      transform: translateY(10px);
+    }
+  } */
+
+  @keyframes pressDown7 {
+
+    10%,
+    20%,
+    100% {
+      transform: translateY(0);
+    }
+
+    15% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes pressDown6 {
+    0% {
+      transform: translateY(15px);
+    }
+
+    35%,
+    45%,
+    100% {
+      transform: translateY(15px);
+    }
+
+    40% {
+      transform: translateY(30px);
+    }
+  }
+
+
+
+  .key:nth-child(1) {
+    animation: pressDown1 2s infinite;
+  }
+
+  .key:nth-child(2) {
+    animation: pressDown2 3s infinite;
+  }
+
+  .key:nth-child(3) {
+    animation: pressDown3 4s infinite;
+  }
+
+  .key:nth-child(4) {
+    animation: pressDown4 2.5s infinite;
+  }
+
+  .key:nth-child(5) {
+    animation: pressDown5 2.5s infinite;
+  }
+
+  .key:nth-child(6) {
+    animation: pressDown6 3.5s infinite;
+  }
+
+  .key:nth-child(7) {
+    animation: pressDown7 2.2s infinite;
+  }
+
+  /* .key:nth-child(8) {
+    animation: pressDown8 3.2s infinite;
+  } */
+</style>
+<body>
+  <!-- <div class="content">
+    <div class="content-text">
+      <div class="row">
+        <div class="label">📃 文档地址</div>https://www.wangyunf.com/blossom-doc/index
+      </div>
+      <div class="row">
+        <div class="label">
+          <img src="./github.png" style="height: 60px;width: 60px;">
+          Github
+        </div>https://github.com/blossom-editor/blossom
+      </div>
+      <div class="row">
+        <div class="label">
+          <img src="./gitee.png" style="height: 53px;width: 53px;padding-left: 5px;">
+          Gitee
+        </div>
+        https://gitee.com/blossom-editor/blossom
+      </div>
+    </div>
+  </div> -->
+
+  <div class="title" style="position: absolute;top: 60px;">
+    <span class="key">B</span>
+    <span class="key">l</span>
+    <span class="key">o</span>
+    <span class="key">s</span>
+    <span class="key">s</span>
+    <img class="key" src="https://www.wangyunf.com/bl/pic/home/bl/img/U1/pic/xzzz/blossom-logo.png" />
+    <span class="key">m</span>
+  </div>
+
+  <!-- <div class="content"
+    style="font-size: 140px;width: 60%;padding: 0 20px;color: #EFC75E;transform:rotate(-10deg);text-shadow: 0 0 45px #000;position: absolute;top: 470px;left: 650px;">
+    <div>
+      支持 MacOS！
+    </div>
+  </div>
+
+  <div class="content"
+    style="font-size: 140px;width: 60%;padding: 0 20px;color: #EFC75E;transform:rotate(5deg);text-shadow: 0 0 45px #000;position: absolute;top:800px;left: 830px;">
+    <div>
+      支持 Docker！
+    </div>
+  </div> -->
+</body>

@@ -45,7 +45,7 @@ export default {
      */
     nav: [
       {
-        text: 'v1.8.1',
+        text: 'v1.9.0.dev',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
           { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' }

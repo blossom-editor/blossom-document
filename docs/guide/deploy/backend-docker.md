@@ -27,6 +27,7 @@ docker pull mysql:8.0.31
 docker run \
 -d \
 --name mysql \
+#【可选修改】数据库 root 用户的密码 // [!code warning]
 -e MYSQL_ROOT_PASSWORD=jasmine888 \
 -p 3306:3306 \
 #【需修改】挂载数据库文件保存路径。 // [!code error]
@@ -76,10 +77,10 @@ docker run -d \
   --project.iaas.blos.default-path="/home/bl/img/" \
   #【需修改】配置数据库访问地址 // [!code error]
   --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&& // [!code error]serverTimezone=GMT%2B8" \ // [!code error]
-  #【需修改】配置数据库用户名 // [!code error]
-  --spring.datasource.username=root \ // [!code error]
-  #【需修改】配置数据库密码 // [!code error]
-  --spring.datasource.password=jasmine888 // [!code error]
+  #【可选修改】配置数据库用户名 // [!code warning]
+  --spring.datasource.username=root \ // [!code warning]
+  #【可选修改】配置数据库密码 // [!code warning]
+  --spring.datasource.password=jasmine888 // [!code warning]
 ```
 
 如果你使用的是 Windows，需要在控制台输入下列命令
@@ -96,7 +97,6 @@ docker run -d --name blossom-backend -p 9999:9999 -v /home/bl/:/home/bl/ jasmine
 
 <!--@include: ./backend-after-download.md-->
 
-
 <style scoped>
 .docker {
   width:100%;
@@ -106,6 +106,6 @@ docker run -d --name blossom-backend -p 9999:9999 -v /home/bl/:/home/bl/ jasmine
   font-size: 40px;
   line-height: 60px;
   padding-left:20px;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 </style>

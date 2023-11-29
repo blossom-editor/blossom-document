@@ -32,12 +32,13 @@ Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署
 
 <div class="deploy-type">
   <div class="item docker" @click="toRoute('/guide/deploy/backend-docker')">
-    <div>使用 Dockerhub 公共镜像</div>
+    <div class="title">使用 Dockerhub 公共镜像</div>
     <p class="desc">不包含数据库的后台应用镜像, 适用于已经安装了 MySQL 的情况。</p>
   </div>
   <div class="item docker" @click="toRoute('/guide/deploy/backend-docker-compose')">
-    <div>使用 Docker compose 构建</div>
+    <div class="title">使用 Docker Compose 构建</div>
     <p class="desc">适用于未安装 MySQL，可以连同 MySQL 镜像一起拉取并部署。</p>
+    <div class="tag">推荐</div>
   </div>
 </div>
 
@@ -47,11 +48,11 @@ Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署
     <p class="desc">适用于需要自己构建自定义镜像。</p>
   </div> -->
   <div class="item idea" @click="toRoute('/guide/deploy/backend-jar')">
-    <div>使用 Jar 包部署</div>
+    <div class="title">使用 Jar 包部署</div>
     <p class="desc">适用与已有 JDK + MySQL 环境，仅用命令或脚本就可部署后台应用的场景。</p>
   </div>
   <div class="item idea" @click="toRoute('/guide/deploy/backend-idea')">
-    <div>使用 Idea 插件部署</div>
+    <div class="title">使用 Idea 插件部署</div>
     <p class="desc">适用于开发者更改源码后部署到服务器中。</p>
   </div>
 </div>
@@ -61,7 +62,11 @@ Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署
 
 ## 后台配置参数 {#backend-props}
 
+请前往 [后台配置项](./backend-props) 查看。
+
 ## 常见问题 {#faq}
+
+请前往 [FAQ](./faq) 查看。
 
 <style scoped>
 .deploy-type {
@@ -80,38 +85,45 @@ Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署
   transition: 0.3s;
   cursor: pointer;
   transition: box-shadow 0.3s;
+  position: relative;
 }
 
 .deploy-type .item:hover {
   box-shadow: 0 0 5px #939393;
 }
 
+.deploy-type .item .title {
+  font-size: 18px;
+  font-weight:500;
+}
+
+.deploy-type .item .tag {
+  position: absolute;
+  font-size:14px;
+  top:-10px;
+  right:-20px;
+  color: #FFFFFF;
+  padding: 2px 10px;
+  background-color:var(--vp-c-indigo-3);
+  border-radius: 20px;
+}
+
 .deploy-type .desc {
   font-size: 13px;
   color: #FFFFFF;
-  margin:0;
+  margin:5px 0 0 0;
+  font-weight:300;
 }
 
 
 .deploy-type .docker {
   background: #1C8DEA2D;
-  background-image:linear-gradient(135deg,#72EEF2BD,#5151E5C0);
-    /* linear-gradient(white 0, transparent 0),
-    linear-gradient(90deg, white 0, transparent 0),
-    linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 0),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 0); */
-  /* background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px; */
+  background-image:linear-gradient(135deg,#33CFD4,#5151E5C0);
 }
 
 .deploy-type .idea {
   background: #D333561E;
   background-image:linear-gradient(135deg,#FD658673,#0D24B9B9);
-  /* background-image:
-    linear-gradient(white 0, transparent 0),
-    linear-gradient(90deg, white 0, transparent 0),
-    linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 0),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 0); */
-  /* background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px; */
 
 }
 </style>

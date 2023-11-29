@@ -15,7 +15,7 @@ onMounted(() => {
 
 ## 创建数据库 {#create-database}
 
-你需要在 MySQL 中先创建一个数据库，数据库名称需要与启动参数--spring.datasource.url 配置的数据库名称相同，如果不需要自定义数据库名称，你可以直接使用如下语句创建数据库：
+你需要在 MySQL 中先创建一个数据库，数据库名称需要与启动参数 `--spring.datasource.url` 配置的数据库名称相同，如果不需要自定义数据库名称，你可以直接使用如下语句创建数据库：
 
 ```sql
 CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
@@ -27,14 +27,13 @@ CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 # 部署 Jar 包 {#deploy-jar}
 
-将 Jar 包上传到服务器中，在 Jar 包所在路径下使用如下命令进行部署。
+将 Jar 包上传到服务器中，在 Jar 包所在路径下使用如下命令进行部署。如果使用 Windows，需要把每一行末尾的`\`删除，并将所有命令写成一行。
 
 ```bash
 java -jar ./backend-blossom.jar \
-  # 如果 9999 端口已被占用，注意修改 // [!code error]
+  # 如果 9999 端口已被占用，注意修改 // [!code warning]
  --server.port=9999 \ // [!code error]
-  #【需修改】挂载图片保存路径，如果是 windows 环境，可以使用 /c/home/bl/ 来指定磁盘 // [!code error]
-  # 注意：只需要将冒号前的路径改为你 Docker 所在设备的路径，不要修改冒号后面的内容。 // [!code error]
+  #【需修改】配置图片保存的磁盘路径 // [!code error]
  --project.iaas.blos.default-path="/home/bl/img" // [!code error]
   #【需修改】配置图片上传后对应生成的访问URL，需要以/pic/结尾。注意，该访问URL需要与访问后台的域名和端口相同 // [!code error]
  --project.iaas.blos.domain="http://192.168.31.99:9999/pic/" \ // [!code error]
@@ -61,7 +60,7 @@ java -jar ./backend-blossom.jar \
 
 除了使用上述命令启动 Jar 包之外，你也可以使用如下脚本，该脚本会自动关闭当前运行的后台程序，并重启当前路径下的 Jar 包。
 
-> 脚本地址：https://github.com/blossom-editor/blossom/blob/v1.5.0/blossom-backend/script/restart-springboot.sh
+> 脚本地址：https://github.com/blossom-editor/blossom/blob/dev/blossom-backend/script/restart-springboot.sh
 
 ```bash
 #!/dash
@@ -71,7 +70,7 @@ echo "进程ID : " $pid
 kill -9 $pid
 echo "进程" $pid "已被杀死"
 echo "开始重启 backend-blossom 服务器"
-# 注意修改相关 配置 // [!code error]
+# 注意修改相关参数，与上方介绍的相同 // [!code error]
 nohup java -jar ./backend-blossom.jar --server.port=9999 --project.iaas.blos.domain="http://192.168.31.99:9999/pic/" --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" --spring.datasource.username=root --spring.datasource.password=jasmine888 &
 echo "backend-blossom 正在启动,请查看日志 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓"
 ```
@@ -89,6 +88,6 @@ echo "backend-blossom 正在启动,请查看日志 ↓↓↓↓↓↓↓↓↓�
   font-size: 40px;
   line-height: 60px;
   padding-left:20px;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 </style>

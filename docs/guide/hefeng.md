@@ -25,37 +25,37 @@ Blossom 还为常见天气适配了多种图标：
 
 <div class="weather">
   <div class="item">
-  <bl-img src="../imgs/weather/qing-s.png" width="40px"/>
+  <bl-img src="../imgs/weather/qing-s.png" width="40px" :shadow="false"/>
     <div class="name">晴</div>
   </div>
 
   <div class="item middle">
-  <bl-img src="../imgs/weather/yin-s.png" width="40px"/>
+  <bl-img src="../imgs/weather/yin-s.png" width="40px" :shadow="false"/>
     <div class="name">阴</div>
   </div>
   
   <div class="item">
-  <bl-img src="../imgs/weather/yu-s.png" width="40px"/>
+  <bl-img src="../imgs/weather/yu-s.png" width="40px" :shadow="false"/>
     <div class="name">雨</div>
   </div>
 
   <div class="item">
-  <bl-img src="../imgs/weather/zhongyu-s.png" width="40px"/>
+    <bl-img src="../imgs/weather/zhongyu-s.png" width="40px" :shadow="false"/>
     <div class="name">大雨</div>
   </div>
 
   <div class="item">
-  <bl-img src="../imgs/weather/xue-s.png" width="40px"/>
+  <bl-img src="../imgs/weather/xue-s.png" width="40px" :shadow="false"/>
     <div class="name">雪</div>
   </div>
 
   <div class="item">
-  <bl-img src="../imgs/weather/feng-s.png" width="40px"/>
+  <bl-img src="../imgs/weather/feng-s.png" width="40px" :shadow="false"/>
     <div class="name">风</div>
   </div>
 
   <div class="item">
-  <bl-img src="../imgs/weather/wu-s.png" width="40px"/>
+  <bl-img src="../imgs/weather/wu-s.png" width="40px" :shadow="false"/>
     <div class="name">雾/霾</div>
   </div>
 </div>

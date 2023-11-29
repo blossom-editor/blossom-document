@@ -17,15 +17,17 @@ onMounted(() => {
 
 Blossom 是一个需要私有部署的笔记软件，虽然本身定位是一个云端软件，但你仍然可以在本地部署，数据和图片都将保存在本地，不依赖任何的图床或者对象存储。
 
-- <span style="color:#779649;font-weight: bold;">客户端</span>：Blossom 的客户端目前支持 Windows 端和 ARM 架构的 Mac 端。
-- <span style="color:#EAB412;font-weight: bold;">网页端</span>：Blossom 拥有一个响应式网页端，可以部署后作为移动客户端使用，或者作为博客供所有人访问。
+<bl-img src="../imgs/home/device.png" :shadow="false"/>
+
+- <span style="color:#779649;font-weight: bold;">客户端</span>：目前支持 Windows 端和 ARM 架构的 Mac 端，以及作为网页端部署。
+- <span style="color:#EAB412;font-weight: bold;">移动端</span>：拥有一个响应式网页移动端，主要适配移动端页面和操作逻辑，同时也作为博客供所有人访问。
 - <span style="color:#307DEF;font-weight: bold;">服务端</span>：服务端支持在 Docker 中进行部署。
 
 ::: tip 提示
 如果你只是想尝试一下，可以查看[试用](./tryuse)。
 :::
 
-## 为什么要使用 Blossom？ {#why-is-blossom}
+## 为什么选择 Blossom？ {#why-is-blossom}
 
 Blossom 作为一款开源软件，无意、也无法和市面上成熟的笔记软件相竞争。仅仅是提供了一个新的选择。
 
