@@ -60,6 +60,10 @@ Blossom 是一个 MIT 协议开源的笔记软件。MIT 是一个非常宽松的
 
 **无论使用哪种赞助方式，作为赞助者，你的名字都将出现在 Blossom 的 README 中**。如果你不希望展示你的名字，你也可以在赞助时留言，或通过 QQ 群(522359970)与邮箱(kuamax888@qq.com)联系我。
 
+---
+
+<!--@include: ./sponsor-list.md-->
+
 <style scoped>
 
 .sponsor {

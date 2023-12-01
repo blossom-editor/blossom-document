@@ -3,7 +3,11 @@
     background-color: #fff;
     margin: 0;
     padding: 0;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(135deg, #7117ea, #ea6060);
   }
 
   /* 宽 / 长 = 0.54 */
@@ -12,8 +16,9 @@
     margin: 0 auto;
     /* max-width: 100%; */
     width: 1800px;
-    margin-left: 0;
-    padding-left: 100px;
+    /* margin-left: 0; */
+    /* padding-left: 100px; */
+    position: relative;
   }
 
   .screen {
@@ -139,16 +144,10 @@
   .iphone,
   .ipad {
     display: block;
-    color: #fff;
-    text-align: center;
-    font-family: 'SF Pro Display', Helvetica Neue, Arial, sans-serif;
-    letter-spacing: -0.022em;
-    font-size: 2.5vmin;
     background-color: #000;
     background-size: auto 200%, cover;
     background-repeat: no-repeat, no-repeat;
     border: solid #111;
-    margin-bottom: 2em;
     position: relative;
     box-shadow: 0 0.5em 15px rgba(0, 0, 0, 0.2), 0 0 0 0.5px #000 inset;
     transition: all 0.1s linear, line-height 0s linear;
@@ -168,7 +167,7 @@
     width: 288.95px;
     height: 584.44px;
     line-height: 51.4455445545vmin;
-    border-width: 1.5207920792vmin;
+    border-width: 20px;
     border-radius: 30px;
     /* line-height: 2.165*$unit;
     	border-width: $unit/15.625;
@@ -176,8 +175,8 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0), #00000024), url(https://www.wangyunf.com/bl/pic/home/bl/img/U1/blossom/blog_home.png);
     z-index: 200;
     position: absolute;
-    bottom: 100px;
-    right: 30px;
+    bottom: 0px;
+    right: -170px;
   }
 
   /* 宽 / 长 = 0.7 */
@@ -186,25 +185,25 @@
     height: 714px;
     width: 500px;
     line-height: 85.8vmin;
-    border-width: 3vmin;
-    border-radius: 4.2857142857vmin;
+    border-width: 20px;
+    border-radius: 30px;
     background-image: linear-gradient(rgba(0, 0, 0, 0), #00000024), url(https://www.wangyunf.com/bl/pic/home/bl/img/U1/blossom/blog_pad.png);
     z-index: 100;
     position: absolute;
-    bottom: 150px;
-    right: 250px;
+    bottom: 50px;
+    right: 90px;
   }
 </style>
 
 <body>
-  <div class="macbook">
+  <!-- <div style="width: 100%; font-size: 80px; color: #fff; margin-top: 200px;text-align: center;">文档：www.wangyunf.com/blossom-doc/index</div> -->
+  <div class="macbook" style="margin-top: 300px;">
     <div class="screen">
       <div class="viewport" style="background-image: url('https://www.wangyunf.com/bl/pic/home/bl/img/U1/blossom/1080p_light.png')"></div>
     </div>
     <div class="base"></div>
     <div class="notch"></div>
+    <figure class="iphone"></figure>
+    <figure class="ipad"></figure>
   </div>
-
-  <figure class="iphone"></figure>
-  <figure class="ipad"></figure>
 </body>

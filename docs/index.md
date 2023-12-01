@@ -42,7 +42,6 @@ features:
     title: 多项常用功能
     details: 主题设置，番茄钟，字数统计，字数折线图，编辑热力图，天气预报。
 ---
-
 <p class="module-container">
   <div class="text" style="padding-bottom:20px;">
     客户端
@@ -93,6 +92,8 @@ features:
     <div class="name">爱发电</div>
   </div>
 </div>
+
+<!--@include: ./guide/about/sponsor-list.md-->
 
 </p>
 
