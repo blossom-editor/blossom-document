@@ -92,10 +92,9 @@ features:
     <div class="name">爱发电</div>
   </div>
 </div>
+</p>
 
 <!--@include: ./guide/about/sponsor-list.md-->
-
-</p>
 
 <style scoped>
 .module-container {
