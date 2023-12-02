@@ -5,6 +5,7 @@
 <div class="sponsor-container">
   <div class="sponsor-list">
     <div class="sponsor-item">i just walked away🏃</div>
+    <div class="sponsor-item">KalyanYang</div>
   </div>
 </div>
 
