@@ -2,6 +2,7 @@
 import { VPTeamMembers } from 'vitepress/theme'
 import { onMounted } from 'vue'
 import { info } from '../../scripts/stat-api'
+import sponsors from '../../scripts/sponsors'
 
 onMounted(() => {
   info()
@@ -25,10 +26,6 @@ const members = [
 <br/>
 <bl-img src="../../imgs/blossom/logo.svg" width="150px" :shadow="false" :drop-shadow="true"/>
 
-<!-- <div style="text-align:center;">
-<VPTeamMembers size="small" :members="members" />
-</div> -->
-
 你好！我是 Blossom 笔记软件的作者，是一名正在探索中的全职独立开发者，你可以叫我小贼。
 
 Blossom 是一个 MIT 协议开源的笔记软件。MIT 是一个非常宽松的协议，意味着你可以随意使用该应用，修改源代码，或者通过该应用进行商业活动。
@@ -41,7 +38,7 @@ Blossom 是一个 MIT 协议开源的笔记软件。MIT 是一个非常宽松的
 
 你可以通过以下几种方式赞助 Blossom。
 
-<div class="sponsor">
+<div class="sponsor-channel">
   <div class="item">
     <bl-img src="../../imgs/blossom/wechat.png" />
     <div class="name">微信</div>
@@ -62,29 +59,29 @@ Blossom 是一个 MIT 协议开源的笔记软件。MIT 是一个非常宽松的
 
 ---
 
-<!--@include: ./sponsor-list.md-->
+<bl-sponsor/>
 
 <style scoped>
 
-.sponsor {
+.sponsor-channel {
 display:flex;flex-direction: row;justify-content: space-between;overflow:scroll;
 padding: 16px 16px 10px 16px;
 }
 
-.sponsor .item {
+.sponsor-channel .item {
 max-width:31%;
 }
 
 .sponsor .middle {
-margin-left:10px;
-margin-right:10px;
+  margin-left:10px;
+  margin-right:10px;
 }
 
-.sponsor .item .name {
-width: 100%;
-font-size: 16px;
-color: #9E9E9E;
-text-align: center;
-margin-top: 10px;
+.sponsor-channel .item .name {
+  width: 100%;
+  font-size: 16px;
+  color: #9E9E9E;
+  text-align: center;
+  margin-top: 10px;
 }
 </style>

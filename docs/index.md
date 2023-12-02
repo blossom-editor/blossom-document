@@ -42,12 +42,16 @@ features:
     title: 多项常用功能
     details: 主题设置，番茄钟，字数统计，字数折线图，编辑热力图，天气预报。
 ---
+
+<script setup lang="ts">
+import sponsors from './scripts/sponsors'
+</script>
+
 <p class="module-container">
   <div class="text" style="padding-bottom:20px;">
     客户端
   </div>
   <bl-theme-img light-img="./imgs/home/home_light.png" dark-img="./imgs/home/home_dark.png" width="1250px"/>
-<!-- <bl-img src="./imgs/home/device.png"  width="1450px" :shadow="false"/> -->
 
   <div class="text" style="margin-top:100px;">
     网页移动端
@@ -94,7 +98,7 @@ features:
 </div>
 </p>
 
-<!--@include: ./guide/about/sponsor-list.md-->
+<bl-sponsor/>
 
 <style scoped>
 .module-container {
@@ -119,8 +123,6 @@ features:
   align-items: center;
   overflow-x:auto;
   padding: 16px 16px 10px 16px;
-  /* align-content: flex-start;
-  flex-wrap: wrap; */
 }
 
 .item {
@@ -138,11 +140,6 @@ features:
 .item:last-child{
     margin-right: auto;
 }
-
-/* .sponsor .middle {
-  margin-left:30px;
-  margin-right:30px;
-} */
 
 .item .name {
   width: 100%;

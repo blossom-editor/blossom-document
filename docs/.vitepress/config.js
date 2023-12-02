@@ -81,6 +81,7 @@ export default {
           {
             items: [
               { text: '博客', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20243' },
+              { text: '赞助者们', link: '/guide/about/sponsor-list' },
               { text: '加入群聊', link: '/guide/about/contact' }
             ]
           }
