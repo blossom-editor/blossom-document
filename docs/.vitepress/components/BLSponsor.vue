@@ -20,9 +20,7 @@ const sponsors = ['i just walked away🏃', 'KalyanYang']
   text-align: center;
   font-size: 20px;
   height: 150px;
-  line-height: 150px;
   color: var(--bl-preview-blockquote-color);
-  overflow-x: auto;
   font-weight: 300;
   display: flex;
   flex-direction: row;

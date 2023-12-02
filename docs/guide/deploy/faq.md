@@ -55,4 +55,4 @@ CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 ## Q: 使用 Docker 部署时，备份或导出文件未在配置的文件夹目录中 {#notfind-backup-file}
 
-检查表中的 BACKUP_PATH 配置的路径是否挂载到了宿主机中。
+检查 [备份文件路径 - BACKUP_PATH](./backend-props#sys-params) 是否挂载到了宿主机中。
