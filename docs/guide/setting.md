@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { info } from '../scripts/stat-api'
+
+onMounted(() => info())
+</script>
+
 # 🛠️ 设置
 
 在软件左下角可以进入设置页面，包括登录等功能都包含在此。

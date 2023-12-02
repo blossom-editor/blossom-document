@@ -43,10 +43,6 @@ Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署
 </div>
 
 <div class="deploy-type">
-  <!-- <div class="item docker" @click="toRoute('/doc/backend-dockerfile')">
-    <div>通过 Dockerfile 构建</div>
-    <p class="desc">适用于需要自己构建自定义镜像。</p>
-  </div> -->
   <div class="item idea" @click="toRoute('/guide/deploy/backend-jar')">
     <div class="title">使用 Jar 包部署</div>
     <p class="desc">适用与已有 JDK + MySQL 环境，仅用命令或脚本就可部署后台应用的场景。</p>
