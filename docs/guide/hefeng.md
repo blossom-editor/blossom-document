@@ -11,7 +11,7 @@ onMounted(() => {
 
 <bl-img src="../imgs/weather/weather.png" width="400px" :shadow="false"/>
 
-首页的天气预报功能使用了和风天气的免费 API，如果需要使用天气预报功能，那么需要申请自己的和风天气开发账号。
+首页的天气预报功能使用了和风天气的免费 API，如果需要使用天气预报功能，那么需要**申请自己的和风天气开发账号**。
 
 ## 天气配置
 
@@ -19,7 +19,15 @@ onMounted(() => {
 
 <bl-img src="../imgs/setting/hefeng_key.png" width="700px"/>
 
-添加完成后，进入首页，点击天气右上角的刷新按钮即可。
+添加完成后，继续配置你所在的城市。
+
+<bl-img src="../imgs/weather/location.png" width="700px"/>
+
+> 查看城市代码：[China-City-List-latest.csv](https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv)
+
+<bl-img src="../imgs/weather/query_location.png" width="700px"/>
+
+在上图标注的搜索框中搜索你的城市名称。点击保存后，进入首页，点击天气右上角的刷新按钮即可。
 
 Blossom 还为常见天气适配了多种图标：
 
