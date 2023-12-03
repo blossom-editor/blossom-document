@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const sponsors = ['i just walked away🏃', 'KalyanYang']
+const sponsors = ['i just walked away🏃', 'KalyanYang', 'dsx']
 </script>
 
 <template>
