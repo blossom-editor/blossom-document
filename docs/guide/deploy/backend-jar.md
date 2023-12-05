@@ -11,7 +11,7 @@ onMounted(() => {
 使用 Jar 包部署
 </div>
 
-该种方式适合物理机中已经有 JDK8 + MySQL8，仅需要 Jar 包进行部署的场景。
+该种方式适合物理机中已经有 `JDK8` + `MySQL8`，仅需要 Jar 包进行部署的场景。
 
 ## 创建数据库 {#create-database}
 
@@ -25,25 +25,29 @@ CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 前往下载 Jar 包：https://github.com/blossom-editor/blossom/releases
 
-# 部署 Jar 包 {#deploy-jar}
+## 部署 Jar 包 {#deploy-jar}
 
 将 Jar 包上传到服务器中，在 Jar 包所在路径下使用如下命令进行部署。如果使用 Windows，需要把每一行末尾的`\`删除，并将所有命令写成一行。
 
 ```bash
 java -jar ./backend-blossom.jar \
-  # 如果 9999 端口已被占用，注意修改 // [!code warning]
- --server.port=9999 \ // [!code error]
-  #【需修改】配置图片保存的磁盘路径 // [!code error]
- --project.iaas.blos.default-path="/home/bl/img" // [!code error]
+  # 如果 9999 端口已被占用，注意修改// [!code warning]
+ --server.port=9999 \// [!code error]
+  #【需修改】配置图片保存的磁盘路径// [!code error]
+ --project.iaas.blos.default-path="/home/bl/img" \// [!code error]
   #【需修改】配置图片上传后对应生成的访问URL，需要以/pic/结尾。注意，该访问URL需要与访问后台的域名和端口相同 // [!code error]
- --project.iaas.blos.domain="http://192.168.31.99:9999/pic/" \ // [!code error]
-  #【需修改】配置数据库访问地址 // [!code error]
- --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" \ // [!code error]
-  #【需修改】配置数据库用户名 // [!code error]
- --spring.datasource.username=root \ // [!code error]
-  #【需修改】配置数据库密码 // [!code error]
- --spring.datasource.password=jasmine888 & // [!code error]
+ --project.iaas.blos.domain="http://192.168.31.99:9999/pic/" \// [!code error]
+  #【需修改】配置数据库访问地址// [!code error]
+ --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" \// [!code error]
+  #【需修改】配置数据库用户名// [!code error]
+ --spring.datasource.username=root \// [!code error]
+  #【需修改】配置数据库密码// [!code error]
+ --spring.datasource.password=jasmine888 &// [!code error]
 ```
+
+:::warning 注意
+如果命令错误：1. 请将命令中的注释删除。2. 将每一行后的斜杠`\`删除。3. 将所有命令写为一行。
+:::
 
 参数说明：
 

@@ -36,6 +36,12 @@ Blossom 还为常见天气适配了多种图标：
   <bl-img src="../imgs/weather/qing-s.png" width="40px" :shadow="false"/>
     <div class="name">晴</div>
   </div>
+  
+  
+  <div class="item">
+  <bl-img src="../imgs/weather/qing-moon.png" width="40px" :shadow="false"/>
+    <div class="name">晴/夜间</div>
+  </div>
 
   <div class="item middle">
   <bl-img src="../imgs/weather/yin-s.png" width="40px" :shadow="false"/>

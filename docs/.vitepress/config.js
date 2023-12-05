@@ -127,7 +127,7 @@ export default {
               { text: '使用 Docker 公共镜像', link: '/guide/deploy/backend-docker' },
               { text: '使用 Docker Compose', link: '/guide/deploy/backend-docker-compose' },
               { text: 'Jar 包部署', link: '/guide/deploy/backend-jar' },
-              { text: 'Idea 源码部署', link: '/guide/deploy/backend-idea' },
+              // { text: 'Idea 源码部署', link: '/guide/deploy/backend-idea' },
               { text: '后台配置项', link: '/guide/deploy/backend-props' }
             ]
           },

@@ -9,7 +9,7 @@ onMounted(() => {
 
 <div class="docker">使用 Docker Compose</div>
 
-Blossom 依赖 `JDK8` + `Mysql8`。如果你拉取镜像缓慢，也可以通过[百度网盘下载](../about/download#baidu)镜像文件。
+Blossom 依赖 `JDK8` + `MySQL8`。如果你拉取镜像缓慢，也可以通过[百度网盘下载](../about/download#baidu)镜像文件。
 
 该方式适合没有安装过 MYSQL 的场景，会连同 MySQL 一起部署，这是最简单快捷的部署方式。
 
@@ -99,8 +99,10 @@ Docker Compose 源文件可前往 [blossom-mysql8.yaml](https://github.com/bloss
 
 在 `blossom-mysql8.yaml` 文件所在路径下执行以下命令，然后请耐心等待镜像拉取和启动。
 
-```
+```bash
 docker compose -f blossom-mysql8.yaml up -d
+# 如果命令无效，可使用下方命令尝试
+docker-compose -f blossom-mysql8.yaml up -d
 ```
 
 <!--@include: ./backend-after-docker-check.md-->
