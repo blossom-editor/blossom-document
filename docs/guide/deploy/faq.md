@@ -11,9 +11,13 @@ onMounted(() => {
 
 ## Q: 图片上传后在照片墙中无法显示 {#cant-shwo-pic}
 
-检查访问后台的域名(IP:端口)是否与 `--project.iaas.blos.domain` 配置的相同，如果访问后台的域名中包含代理路径，则 `--project.iaas.blos.domain` 也要增加代理路径。
+检查**客户端登录页填写的后台访问地址**(IP:端口)是否与 `--project.iaas.blos.domain` 配置的相同，如果访问后台的域名中包含代理路径，则 `--project.iaas.blos.domain` 也要增加代理路径。
 
-正常配置如下：
+:::tip 提示
+如果是 Docker compose 部署，则检查 `PROJECT_IAAS_BLOS_DOMAIN` 配置
+:::
+
+正常配置示例如下：
 
 ```shell
 # 访问后台的域名
@@ -21,9 +25,17 @@ https://www.xxx.com/
 
 # project.iaas.blos.domain 需要配置为如下值:
 --project.iaas.blos.domain=https://www.xxx.com/pic/
+
+------------------------------
+
+# 或者访问后台的是IP:端口
+http://123.123.123.123:6789
+
+# project.iaas.blos.domain 需要配置为如下值:
+--project.iaas.blos.domain=http://123.123.123.123:6789/pic/
 ```
 
-如果配置了代理路径，例如在 nginx 进行了如下配置：
+如果后台配置了反向代理路径，例如在 Nginx 进行了如下配置：
 
 ```shell
 # blossom 服务器
@@ -34,7 +46,7 @@ location /bl/ {
 }
 ```
 
-那么需要将配置修改为
+那么需要将配置修改为：
 
 ```shell
 # 访问后台的域名

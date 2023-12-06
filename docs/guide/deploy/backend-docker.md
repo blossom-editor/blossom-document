@@ -29,7 +29,7 @@ docker run \
 -e MYSQL_ROOT_PASSWORD=jasmine888 \
 -p 3306:3306 \
 #【需修改】挂载数据库文件保存路径。 // [!code error]
-# 注意：只需要将冒号前的路径改为你 Docker 所在设备的路径，不要修改冒号后面的内容。 // [!code error]
+# 注意：只需要将冒号前的路径改为你 Docker 所在设备的某个路径，不要修改冒号后面的内容。 // [!code error]
 -v /usr/local/docker/mysql/data:/var/lib/mysql \// [!code error]
 -v /usr/local/docker/mysql-files/log:/var/lib/mysql-files \// [!code error]
 -v /usr/local/docker/mysql/log:/var/log/mysql \// [!code error]
@@ -73,7 +73,7 @@ docker run -d \
   # 指定端口映射
   -p 9999:9999 \
   #【需修改】挂载图片保存路径，如果是 windows 环境，可以使用 /c/home/bl/ 来指定磁盘 // [!code error]
-  # 注意：只需要将冒号前的路径改为你 Docker 所在设备的路径，不要修改冒号后面的内容。 // [!code error]
+  # 注意：只需要将冒号前的路径改为你 Docker 所在设备的某个路径，不要修改冒号后面的内容。 // [!code error]
   -v /home/bl/:/home/bl/ \// [!code error]
   # 启动的镜像名称
   jasminexzzz/blossom:latest \
@@ -82,12 +82,16 @@ docker run -d \
   # 配置图片保存的磁盘路径，请使用 -v 将该路径挂载为本地路径，如上方示例
   --project.iaas.blos.default-path="/home/bl/img/" \
   #【需修改】配置数据库访问地址// [!code error]
-  --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&& // [!code error]serverTimezone=GMT%2B8" \// [!code error]
+  --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" \// [!code error]
   #【可选修改】配置数据库用户名// [!code warning]
   --spring.datasource.username=root \// [!code warning]
   #【可选修改】配置数据库密码// [!code warning]
   --spring.datasource.password=jasmine888// [!code warning]
 ```
+
+:::warning 注意
+如果命令错误：1. 请将命令中的注释删除。2. 将每一行后的斜杠`\`删除。3. 将所有命令写为一行。
+:::
 
 Windows 平台无法识别命令后的`\`，所以需要在控制台输入下列命令：
 

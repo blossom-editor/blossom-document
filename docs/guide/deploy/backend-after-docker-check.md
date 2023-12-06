@@ -39,7 +39,7 @@ docker logs blossom-backend
 
 该提示意为你没有登录，现在就可以使用客户端登录使用了。
 
-或者访问`127.0.0.1:9999/sys/alive`，返回一下内容则为成功。
+<!-- 或者访问`127.0.0.1:9999/sys/alive`，返回一下内容则为成功。
 
 ```json
 {
@@ -47,4 +47,4 @@ docker logs blossom-backend
   "msg": "成功",
   "data": "这里是 [blossom-backend] 服务器 [dev] 环境"
 }
-```
+``` -->

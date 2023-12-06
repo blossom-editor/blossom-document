@@ -18,7 +18,7 @@
 
 解压 `blossom-x.y.z-web-client.zip` 到服务器目录，本例中文件解压在 `/usr/local/xzzz/blossom/demo/` 路径下。
 
-配置 Nignx，下方是一个配置示例：
+配置 Nginx，下方是一个配置示例：
 
 ```bash
 # 【需修改】配置客户端资源访问路径 // [!code error]

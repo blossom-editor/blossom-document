@@ -85,6 +85,7 @@ services:
     networks:
       - blossomnet
     healthcheck:
+      # 【可选修改】如果修改了上方的数据库密码「MYSQL_ROOT_PASSWORD」修改，下方的 -p 后的密码也要修改 // [!code warning]
       test: ["CMD", "mysqladmin", "-uroot", "-pjasmine888", "ping", "-h", "localhost"]
       interval: 10s
       timeout: 3s
