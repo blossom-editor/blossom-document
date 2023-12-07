@@ -2,10 +2,6 @@
 
 如果不想使用桌面客户端，也可以在网页端部署客户端，可查看[在线示例](https://www.wangyunf.com/blossom-demo/#/settingIndex)。
 
-:::danger 注意
-仅支持 v1.9.0 及以上版本
-:::
-
 ## 文件下载
 
 提供了客户端的网页版打包文件，可前往[下载地址](../about/download)中下载`blossom-x.y.z-web-client.zip`文件。
@@ -37,3 +33,7 @@ location /blossom-demo/ {
 }
 
 ```
+
+:::tip 提示
+完整的Nginx例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
+:::

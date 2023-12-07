@@ -44,9 +44,7 @@ onMounted(() => {
 
 ```typescript:line-numbers
 const blossom = {
-  /**
-   * 基础配置
-   */
+  /** 基础配置 */
   SYS: {
     // 修改该值可以改变网页左上角名称, 你可以改为你的名称 // [!code warning]
     NAME: 'Blossom',
@@ -61,11 +59,7 @@ const blossom = {
     // 邮箱 // [!code warning]
     EMAIL: ''
   },
-  /**
-   * 博客样式，当前可设置样式如下：
-   * 1. 左上角 LOGO 样式
-   * 2. 专题文件夹的特殊样式显示
-   */
+  /** 博客样式 */
   THEME: {
     LOGO_STYLE: {
       // 左上角 LOGO 的圆角设置 // [!code warning]
@@ -74,9 +68,7 @@ const blossom = {
     // 是否以特殊样式显示专题文件夹 // [!code warning]
     SUBJECT_TITLE: true
   },
-  /**
-   * 服务器的地址
-   */
+  /** 服务器的地址 */
   DOMAIN: {
     // 将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同 // [!code error]
     PRD: 'https://www.wangyunf.com/bl/', // [!code error]
@@ -111,12 +103,12 @@ export default blossom
 
 - `SYS.NAME`：博客左上角的名称。
 - `SYS.LOGO`：博客左上角的 Logo 文件名，对应文件需要放在 `src/assets/imgs/logo/` 路径下。
-- `SYS.ICP_BEI_AN_HAO`：如果博客作为域名的默认访问页面，则可能需要配置域名的备案号。。
+- `SYS.ICP_BEI_AN_HAO`：如果博客作为域名的默认访问页面，则可能需要配置域名的备案号。
 
 ### 样式配置
 
 - `THEME.LOGO_STYLE`：博客左上角 Logo 的样式。你可以在此设置圆角或图片阴影等任何样式。
-- `THEME.SUBJECT_TITLE`：文章列表中是否已特殊样式显示专题。
+- `THEME.SUBJECT_TITLE`：文章列表中是否以特殊样式显示专题。
 
 ## 打包 {#build}
 
@@ -129,7 +121,7 @@ npm run build
 
 打包后在 `blossom-web/dist/` 目录下会生成打包结果文件，需要将相关文件上传至服务器。
 
-## Nginx 配置 {#nginx}
+## Nginx 配置静态代理 {#nginx}
 
 如果你使用 Nginx，可参考以下方式配置。
 
@@ -150,3 +142,17 @@ location /blossom/ {
 }
 
 ```
+
+:::tip 提示
+完整的Nginx例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
+:::
+
+## 【重要】在客户端配置博客地址 {#client}
+
+由于博客是单独部署的，客户端并不知道博客的访问地址，所以需要配置该地址。
+
+<bl-img src="../../imgs/setting/blog_url.png" width="700px"/>
+
+例如博客首页的地址为：https://www.wangyunf.com/blossom/#/home
+
+则该处填写的地址即为：https://www.wangyunf.com/blossom/#/articles?articleId=

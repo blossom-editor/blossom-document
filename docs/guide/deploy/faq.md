@@ -87,7 +87,7 @@ CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 ## Q: 如何配置 Nginx？{#how-config-nginx}
 
-下方是一个 Nginx 反向代理实例供你参考：
+下方是一个 Nginx 服务端反向代理以及网页静态代理完整实例供你参考：
 
 ```bash
 user www-data;
