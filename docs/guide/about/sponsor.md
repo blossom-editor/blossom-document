@@ -46,7 +46,7 @@ Blossom 是一个 MIT 协议开源的笔记软件。MIT 是一个非常宽松的
 
   <div class="item middle">
     <bl-img src="../../imgs/blossom/ali.png" />
-    <div class="name">支付宝</div>
+    <div class="name">支付宝<br/>建议您备注一个昵称</div>
   </div>
   
   <div class="item">
@@ -79,7 +79,7 @@ max-width:31%;
 
 .sponsor-channel .item .name {
   width: 100%;
-  font-size: 16px;
+  font-size: 15px;
   color: #9E9E9E;
   text-align: center;
   margin-top: 10px;
