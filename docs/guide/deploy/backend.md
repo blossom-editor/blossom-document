@@ -30,7 +30,9 @@ Blossom 使用 2 核 2G，2M ~ 3M 带宽的服务器即可流畅使用。所以�
 
 Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署方式。也可以参考其他用户所写的文章：
 
-> 『文章』 [威联通QNAP TS-464C2 部署Blossom填坑指南](https://mp.weixin.qq.com/s/oWiP8hM-OcVXiGMLsJf6KQ)
+> 『文章』 [威联通 QNAP TS-464C2 部署 Blossom 填坑指南](https://mp.weixin.qq.com/s/oWiP8hM-OcVXiGMLsJf6KQ)
+>
+> 『文章』 [群晖创建 Blossom 教程](./backend-nas-qunhui)
 >
 > 『视频』 [搭建超好用笔记软件——Blossom 通用后端（免费、开源，全平台）](https://www.bilibili.com/video/BV1fC4y1c7iQ/)
 
