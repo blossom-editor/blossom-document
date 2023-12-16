@@ -2,7 +2,7 @@
 
 如果不想使用桌面客户端，也可以使用网页端客户端，可查看[在线示例](https://www.wangyunf.com/blossom-demo/#/settingIndex)。
 
-## 自带网页客户端
+## 自带网页客户端 {#backstage}
 
 自`1.10.0`版本开始，部署后台时会自带网页客户端，客户端地址为
 
@@ -34,15 +34,11 @@ http://www.abc.com/bl/editor/#/settingindex
 由于使用场景众多，Blossom 无法全部覆盖测试，所以如果你在使用自带网页客户端时遇到问题，可以选择单独部署或使用桌面客户端。
 :::
 
-## 单独部署网页客户端
+## 单独部署网页客户端 {#independent }
 
 ### 文件下载
 
-提供了客户端的网页版打包文件，可前往[下载地址](../about/download)中下载`blossom-x.y.z-web-client.zip`文件。
-
-:::tip 提示
-`x.y.z` 代表最新版本号，文件需要在服务器部署，本地打开时无法正常显示，如果你要在本地使用请使用桌面客户端。
-:::
+前往[下载地址](../about/download)中下载`blossom-x.y.z-web-client.zip`文件。
 
 ### 部署方式
 

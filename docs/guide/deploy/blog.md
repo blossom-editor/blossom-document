@@ -22,7 +22,7 @@ onMounted(() => {
 
 博客除了可以访问公开文章之外，更提供了各项功能的移动端访问入口。
 
-## 自带博客
+## 自带博客 {#backstage}
 
 自`1.10.0`版本开始，部署后台时会自带博客页面，访问地址为：
 
@@ -57,15 +57,11 @@ http://www.abc.com/bl/blog/#/home
 
 :::
 
-## 单独部署博客
+## 单独部署博客 {#independent }
 
 ### 文件下载
 
-提供了客户端的网页版打包文件，可前往[下载地址](../about/download)中下载`blossom-x.y.z-web-blog.zip`文件。
-
-:::tip 提示
-`x.y.z` 代表最新版本号，文件需要在服务器部署，本地打开时无法正常显示，如果你要在本地使用请使用桌面客户端。
-:::
+前往[下载地址](../about/download)中下载`blossom-x.y.z-web-blog.zip`文件。
 
 ### 部署方式
 
@@ -148,7 +144,7 @@ services:
 ```javascript
 const blossom = {
   SYS: {
-    // 修改该值可以改变网页左上角名称, 你可以改为你的名称 // [!code warning]
+    // 修改该值可以改变网页左上角名称 // [!code warning]
     NAME: 'Blossom',
     // 公网安备号// [!code warning]
     GONG_WANG_AN_BEI: '',
@@ -194,7 +190,7 @@ export default blossom
 
 ### 修改 Logo
 
-可以替换解压目录下的`blog-logo.png`图片来更改博客左上角的 Logo。如果是 docker 部署也可以挂在该文件来修改 Logo，挂载方式如上方`config.js`文件示例。
+可以替换解压目录下的`blog-logo.png`图片来更改博客左上角的 Logo。如果是 docker 部署也可以挂载该文件来修改 Logo，挂载方式如上方`config.js`文件示例。
 
 ### Nginx 配置静态代理 {#nginx}
 
@@ -220,7 +216,7 @@ location /blossom/ {
 
 ## 登录博客 {#login}
 
-在使用`v1.9.0`及以上版本时，可以在左上角 logo 上连续点击 7 次以上，即会跳转至博客的登录页面。博客中的各项功能和交互逻辑大多是用来适配移动端页面。
+可以在左上角 logo 上连续点击 7 次以上，即会跳转至博客的登录页面。博客中的各项功能和交互逻辑大多是用来适配移动端页面。
 
 :::tip 提示
 完整的 Nginx 例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
