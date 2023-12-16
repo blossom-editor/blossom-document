@@ -22,108 +22,183 @@ onMounted(() => {
 
 博客除了可以访问公开文章之外，更提供了各项功能的移动端访问入口。
 
-博客由于需要修改一些相关配置，所以无法提供即用的包，所以需要你自行配置并打包。你至少需要 `NodeJS 18` 及以上。
+## 自带博客
 
-## 登录博客 {#login}
+自`1.10.0`版本开始，部署后台时会自带博客页面，访问地址为：
 
-在使用`v1.9.0`及以上版本时，可以在左上角 logo 上连续点击 7 次以上，即会跳转至博客的登录页面。博客中的各项功能和交互逻辑大多是用来适配移动端页面。
+```bash
+IP:端口(域名)/blog/#/home
+```
 
-## 修改博客配置 {#how-to-deploy}
+---
 
-博客源码在项目的 blossom-web 目录下，你需要修改 `blossom-web\src\assets\constants\blossom.ts` 文件中的以下内容：
+例如 IP:端口为：`192.168.11.11:9999`，则访问
 
-- `DOMAIN.PRD`：填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同。
-- `DOMAIN.USER_ID`：将该值填写你开放为博客的用户 ID。
+```bash
+http://192.168.11.11:9999/blog/#/home
+```
 
-需要修改的内容在下方标识为<span style="background-color:#F5DCE1">红色底色</span>。
+例如域名为`http://www.abc.com`，则访问
+
+```bash
+http://www.abc.com/blog/#/home
+```
+
+如果有配置反向代理路径，如`/bl/`，则访问
+
+```bash
+http://www.abc.com/bl/blog/#/home
+```
+
+:::danger 注意！
+自带博客默认展示 ID 为 1 的用户的公开文章信息。但允许所有用户在博客端登录。如果你需要修改默认展示用户，请查看下方[修改博客配置](./blog#update-config)。
+
+<!-- 由于使用场景众多，Blossom 无法全部覆盖测试，所以如果你在使用自带博客时遇到问题，可以选择单独部署。 -->
+
+:::
+
+## 单独部署博客
+
+### 文件下载
+
+提供了客户端的网页版打包文件，可前往[下载地址](../about/download)中下载`blossom-x.y.z-web-blog.zip`文件。
+
+:::tip 提示
+`x.y.z` 代表最新版本号，文件需要在服务器部署，本地打开时无法正常显示，如果你要在本地使用请使用桌面客户端。
+:::
+
+### 部署方式
+
+解压 `blossom-x.y.z-web-blog.zip` 到服务器目录，本例中文件解压在 `/usr/local/xzzz/blossom/blog/` 路径下。
+
+配置 Nginx，下方是一个配置示例：
+
+```bash
+# 【需修改】配置客户端资源访问路径 // [!code error]
+location /blossom-blog/ {
+        # 【需修改】配置资源所在的路径 // [!code error]
+        alias                   /usr/local/xzzz/blossom/blog/; // [!code error]
+        try_files               $uri $uri/ /index.html;
+        index                   index.html index.htm;
+        gzip                    on;
+        gzip_buffers            32 4k;
+        gzip_comp_level         6;
+        gzip_min_length         100;
+        gzip_types              application/javascript text/css text/xml font/ttf font/otf image/svg+xml;
+        gzip_disable            "MSIE [1-6]\.";
+        gzip_vary               on;
+}
+
+```
+
+:::tip 提示
+完整的 Nginx 例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
+:::
+
+## 修改博客配置 {#update-config}
+
+解压文件后，在解压路径下包含一个`config.js`文件，修改该文件可以进行个性化配置。
+
+:::tip 提示
+如果通过 Docker 部署，并且想修改后台自带的博客配置，你需要进入容器后修改以下文件：
+
+```bash
+# 进入容器，注意将 blossom-backend 修改为你的容器名称
+docker exec -it blossom-backend-dev /bin/bash
+
+# 进入路径，并修改 config.js 文件
+cd /application/BOOT-INF/classes/static/blog
+
+# 修改 config.js 文件
+```
+
+如果你不熟悉如何修改容器内文件，你可以使用挂载文件的方式进行修改，你需要在 docker run 命令中添加如下配置：
+
+```bash
+# 将冒号(:)前的部分改成你运行 docker 的设备的某个路径，不要修改冒号后面的内容。 // [!code error]
+-v /d/blossom/dev/config.js:/application/BOOT-INF/classes/static/blog/config.js
+```
+
+如果使用 docker compose 部署，需要添加在下方所示位置：
+
+```yaml
+services:
+  blossom:
+    image: jasminexzzz/blossom:latest
+    container_name: blossom-backend
+    volumes:
+      - /d/blossom/bl/:/home/bl/
+      # 添加到该位置// [!code error]
+      - /d/blossom/dev/config.js:/application/BOOT-INF/classes/static/blog/config.js
+```
+
+然后在对应目录下创建 config.js 文件，接着将下方[配置文件内容](./blog#config-centent)复制到该文件中。
+
+:::
+
+### 配置文件内容{#config-content}
 
 <!--
 // [!code warning]
 // [!code error]
  -->
 
-```typescript:line-numbers
+<span style="color:red">**修改下方标识为红色背景的内容**。</span>如果你需要在 Docker 中挂载 config.js 文件，请将以下内容复制到文件中。
+
+```javascript
 const blossom = {
-  /** 基础配置 */
   SYS: {
     // 修改该值可以改变网页左上角名称, 你可以改为你的名称 // [!code warning]
     NAME: 'Blossom',
-    // 博客左上角 LOGO 文件名称, 文件需要放在 src/assets/imgs/logo/ 路径下 // [!code warning]
-    LOGO: 'blossom_logo.png',
-    // 版本
-    VERSION: 'v1.9.0',
-    // 公网安备号 // [!code warning]
-    GONG_WANG_AN_BEI: 'X公网安备 XXXXXXXXXX号',
-    // ICP 备案号 // [!code warning]
-    ICP_BEI_AN_HAO: '京ICP备123123123号',
-    // 邮箱 // [!code warning]
+    // 公网安备号// [!code warning]
+    GONG_WANG_AN_BEI: '',
+    // ICP 备案号// [!code warning]
+    ICP_BEI_AN_HAO: '',
+    // 邮箱// [!code warning]
     EMAIL: ''
   },
-  /** 博客样式 */
   THEME: {
     LOGO_STYLE: {
-      // 左上角 LOGO 的圆角设置 // [!code warning]
+      // 左上角 LOGO 的圆角设置// [!code warning]
       'border-radius': '50%'
     },
-    // 是否以特殊样式显示专题文件夹 // [!code warning]
+    // 是否以特殊样式显示专题文件夹// [!code warning]
     SUBJECT_TITLE: true
   },
-  /** 服务器的地址 */
   DOMAIN: {
-    // 将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同 // [!code error]
+    // 如果单独部署博客，必须修改该项// [!code error]
+    // 如果挂载为后台自带博客配置文件，则无需修改// [!code error]
+    // 将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同// [!code error]
     PRD: 'https://www.wangyunf.com/bl/', // [!code error]
-    // 将该值填写你开放为博客的用户ID // [!code error]
+    // 将该值填写你开放为博客的用户ID// [!code error]
     USER_ID: 1 // [!code error]
   },
   /**
    * 可以填写你自己的网站，该信息会展示在右上角的【更多】按钮中，以及首页的【所有文章】下
    * NAME: 网站名称
    * URL: 网站地址
-   * LOGO: 网站LOGO, 放在 src/assets/imgs/linklogo/ 路径下
+   * LOGO: 网站LOGO地址
    */
   LINKS: [
     // 下方是一个示例
     // {
-    //   NAME: '我的个人主页',
-    //   URL: 'https://www.wangyunf.com',
-    //   LOGO: 'luban.png'
+    //   NAME: 'Blossom 双链笔记软件',
+    //   URL: 'https://www.wangyunf.com/blossom-doc/index.html',
+    //   LOGO: 'https://www.wangyunf.com/bl/pic/home/bl/img/U1/head/blossom_logo.png'
     // }
   ]
 }
 
 export default blossom
-
 ```
 
-## 其他配置项说明
+### 修改 Logo
 
-博客提供了一些其他可选的个性化配置项供修改。
+可以替换解压目录下的`blog-logo.png`图片来更改博客左上角的 Logo。如果是 docker 部署也可以挂在该文件来修改 Logo，挂载方式如上方`config.js`文件示例。
 
-### 基础配置
+### Nginx 配置静态代理 {#nginx}
 
-- `SYS.NAME`：博客左上角的名称。
-- `SYS.LOGO`：博客左上角的 Logo 文件名，对应文件需要放在 `src/assets/imgs/logo/` 路径下。
-- `SYS.ICP_BEI_AN_HAO`：如果博客作为域名的默认访问页面，则可能需要配置域名的备案号。
-
-### 样式配置
-
-- `THEME.LOGO_STYLE`：博客左上角 Logo 的样式。你可以在此设置圆角或图片阴影等任何样式。
-- `THEME.SUBJECT_TITLE`：文章列表中是否以特殊样式显示专题。
-
-## 打包 {#build}
-
-使用 npm 打包代码。
-
-```bash
-npm install
-npm run build
-```
-
-打包后在 `blossom-web/dist/` 目录下会生成打包结果文件，需要将相关文件上传至服务器。
-
-## Nginx 配置静态代理 {#nginx}
-
-如果你使用 Nginx，可参考以下方式配置。
+如果你使用 Nginx 作为静态代理工具，可参考以下方式配置。
 
 ```shell
 # blossom 博客  q
@@ -143,8 +218,12 @@ location /blossom/ {
 
 ```
 
+## 登录博客 {#login}
+
+在使用`v1.9.0`及以上版本时，可以在左上角 logo 上连续点击 7 次以上，即会跳转至博客的登录页面。博客中的各项功能和交互逻辑大多是用来适配移动端页面。
+
 :::tip 提示
-完整的Nginx例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
+完整的 Nginx 例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
 :::
 
 ## 【重要】在客户端配置博客地址 {#client}

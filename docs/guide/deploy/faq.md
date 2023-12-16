@@ -9,52 +9,7 @@ onMounted(() => {
 
 # 常见问题
 
-## Q: 图片上传后在照片墙中无法显示 {#cant-shwo-pic}
-
-检查**客户端登录页填写的后台访问地址**(IP:端口)是否与 `--project.iaas.blos.domain` 配置的相同，如果访问后台的域名中包含代理路径，则 `--project.iaas.blos.domain` 也要增加代理路径。
-
-:::tip 提示
-如果是 Docker compose 部署，则检查 `PROJECT_IAAS_BLOS_DOMAIN` 配置
-:::
-
-正常配置示例如下：
-
-```shell
-# 访问后台的域名
-https://www.xxx.com/
-
-# project.iaas.blos.domain 需要配置为如下值:
---project.iaas.blos.domain=https://www.xxx.com/pic/
-
-------------------------------
-
-# 或者访问后台的是IP:端口
-http://123.123.123.123:6789
-
-# project.iaas.blos.domain 需要配置为如下值:
---project.iaas.blos.domain=http://123.123.123.123:6789/pic/
-```
-
-如果后台配置了反向代理路径，例如在 Nginx 进行了如下配置：
-
-```shell
-# blossom 服务器
-location /bl/ {
-        proxy_pass              http://127.0.0.1:9999/;
-        client_max_body_size    50m;
-        proxy_set_header        x-forwarded-for $remote_addr;
-}
-```
-
-那么需要将配置修改为：
-
-```shell
-# 访问后台的域名
-https://www.xxx.com/bl
-
-# project.iaas.blos.domain 需要配置为如下值:
---project.iaas.blos.domain=https://www.xxx.com/bl/pic/
-```
+## 部署时常见问题
 
 ## Q: 数据库容器中如何创建数据库? {#how-create-database}
 
@@ -72,7 +27,7 @@ CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 Query OK, 1 row affected
 ```
 
-## Q: 项目启动后未找到数据库，后台出现 `Unknown database blossom` 错误 {#unknown-database}
+## Q: 项目启动时出现 `Unknown database blossom` 错误 {#unknown-database}
 
 查看 MySQL 中是否创建了对应数据库，若未创建数据库，可以使用如下语句创建数据库。
 
@@ -81,9 +36,19 @@ CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 ```
 
-## Q: 使用 Docker 部署时，备份或导出文件未在配置的文件夹目录中 {#notfind-backup-file}
+## Q: 后台启动时出现 `Host xxx is not allowed to connect to this MariaDB server` {#mariadb-not-allowed}
 
-检查 [备份文件路径 - BACKUP_PATH](./backend-props#sys-params) 是否挂载到了宿主机中。
+该问题出现在使用`MariaDB`时，你需要登录到数据库执行以下语句打开数据库的远程访问权限。
+
+```sql
+use mysql;
+
+update mysql.global_priv set Host='%' where User='root';
+
+update user set host = '%' where user = 'root';
+
+flush privileges;
+```
 
 ## Q: 如何配置 Nginx？{#how-config-nginx}
 
@@ -176,3 +141,72 @@ http {
   }
 }
 ```
+
+## 使用中常见问题
+
+## Q: 后台启动成功，但客户端连接不上 {#client-cant-connect-server}
+
+排查以下问题：
+
+1. 如果登录页填写的后台地址为 https，则后台必须能通过 https 访问到。
+2. 如果访问客户端为 https，则登录页填写的后台地址也必须为 https。
+
+## Q: 图片上传后在照片墙中无法显示 {#cant-shwo-pic}
+
+检查**客户端登录页填写的后台访问地址**(IP:端口)是否与 `--project.iaas.blos.domain` 配置的相同，如果访问后台的域名中包含代理路径，则 `--project.iaas.blos.domain` 也要增加代理路径。
+
+:::tip 提示
+如果是 Docker compose 部署，则检查 `PROJECT_IAAS_BLOS_DOMAIN` 配置
+:::
+
+正常配置示例如下：
+
+```shell
+# 访问后台的域名
+https://www.xxx.com/
+
+# project.iaas.blos.domain 需要配置为如下值:
+--project.iaas.blos.domain=https://www.xxx.com/pic/
+
+------------------------------
+
+# 或者访问后台的是IP:端口
+http://123.123.123.123:6789
+
+# project.iaas.blos.domain 需要配置为如下值:
+--project.iaas.blos.domain=http://123.123.123.123:6789/pic/
+```
+
+如果后台配置了反向代理路径，例如在 Nginx 进行了如下配置：
+
+```shell
+# blossom 服务器
+location /bl/ {
+        proxy_pass              http://127.0.0.1:9999/;
+        client_max_body_size    50m;
+        proxy_set_header        x-forwarded-for $remote_addr;
+}
+```
+
+那么需要将配置修改为：
+
+```shell
+# 访问后台的域名
+https://www.xxx.com/bl
+
+# project.iaas.blos.domain 需要配置为如下值:
+--project.iaas.blos.domain=https://www.xxx.com/bl/pic/
+```
+
+## Q: 图片上传时提示图片已存在 {#pic-exist}
+
+<br/>
+<bl-img src="../../imgs/pic/upload_error.png" width="300px"/>
+
+该配置是为了防止误传重复文件，你可以在设置中忽略该校验。
+
+<bl-img src="../../imgs/pic/pic_repeat_upload.png" width="700px"/>
+
+## Q: 使用 Docker 部署时，备份或导出文件未在配置的文件夹目录中 {#notfind-backup-file}
+
+检查 [备份文件路径 - BACKUP_PATH](./backend-props#sys-params) 是否挂载到了宿主机中。

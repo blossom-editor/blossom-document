@@ -49,7 +49,7 @@ export default {
         link: 'https://www.wangyunf.com/blossom-demo/#/settingindex'
       },
       {
-        text: 'v1.9.0',
+        text: 'v1.10.0',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
           { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' }
@@ -119,9 +119,9 @@ export default {
         items: [{ text: '和风天气', link: '/guide/hefeng' }]
       },
       {
-        text: '部署方式',
+        text: '如何部署？',
         items: [
-          { text: '后台部署', link: '/guide/deploy/backend' },
+          { text: '所有部署方式', link: '/guide/deploy/backend' },
           {
             items: [
               { text: '使用 Docker 公共镜像', link: '/guide/deploy/backend-docker' },

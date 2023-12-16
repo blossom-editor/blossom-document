@@ -15,7 +15,7 @@ Blossom 依赖 `JDK8` + `MySQL8`。如果你拉取镜像缓慢，也可以通过
 
 ## 确认是否安装 Docker Compose {#check-docker-compose}
 
-执行下方命令，查看是否安装了 Docker Compose，如果安装的较新版本的 Docker，通常会默认安装 Docker Compose。
+执行下方命令，查看是否安装了 Docker Compose，如果安装的较新版本的 Docker，通常会自动安装 Docker Compose。
 
 ```bash
 docker-compose --version
@@ -23,7 +23,7 @@ docker-compose --version
 
 ## 创建 `blossom-mysql8.yaml` 文件 {#create-yaml-file}
 
-下方是 docker compose 示例文件，你需要创建一个 `blossom-mysql8.yaml` 文件，然后将下列内容复制到文件中，**并且修改其中标识为红色背景的内容**。
+下方是 docker compose 示例文件，你需要创建一个 `blossom-mysql8.yaml` 文件，然后将下列内容复制到文件中，<span style="color:red">**并且修改其中标识为红色背景的内容**</span>。
 
 ```yml:line-numbers
 version: "3.8"
@@ -41,14 +41,14 @@ services:
       # 【需修改】 // [!code error]
       # 将冒号(:)前的部分改成你运行 docker 的设备的某个路径，不要修改冒号后面的内容。  // [!code error]
       # 如果是windows环境，可以使用/c/home/bl/img/来指定磁盘 // [!code error]
-      # 该配置十分重要，所有的图片和备份文件都在这个路径下 // [!code error]
       - /d/blossom/bl/:/home/bl/ // [!code error]
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://blmysql:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8
       SPRING_DATASOURCE_USERNAME: root
       # 【可选修改】配置数据库密码，这个改了下方的黄色部分也要修改 // [!code warning]
       SPRING_DATASOURCE_PASSWORD: jasmine888 // [!code warning]
-      # 【需修改】配置图片上传后对应生成的访问 URL，需要以/pic/结尾。注意，该访问域名(IP:端口)需要与访问后台的域名(IP:端口)相同 // [!code error]
+      # 【需修改】配置图片上传后对应生成的访问 URL，需要以/pic/结尾。 // [!code error]
+      # 该访问域名(IP:端口)需要与访问后台的域名(IP:端口)相同 // [!code error]
       PROJECT_IAAS_BLOS_DOMAIN: http://localhost:9999/pic/ // [!code error]
       PROJECT_IAAS_BLOS_DEFAULT-PATH: /home/bl/img/
     ports:

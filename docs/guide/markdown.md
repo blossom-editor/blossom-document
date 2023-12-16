@@ -34,6 +34,16 @@ Markdown 由于是一个纯文本格式的文档规范，它语法简单易用�
 
 <bl-img src="../imgs/article/markmap.svg" width="700px" height="300px" :shadow="false"/>
 
+:::warning 注意
+由于思维导图为异步渲染，所以可能会造成预览页抖动，你可以在使用如下方式预设内容高度，可以防止页面抖动。如下所示，思维导图的最大高度为 300 像素：
+
+````
+```markmap##h300
+```
+````
+
+:::
+
 ## 图片拓展 {#image}
 
 Markdown 中的图片是无法控制宽高的，通常图片的显示大小就是图片本身的大小，所以 Blossom 拓展了图片的如下功能：
@@ -135,27 +145,36 @@ Markdown 中的图片是无法控制宽高的，通常图片的显示大小就�
 
 <bl-blockquote color="purple">紫色 ##purple##</bl-blockquote>
 
-引用快还支持使用 Github 语法的语义化引用。
+引用快还支持使用 [Github 语法的语义化引用](https://github.com/orgs/community/discussions/16925)。
 
 ```
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
 
 > [!IMPORTANT]
 > Crucial information necessary for users to succeed.
 
 > [!WARNING]
 > Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
 ```
 
 上述内容将会渲染成如下内容：
 
 <bl-blockquote color="blue">Highlights information that users should take into account, even when skimming.</bl-blockquote>
 
-<bl-blockquote color="purple">Crucial information necessary for users to succeed.
-</bl-blockquote>
+<bl-blockquote color="blue">Optional information to help a user be more successful.</bl-blockquote>
+
+<bl-blockquote color="purple">Crucial information necessary for users to succeed.</bl-blockquote>
 
 <bl-blockquote color="yellow">Critical content demanding immediate user attention due to potential risks.</bl-blockquote>
+
+<bl-blockquote color="red">Negative potential consequences of an action.</bl-blockquote>
 
 ## 表格布局 {#table}
 
@@ -213,7 +232,7 @@ Markdown 的表格功能是较为简单的，如果你要在表格内编写复�
 行内公式在单行代码块的基础上进行拓展，你需要在 `$$` 内部书写 katex 语法，如下：
 
 ```markdown
-支持行内公式, 例如: 质能方程 `$E = mc^2$` 是一个优雅而伟大的公式
+支持行内公式, 例如: 质能方程 $E = mc^2$ 是一个优雅而伟大的公式
 ```
 
 上述文字将被渲染成下图：
@@ -222,17 +241,18 @@ Markdown 的表格功能是较为简单的，如果你要在表格内编写复�
 
 ### 非行内公式 {#katex-block}
 
-非行内公式在代码块的基础上进行拓展，在```后填写 katex，来指定代码块内容为 Mermaid 语法，如下:
+非行内公式除了支持官方的`$$`语法外，还支持在代码块```后填写 katex，来指定代码块内容为 Katex 语法，如下:
 
 ````
-```katex
+$$
 \left\{ \begin{array}{l}
 0 = c_x-a_{x0}-d_{x0}\dfrac{(c_x-a_{x0})\cdot d_{x0}}{\|d_{x0}\|^2} + c_x-a_{x1}-d_{x1}\dfrac{(c_x-a_{x1})\cdot d_{x1}}{\|d_{x1}\|^2} \\[2ex]
 0 = c_y-a_{y0}-d_{y0}\dfrac{(c_y-a_{y0})\cdot d_{y0}}{\|d_{y0}\|^2} + c_y-a_{y1}-d_{y1}\dfrac{(c_y-a_{y1})\cdot d_{y1}}{\|d_{y1}\|^2} \end{array} \right.
-```
+$$
 
 ---
 
+# 某些编辑器中，使用如下方式编辑公式
 ```katex
 \begin{CD}
   RCOHR'SO_3Na @>{\text{Hydrolysis,$\Delta, Dil.HCl$}}>> (RCOR')+NaCl+SO_2+ H_2O
@@ -265,3 +285,13 @@ timeline
 上述 Markdown 内容将被渲染成下图:
 
 <bl-img src="../imgs/article/mermaid.png" width="700px" :shadow="false"/>
+
+:::warning 注意
+由于图表为异步渲染，所以可能会造成预览页抖动，你可以在使用如下方式预设内容高度，可以防止页面抖动。如下所示，图表的最大高度为 300 像素：
+
+````
+```mermaid##h300
+```
+````
+
+:::

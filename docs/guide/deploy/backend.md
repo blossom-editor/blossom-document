@@ -15,7 +15,7 @@ const toRoute = (route) => {
 
 </script>
 
-# 后台部署
+# 部署 Blossom
 
 :::danger 在阅读如何部署前，请你务必先阅读下面内容：
 
@@ -26,7 +26,7 @@ const toRoute = (route) => {
 
 Blossom 使用 2 核 2G，2M ~ 3M 带宽的服务器即可流畅使用。所以服务器+域名的总成本大约在 100 ~ 200 元/年上下。这样和其他笔记软件的会员费用相差不大，并且数据更加安全可控。在不想作为云端笔记使用时，也可以接着作为本地应用部署使用<span style="color:#A9A9A9">(_Blossom 提供了一个全量导出功能，可以将笔记图片链接修改为本地图片路径_)。</span>
 
-## 如何后台部署？ {#how-to-deploy-backend}
+## 如何部署后台？ {#how-to-deploy-backend}
 
 Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署方式。也可以参考其他用户所写的文章：
 
@@ -60,6 +60,19 @@ Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署
 </div>
 
 <div class="deploy-type">
+</div>
+
+## 如何部署页面？{#how-to-deploy-web}
+
+<div class="deploy-type">
+  <div class="item client" @click="toRoute('/guide/deploy/client')">
+    <div class="title">客户端网页版</div>
+    <p class="desc">查看如何部署网页版客户端。</p>
+  </div>
+  <div class="item blog" @click="toRoute('/guide/deploy/blog')">
+    <div class="title">博客页面</div>
+    <p class="desc">查看如何部署博客，以及如何进行自定义配置。</p>
+  </div>
 </div>
 
 ## 后台配置参数 {#backend-props}
@@ -126,6 +139,21 @@ Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署
 .deploy-type .idea {
   background: #D333561E;
   background-image:linear-gradient(135deg,#FD658673,#0D24B9B9);
+}
 
+.deploy-type .client {
+  background-image: linear-gradient(135deg,#869F61,#acbb78);
+}
+
+.deploy-type .client .title {
+  color: #ffffff;
+}
+
+.deploy-type .blog {
+  background-image: linear-gradient(to bottom right, #3e464e, #212121);
+}
+
+.deploy-type .blog .title {
+  color: #ffffff;
 }
 </style>

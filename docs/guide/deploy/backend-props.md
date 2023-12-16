@@ -150,6 +150,17 @@ server:
 
 ### 修改授权时长 {#props-auth}
 
+:::tip 提示
+如果你使用 Docker 部署，需要在启动命令中配置。
+
+```bash
+--project.auth.clients[0].client-id=blossom 
+# 修改该值来改变你的授权时间，单位秒
+--project.auth.clients[0].duration=99999
+```
+
+:::
+
 默认的授权时长为 6 小时，超过 6 小时没有使用则必须重新登录。你可以修改 `application-prod.yml` 中的以下配置来更改这个设置。
 
 ```yml
@@ -158,7 +169,7 @@ project:
     clients:
       - client-id: blossom
         # 修改该值来改变你的授权时间，单位秒
-        expire: 21600
+        duration: 21600
 ```
 
 ### 修改上传文件大小限制 {#props-filesize}

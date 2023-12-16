@@ -25,6 +25,7 @@ onMounted(() => {
 - `backend-blossom.jar`：后台 Java 包。
 - `blossom-x.y.z.dmg`：MacOS ARM 客户端。
 - `blossom-x.y.z.-setup.exe`：Windows 客户端。
+- `blossom-x.y.z.-web-blog.zip`：博客网页部署包。
 - `blossom-x.y.z.-web-client.zip`：客户端网页部署包。
 
 :::tip 提示
@@ -45,6 +46,7 @@ onMounted(() => {
 - `backend-blossom.jar`：后台 Java 包。
 - `blossom-x.y.z.dmg`：MacOS ARM 客户端。
 - `blossom-x.y.z.-setup.exe`：Windows 客户端。
+- `blossom-x.y.z.-web-blog.zip`：博客网页部署包。
 - `blossom-x.y.z.-web-client.zip`：客户端网页部署包。
 - `jasminexzzz-blossom-arm64-x-y-z.tar`：MacOS ARM 架构 Docker 镜像。
 - `jasminexzzz-blossom-amd64-x-y-z.tar`：Windows/Linux Docker 镜像。
