@@ -6,7 +6,7 @@ const sponsorsEspecially = [
 
 // prettier-ignore
 const sponsors = [
-  'i just walked away🏃', 'KalyanYang', 'dsx', '熊猫不是猫',
+  'i just walked away🏃 * 2', 'KalyanYang', 'dsx', '熊猫不是猫',
   '白驹过隙', '支付宝用户-*发', '支付宝用户-*琛', '疾风剑豪索隆',
   '放羊的星星', '立冬', '给你一支烟', '林诗',
    'Criesgod', '支付宝用户-*伟', 'Mr_tg000', 'egil'
