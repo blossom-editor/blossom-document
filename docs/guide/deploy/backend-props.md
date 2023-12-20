@@ -11,19 +11,19 @@ onMounted(() => {
 
 > 文本介绍一些其他配置项，这些配置使用默认项也不影响应用使用。
 
-## 系统参数配置 {#sys}
+# 系统参数配置 {#sys}
 
-### 默认用户 {#sys-user}
+## 默认用户 {#sys-user}
 
 系统启动后，会自动初始化用户，用户表 `base_user` 会带有一个管理员用户，用户名密码为：`blos/blos`。你可以通过该用户登录后，修改用户名及各类信息，或者创建其他用户。
 
-### 配置用户所在的地理位置 {#sys-user-location}
+## 配置用户所在的地理位置 {#sys-user-location}
 
 用户表 `base_user.location` 字段代表该用户所处的地区位置，该位置会用来查询该用户所属地区的天气，如果你要使用天气功能，那么你需要为用户配置该字段信息。更具体的文档可见: 和风天气
 
 > 全国所有地区的位置文档：[China-City-List-latest.csv](https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv)
 
-### 配置系统参数 {#sys-params}
+## 配置系统参数 {#sys-params}
 
 系统参数表 `base_sys_param` 用于配置系统相关参数。要变更这些参数，你需要修改 `base_sys_param.param_value` 字段，下面是参数的详细说明：
 
@@ -65,15 +65,15 @@ JWT 方式的授权方式已经不再建议使用。
 
 - `SERVER_DATABASE_EXPIRE`：数据库到期日期，仅用于提醒。请使用 YYYY-MM-DD 格式。
 
-## 后台配置文件 {#props}
+# 后台配置项 {#props}
 
-### 数据库脚本初始化 {#props-sql-schema}
+## 数据库脚本初始化 {#props-sql-schema}
 
 系统启动时，会自动初始化数据库相关脚本和参数，无需手动初始化数据库。
 
 数据库脚本文件路径：`blossom-backend/backend/src/main/resources/schema-mysql.sql`
 
-### 数据库连接配置 {#props-sql-url}
+## 数据库连接配置 {#props-sql-url}
 
 :::tip 提示
 如果你使用 Docker 部署，该配置通常在启动命令中配置。例如：
@@ -94,7 +94,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/xzzz-blossom
 ```
 
-### 访问地址与文件存储 {#props-iaas-blos}
+## 访问地址与文件存储 {#props-iaas-blos}
 
 :::tip 提示
 如果你使用 Docker 部署，该配置通常在启动命令中配置，并且文件存储 `default-path` 建议使用默认值。
@@ -129,7 +129,7 @@ project:
 目前暂不支持其他公有云对象存储。
 :::
 
-### 修改应用端口 {#props-port}
+## 修改应用端口 {#props-port}
 
 :::tip 提示
 如果你使用 Docker 部署，该配置通常不需要修改，而是在启动命令中进行端口映射。
@@ -148,18 +148,7 @@ server:
   port: 9999
 ```
 
-### 修改授权时长 {#props-auth}
-
-:::tip 提示
-如果你使用 Docker 部署，需要在启动命令中配置。
-
-```bash
---project.auth.clients[0].client-id=blossom 
-# 修改该值来改变你的授权时间，单位秒
---project.auth.clients[0].duration=99999
-```
-
-:::
+## 修改授权时长 {#props-auth}
 
 默认的授权时长为 6 小时，超过 6 小时没有使用则必须重新登录。你可以修改 `application-prod.yml` 中的以下配置来更改这个设置。
 
@@ -172,17 +161,43 @@ project:
         duration: 21600
 ```
 
-### 修改上传文件大小限制 {#props-filesize}
-
 :::tip 提示
-如果你使用 Docker 部署，该配置通常在启动命令中配置。
+如果你使用 Docker 部署，需要在启动命令中配置。
 
 ```bash
---spring.servlet.multipart.max-file-size="50MB"
---spring.servlet.multipart.max-request-size="50MB"
+--project.auth.clients[0].client-id=blossom
+# 修改该值来改变你的授权时间，单位秒
+--project.auth.clients[0].duration=99999
 ```
 
 :::
+
+## 重置用户密码
+
+你可以在启动时重置用户名与密码, 只需要修改如下配置项：
+
+```yml
+project:
+  auth:
+    default-password: 123456 # 默认密码
+    password-reset: false # 启动时重置密码
+```
+
+:::tip 提示
+如果你使用 Docker 部署，需要在启动命令中配置。
+
+```bash
+--project.auth.default-password=123456 # 该值为重置后的用户密码
+--project.auth.password-reset=true
+```
+
+:::
+
+:::danger 注意！
+在重置后, 你需要将配置`project.auth.password-reset=`改为`false`，否则每次启动都会重置密码！
+:::
+
+## 修改上传文件大小限制 {#props-filesize}
 
 默认的上传大小限制是 `50MB`，主要是考虑到服务器带宽和存储空间限制。如果你是本地部署，可能会需要更大的文件存储。那么你可以修改 `application-prod.yml` 中的以下配置来更改这个设置。
 
@@ -194,11 +209,21 @@ spring:
       max-request-size: 50MB
 ```
 
+:::tip 提示
+如果你使用 Docker 部署，该配置通常在启动命令中配置。
+
+```bash
+--spring.servlet.multipart.max-file-size="50MB"
+--spring.servlet.multipart.max-request-size="50MB"
+```
+
+:::
+
 :::danger 警告
 目前上传并没有实现分片上传，如果你上传超大文件，可能会因为网络抖动，页面切换等原因出现上传失败的情况。
 :::
 
-## 更多技术细节 {#props-more}
+# 更多技术细节 {#props-more}
 
 后台是一个很简单的 SpringBoot 应用，默认使用基于 Caffeine 存储的本地有状态 Token。
 

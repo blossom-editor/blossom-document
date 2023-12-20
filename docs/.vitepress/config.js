@@ -49,7 +49,7 @@ export default {
         link: 'https://www.wangyunf.com/blossom-demo/#/settingindex'
       },
       {
-        text: 'v1.10.0',
+        text: 'v1.11.0',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
           { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' }
