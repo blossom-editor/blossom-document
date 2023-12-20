@@ -77,7 +77,7 @@ import sponsors from './scripts/sponsors'
 <div class="text">
   <p>作为一个独立开发者，我目前的核心工作就是维护 Blossom。</p>
   <p>但开源项目的收益很难维持生活。</p>
-  <p>如果您觉得这个应用还不错，您可以通过以下<a style="color:var(--vp-c-indigo-1);text-decoration: underline;" href="https://www.wangyunf.com/blossom-doc/guide/about/sponsor.html">赞助</a>的方式来支持我的工作，我将感激不尽。</p>
+  <p>如果您觉得这个应用还不错，您可以通过以下<a style="color:var(--vp-c-indigo-1);text-decoration: underline;" href="https://www.wangyunf.com/blossom-doc/guide/about/sponsor.html">赞助</a>的方式来支持我的工作，我将感激不尽！</p>
 </div>
 
 <div class="img-container">
@@ -120,7 +120,7 @@ import sponsors from './scripts/sponsors'
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   overflow-x:auto;
   padding: 16px 16px 10px 16px;
 }
