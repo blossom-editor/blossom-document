@@ -142,32 +142,30 @@ services:
 <span style="color:red">**修改下方标识为红色背景的内容**。</span>如果你需要在 Docker 中挂载 config.js 文件，请将以下内容复制到文件中。
 
 ```javascript
-const blossom = {
+window.blconfig = {
   SYS: {
-    // 修改该值可以改变网页左上角名称 // [!code warning]
+    // 修改该值可以改变网页左上角名称, 你可以改为你的名称
     NAME: 'Blossom',
-    // 公网安备号// [!code warning]
+    // 公网安备号
     GONG_WANG_AN_BEI: '',
-    // ICP 备案号// [!code warning]
+    // ICP 备案号
     ICP_BEI_AN_HAO: '',
-    // 邮箱// [!code warning]
+    // 邮箱
     EMAIL: ''
   },
   THEME: {
     LOGO_STYLE: {
-      // 左上角 LOGO 的圆角设置// [!code warning]
+      // 左上角 LOGO 的圆角设置
       'border-radius': '50%'
     },
-    // 是否以特殊样式显示专题文件夹// [!code warning]
+    // 是否以特殊样式显示专题文件夹
     SUBJECT_TITLE: true
   },
   DOMAIN: {
-    // 如果单独部署博客，必须修改该项// [!code error]
-    // 如果挂载为后台自带博客配置文件，则无需修改// [!code error]
-    // 将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同// [!code error]
-    PRD: 'https://www.wangyunf.com/bl/', // [!code error]
-    // 将该值填写你开放为博客的用户ID// [!code error]
-    USER_ID: 1 // [!code error]
+    // 将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同
+    PRD: 'http://localhost:9999',
+    // 将该值填写你开放为博客的用户ID
+    USER_ID: 1
   },
   /**
    * 可以填写你自己的网站，该信息会展示在右上角的【更多】按钮中，以及首页的【所有文章】下
@@ -185,7 +183,6 @@ const blossom = {
   ]
 }
 
-export default blossom
 ```
 
 ### 修改 Logo

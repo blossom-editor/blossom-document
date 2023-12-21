@@ -51,7 +51,7 @@ onMounted(() => {
 <br/>
 <bl-img src="../imgs/article/tree_menu.png" width="200px"/>
 
-档菜单是由「文件夹」与「文章」构成的树状菜单，可以使用快捷键 `Alt/Cmd + 1` 来切换显示/隐藏。该快捷键与 Jetbrains 系列的产品相同，暂不支持修改。
+文档菜单是由「文件夹」与「文章」构成的树状菜单，可以使用快捷键 `Alt/Cmd + 1` 来切换显示/隐藏。该快捷键与 Jetbrains 系列的产品相同，暂不支持修改。
 
 ## 文档标题 {#tree-menu-title}
 
