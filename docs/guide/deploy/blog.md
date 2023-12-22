@@ -144,7 +144,7 @@ services:
 ```javascript
 window.blconfig = {
   SYS: {
-    // 修改该值可以改变网页左上角名称, 你可以改为你的名称
+    // 修改该值可以改变网页左上角名称
     NAME: 'Blossom',
     // 公网安备号
     GONG_WANG_AN_BEI: '',
@@ -162,10 +162,12 @@ window.blconfig = {
     SUBJECT_TITLE: true
   },
   DOMAIN: {
-    // 将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同
-    PRD: 'http://localhost:9999',
-    // 将该值填写你开放为博客的用户ID
-    USER_ID: 1
+    // 如果单独部署博客，必须修改该项// [!code error]
+    // 如果挂载为后台自带博客配置文件，则无需修改// [!code error]
+    // 将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同// [!code error]
+    PRD: 'http://localhost:9999', // [!code error]
+    // 将该值填写你开放为博客的用户ID // [!code error]
+    USER_ID: 1 // [!code error]
   },
   /**
    * 可以填写你自己的网站，该信息会展示在右上角的【更多】按钮中，以及首页的【所有文章】下

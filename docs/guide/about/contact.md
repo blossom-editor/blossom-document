@@ -1,5 +1,13 @@
 ## 加入群聊 📟 {#contact}
 
-联系作者：QQ 群: 522359970 / Email: kuamax888@qq.com
+- 1 群：522359970 (即将满)
+- 2 群：921906098
 
-<bl-img src="../../imgs/blossom/qq.png" width="350px" :shadow="false"/>
+<div style="display:flex;flex-direction: row;justify-content: flex-start;overflow-x:scroll;padding: 20px;">
+  <bl-img src="../../imgs/blossom/qq1.png" width="250px" :shadow="false"/>
+  <bl-img src="../../imgs/blossom/qq2.png" width="250px" :shadow="false"/>
+</div>
+
+## 联系作者
+
+Email: kuamax888@qq.com
