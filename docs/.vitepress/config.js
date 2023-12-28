@@ -62,6 +62,7 @@ export default {
           { text: '使用 Docker Compose', link: '/guide/deploy/backend-docker-compose' },
           { text: 'Jar 包部署', link: '/guide/deploy/backend-jar' },
           { text: 'Idea 源码部署', link: '/guide/deploy/backend-idea' },
+          { text: '更多教程(Nas)', link: '/guide/deploy/backend-other' },
           {
             items: [{ text: '客户端部署', link: '/guide/deploy/client' }]
           },
@@ -128,7 +129,8 @@ export default {
               { text: '使用 Docker Compose', link: '/guide/deploy/backend-docker-compose' },
               { text: 'Jar 包部署', link: '/guide/deploy/backend-jar' },
               // { text: 'Idea 源码部署', link: '/guide/deploy/backend-idea' },
-              { text: '后台配置项', link: '/guide/deploy/backend-props' }
+              { text: '后台配置项', link: '/guide/deploy/backend-props' },
+              { text: '更多教程(Nas)', link: '/guide/deploy/backend-other' }
             ]
           },
           { text: '网页客户端部署', link: '/guide/deploy/client' },

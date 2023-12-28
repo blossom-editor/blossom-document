@@ -8,6 +8,11 @@
 - 例如域名为`http://www.abc.com`，则访问`http://www.abc.com/editor/#/settingindex`
 - 如果有配置反向代理路径，如`/bl/`，则访问`http://www.abc.com/bl/editor/#/settingindex`
 
+:::danger <h1>注意！</h1>
+这个地址是网页的的访问地址，不是登录地址！是填写在浏览器地址栏的地址！
+<bl-img src="../../imgs/deploy/client-url.png" width="700px"/>
+:::
+
 打开客户端后，会进入登录页面。
 
 <bl-img src="../../imgs/setting/login.png" width="700px"/>
@@ -15,6 +20,10 @@
 在上方输入后台的访问地址，然后使用默认用户名密码进行登录
 
 - 用户名为`blos`，密码为`blos`
+
+:::danger <h1>注意！</h1>
+访问地址中不包含`/editor/#/settingindex`!!!
+:::
 
 登录后建议将默认用户修改用户名和密码后，做为你的主账号使用，**因为后台自带的博客端仅支持用户 ID 为`1`的用户**。
 

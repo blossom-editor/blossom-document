@@ -153,50 +153,30 @@ http {
 
 ## Q: 图片上传后在照片墙中无法显示 {#cant-shwo-pic}
 
-检查**客户端登录页填写的后台访问地址**(IP:端口)是否与 `--project.iaas.blos.domain` 配置的相同，如果访问后台的域名中包含代理路径，则 `--project.iaas.blos.domain` 也要增加代理路径。
+将以下配置项：
 
-:::tip 提示
-如果是 Docker compose 部署，则检查 `PROJECT_IAAS_BLOS_DOMAIN` 配置
-:::
+```
+# docker run 命令
+docker run -d \
+  # 修改该配置
+  --project.iaas.blos.domain="http://127.0.0.1:9999/pic/"
 
-正常配置示例如下：
 
-```shell
-# 访问后台的域名
-https://www.xxx.com/
-
-# project.iaas.blos.domain 需要配置为如下值:
---project.iaas.blos.domain=https://www.xxx.com/pic/
-
-------------------------------
-
-# 或者访问后台的是IP:端口
-http://123.123.123.123:6789
-
-# project.iaas.blos.domain 需要配置为如下值:
---project.iaas.blos.domain=http://123.123.123.123:6789/pic/
+# docker compose
+services:
+  blossom:
+    environment:
+      # Docker compose 就修改这项
+      PROJECT_IAAS_BLOS_DOMAIN: http://localhost:9999/pic/
 ```
 
-如果后台配置了反向代理路径，例如在 Nginx 进行了如下配置：
+修改为`登录地址` + `/pic`
 
-```shell
-# blossom 服务器
-location /bl/ {
-        proxy_pass              http://127.0.0.1:9999/;
-        client_max_body_size    50m;
-        proxy_set_header        x-forwarded-for $remote_addr;
-}
-```
+例如登录地址如下：
 
-那么需要将配置修改为：
+<bl-img src="../../imgs/deploy/login-url.png" width="400px"/>
 
-```shell
-# 访问后台的域名
-https://www.xxx.com/bl
-
-# project.iaas.blos.domain 需要配置为如下值:
---project.iaas.blos.domain=https://www.xxx.com/bl/pic/
-```
+就修改为 `http://localhost:9999/pic`
 
 ## Q: 图片上传时提示图片已存在 {#pic-exist}
 

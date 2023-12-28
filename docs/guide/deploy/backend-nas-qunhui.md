@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { info } from '../../scripts/stat-api'
+
+onMounted(() => {
+  info()
+})
+</script>
+
 # 群晖创建 blossom 教程
 
 :::tip

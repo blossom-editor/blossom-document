@@ -4,7 +4,7 @@
 
 ## 自带网页客户端 {#backstage}
 
-自`1.10.0`版本开始，部署后台时会自带网页客户端，客户端地址为
+自`1.10.0`版本开始，部署后台时会自带网页客户端，客户端在浏览器的访问地址为
 
 ```bash
 IP:端口(域名)/editor/#/settingindex
@@ -29,6 +29,11 @@ http://www.abc.com/editor/#/settingindex
 ```bash
 http://www.abc.com/bl/editor/#/settingindex
 ```
+
+:::danger <h1>注意！</h1>
+这个地址是网页的的访问地址，不是登录地址！是填写在浏览器地址栏的地址！
+<bl-img src="../../imgs/deploy/client-url.png" width="700px"/>
+:::
 
 :::warning 提示
 由于使用场景众多，Blossom 无法全部覆盖测试，所以如果你在使用自带网页客户端时遇到问题，可以选择单独部署或使用桌面客户端。
