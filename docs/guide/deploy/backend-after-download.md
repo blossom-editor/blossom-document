@@ -1,14 +1,21 @@
 ## 安装客户端并登录 {#install}
 
-部署成功后可以使用自带的网页客户端，或者[下载 PC 客户端](../about/download)进行使用。
+部署成功后即可使用客户端登录，Blossom 提供了两种客户端。
 
-网页客户端地址为： `IP:端口(域名)/editor/#/settingindex`
+1. [下载 PC 桌面客户端](../about/download)。
+2. 使用自带的网页客户端。
 
-- 例如 IP:端口为：`192.168.11.11:9999`，则访问 `http://192.168.11.11:9999/editor/#/settingindex`
-- 例如域名为`http://www.abc.com`，则访问`http://www.abc.com/editor/#/settingindex`
-- 如果有配置反向代理路径，如`/bl/`，则访问`http://www.abc.com/bl/editor/#/settingindex`
+> 网页客户端地址为: `IP:端口(域名)/editor/#/settingindex`
+>
+> ---
+>
+> 例如 IP:端口为`127.0.0.1:9999`，则访问 `http://127.0.0.1:9999/editor/#/settingindex`
+>
+> 例如域名为`http://www.abc.com`，则访问`http://www.abc.com/editor/#/settingindex`
+>
+> 如果有配置反向代理路径，如`/bl/`，则访问`http://www.abc.com/bl/editor/#/settingindex`
 
-:::danger <h1>注意！</h1>
+:::danger <span style="color:#ea483f">注意！</span>
 这个地址是网页的的访问地址，不是登录地址！是填写在浏览器地址栏的地址！
 <bl-img src="../../imgs/deploy/client-url.png" width="700px"/>
 :::
@@ -21,7 +28,7 @@
 
 - 用户名为`blos`，密码为`blos`
 
-:::danger <h1>注意！</h1>
+:::danger <span style="color:#ea483f">注意！</span>
 访问地址中不包含`/editor/#/settingindex`!!!
 :::
 
@@ -29,43 +36,27 @@
 
 > 查看[如何修改及创建用户?](../setting)
 
-如果在使用中遇到其他问题，可查看[常见问题](../deploy/faq)。
+## 快速设置 {#quick-setting}
 
-## ☔ 其他事项 {#other-check}
+如果你是初次使用，那么在页面的右上角会看到如下提示。
 
-到这里你已经可以正常使用软件了，但还是推荐你进行以下一些操作。
+<bl-img src="../../imgs/setting/caution.gif" width="300px"/>
 
-### 检查图片使用 {#other-check-pic}
+点击黄色闪烁图标，会进入如下页面。
 
-1. 左侧菜单选择`Pic` 照片墙功能。
-2. 然后点击《🌌 默认文件夹》，并上传一张图片。
-3. 接着重新点击文件夹，在刷新右侧图片列表后，查看图片是否上传成功并正常访问。
+<bl-img src="../../imgs/setting/caution-popover.png" width="400px"/>
 
-如果你是 Docker 部署，还建议你去挂载路径检查图片是否已成功保存。如果上传的图片无法访问，可以参考[常见问题-图片无法访问](./faq#cant-shwo-pic)。
+点击上方任意一个红色框，即可开始快速配置。
 
-> 没有默认刷新是因为有部分用户的服务器带宽较小，频繁刷新可能会造成访问缓慢等现象。
+<bl-img src="../../imgs/setting/quick-setting-pic.png" width="650px"/>
 
----
+点击【是】，进入博客配置。
 
-### 关于服务器配置中的网页端地址
+<bl-img src="../../imgs/setting/quick-setting-blog.png" width="650px"/>
 
-<br/>
-<bl-img src="../../imgs/setting/blog_url.png" width="700px"/>
+通常情况下点击【确认使用自带博客】，即可配置完成。
 
-你需要将该地址配置为博客端的访问地址，如果你使用后台自带的博客端，那么这个地址为`IP:端口(域名)/blog/#/articles?articleId=`。
+- 更多关于快速设置的功能可查阅[设置](../setting)。
+- 更多关于博客的配置信息可查阅[博客/移动端页面](./blog)。
 
-如果你单独部署博客端，那么这个地址为`访问博客的域名/#/articles?articleId=`。
-
-:::warning 注意
-如果你不部署使用[移动端(博客端)](./blog)，那么你无需关注该配置。但了解该配置仍然会解决你未来可能会有的一些疑惑。
-:::
-
-由于 Blossom 文章的所有内容都是 Markdown 格式，所以文章之间的互相引用就只有通过链接的方式(`[]()`)。**那么既然是一个链接，链接的地址就是上图配置的内容**。
-
-当然，如果你未修改，那么该链接的是无法正常在浏览器访问的。**但是请你放心，这并不影响你在客户端中正常的进行跳转和查看。**
-
-例如下图，左侧可以看到地址是一个无效地址，但右边的双链引用是可以正常点击查看的，并且底部的新窗口打开也可以正常使用。
-
-<bl-img src="../../imgs/deploy/after_check_link.png" width="700px"/>
-
-但我们还是推荐你配置该参数。以便日后使用移动端时减少笔记的修改工作。
+<bl-img src="../../imgs/setting/quick-setting-completed.png" width="650px"/>

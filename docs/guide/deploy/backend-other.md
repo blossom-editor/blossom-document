@@ -9,6 +9,10 @@ onMounted(() => {
 
 Blossom 依赖 `JDK8` + `MySql8`，你可以参考其他用户所写的文章：
 
+:::tip 提示
+其他用户所写的文章可能存在滞后性，请结合官方文档一起阅读。
+:::
+
 - 『文章』[威联通 QNAP TS-464C2 部署 Blossom 填坑指南](https://mp.weixin.qq.com/s/oWiP8hM-OcVXiGMLsJf6KQ)
 - 『文章』[群晖创建 Blossom 教程](./backend-nas-qunhui) by 黑醋栗和丁香
 - 『文章』[群晖 Blossom 部署教程](./backend-nas-qunhui1) by 强有力的实力丶

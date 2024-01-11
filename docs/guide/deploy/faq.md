@@ -142,6 +142,8 @@ http {
 }
 ```
 
+<br/><br/><br/><br/>
+
 ## 使用中常见问题
 
 ## Q: 后台启动成功，但客户端连接不上 {#client-cant-connect-server}
@@ -150,33 +152,13 @@ http {
 
 1. 如果登录页填写的后台地址为 https，则后台必须能通过 https 访问到。
 2. 如果访问客户端为 https，则登录页填写的后台地址也必须为 https。
+3. 登录地址中不能包含`editor/#/settingindex`。
 
 ## Q: 图片上传后在照片墙中无法显示 {#cant-shwo-pic}
 
-将以下配置项：
+在设置中将文件访问地址已修改为【登录地址+`/pic`】，也可点击右侧自动配置按钮，会自动修改为【登录地址+`/pic`】。
 
-```
-# docker run 命令
-docker run -d \
-  # 修改该配置
-  --project.iaas.blos.domain="http://127.0.0.1:9999/pic/"
-
-
-# docker compose
-services:
-  blossom:
-    environment:
-      # Docker compose 就修改这项
-      PROJECT_IAAS_BLOS_DOMAIN: http://localhost:9999/pic/
-```
-
-修改为`登录地址` + `/pic`
-
-例如登录地址如下：
-
-<bl-img src="../../imgs/deploy/login-url.png" width="400px"/>
-
-就修改为 `http://localhost:9999/pic`
+<bl-img src="../../imgs/setting/setting-picurl.png" width="700px"/>
 
 ## Q: 图片上传时提示图片已存在 {#pic-exist}
 

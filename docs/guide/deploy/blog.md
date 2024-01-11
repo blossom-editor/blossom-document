@@ -59,15 +59,17 @@ http://www.abc.com/bl/blog/#/home
 
 ## 单独部署博客 {#independent }
 
+如果有多个用户需要使用博客功能，则需要单独部署，每个用户的博客配置是独立的，可以拥有不同的 Logo，博客名称，IPC 备案号等信息。
+
 ### 文件下载
 
 前往[下载地址](../about/download)中下载`blossom-x.y.z-web-blog.zip`文件。
 
-### 部署方式
+### 部署代理
 
 解压 `blossom-x.y.z-web-blog.zip` 到服务器目录，本例中文件解压在 `/usr/local/xzzz/blossom/blog/` 路径下。
 
-配置 Nginx，下方是一个配置示例：
+以 Nginx 为例：
 
 ```bash
 # 【需修改】配置客户端资源访问路径 // [!code error]
@@ -93,22 +95,10 @@ location /blossom-blog/ {
 
 ## 修改博客配置 {#update-config}
 
-解压文件后，在解压路径下包含一个`config.js`文件，修改该文件可以进行个性化配置。
+在解压文件后，解压路径下会有一个`config.js`文件，修改该文件可以进行个性化配置。
 
 :::tip 提示
-如果通过 Docker 部署，并且想修改后台自带的博客配置，你需要进入容器后修改以下文件：
-
-```bash
-# 进入容器，注意将 blossom-backend 修改为你的容器名称
-docker exec -it blossom-backend-dev /bin/bash
-
-# 进入路径，并修改 config.js 文件
-cd /application/BOOT-INF/classes/static/blog
-
-# 修改 config.js 文件
-```
-
-如果你不熟悉如何修改容器内文件，你可以使用挂载文件的方式进行修改，你需要在 docker run 命令中添加如下配置：
+如果通过 Docker 部署，你可以使用挂载文件的方式进行修改，你需要在 docker run 命令中添加如下配置：
 
 ```bash
 # 将冒号(:)前的部分改成你运行 docker 的设备的某个路径，不要修改冒号后面的内容。 // [!code error]
@@ -129,7 +119,6 @@ services:
 ```
 
 然后在对应目录下创建 config.js 文件，接着将下方[配置文件内容](./blog#config-centent)复制到该文件中。
-
 :::
 
 ### 配置文件内容{#config-content}
@@ -140,6 +129,12 @@ services:
  -->
 
 <span style="color:red">**修改下方标识为红色背景的内容**。</span>如果你需要在 Docker 中挂载 config.js 文件，请将以下内容复制到文件中。
+
+:::danger 重要变更
+在`v1.12.0`版本中，已经支持通过客户端进行博客的各项配置，[前往查看](../setting#blog)。
+
+在后续版本中，会逐步移除配置文件中的配置项，建议使用客户端配置的方式。
+:::
 
 ```javascript
 window.blconfig = {
@@ -184,33 +179,6 @@ window.blconfig = {
     // }
   ]
 }
-
-```
-
-### 修改 Logo
-
-可以替换解压目录下的`blog-logo.png`图片来更改博客左上角的 Logo。如果是 docker 部署也可以挂载该文件来修改 Logo，挂载方式如上方`config.js`文件示例。
-
-### Nginx 配置静态代理 {#nginx}
-
-如果你使用 Nginx 作为静态代理工具，可参考以下方式配置。
-
-```shell
-# blossom 博客  q
-location /blossom/ {
-        # 修改为存放文件的路径 // [!code error]
-        alias                   /usr/local/xzzz/blossom/blog/;
-        try_files               $uri $uri/ /index.html;
-        index                   index.html index.htm;
-        gzip                    on;
-        gzip_buffers            32 4k;
-        gzip_comp_level         6;
-        gzip_min_length         100;
-        gzip_types              application/javascript text/css text/xml font/ttf font/otf image/svg+xml;
-        gzip_disable            "MSIE [1-6]\.";
-        gzip_vary               on;
-}
-
 ```
 
 ## 登录博客 {#login}
@@ -221,12 +189,6 @@ location /blossom/ {
 完整的 Nginx 例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
 :::
 
-## 【重要】在客户端配置博客地址 {#client}
+## 客户端配置博客地址 {#client}
 
-由于博客是单独部署的，客户端并不知道博客的访问地址，所以需要配置该地址。
-
-<bl-img src="../../imgs/setting/blog_url.png" width="700px"/>
-
-例如博客首页的地址为：https://www.wangyunf.com/blossom/#/home
-
-则该处填写的地址即为：https://www.wangyunf.com/blossom/#/articles?articleId=
+可查阅[快速配置](../setting#quick)。

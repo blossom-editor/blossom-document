@@ -48,7 +48,7 @@ docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=jasmine888 -p 3306:3306 -v /us
 
 ## 创建数据库 {#create-database}
 
-无论你是否曾经安装过数据库，你都需要在 MySQL 中创建一个数据库，数据库名称需要与启动容器命令中参数`--spring.datasource.url`配置的数据库名称相同，如果不需要自定义数据库名称，你可以直接使用如下语句创建数据库。
+无论你是否曾经安装过数据库，你都需要在 MySQL 中创建一个数据库，数据库名称需要与启动容器命令中参数 `--spring.datasource.url` 配置的数据库名称相同，如果不需要自定义数据库名称，你可以直接使用如下语句创建数据库。
 
 ```sql
 CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
@@ -66,7 +66,7 @@ docker pull jasminexzzz/blossom:latest
 
 启动应用容器，注意修改其中标识为红色背景的内容。
 
-```bash:line-numbers
+```bash
 docker run -d \
   # 容器名称
   --name blossom-backend \
@@ -77,10 +77,6 @@ docker run -d \
   -v /home/bl/:/home/bl/ \// [!code error]
   # 启动的镜像名称
   jasminexzzz/blossom:latest \
-  #【需修改】配置图片上传后对应生成的访问URL，需要以/pic/结尾。注意，该访问URL需要与访问后台的域名和端口相同 // [!code error]
-  --project.iaas.blos.domain="http://127.0.0.1:9999/pic/" \// [!code error]
-  # 配置图片保存的磁盘路径，请使用 -v 将该路径挂载为本地路径，如上方示例
-  --project.iaas.blos.default-path="/home/bl/img/" \
   #【需修改】配置数据库访问地址// [!code error]
   --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" \// [!code error]
   #【可选修改】配置数据库用户名// [!code warning]

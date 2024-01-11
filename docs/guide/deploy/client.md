@@ -30,13 +30,9 @@ http://www.abc.com/editor/#/settingindex
 http://www.abc.com/bl/editor/#/settingindex
 ```
 
-:::danger <h1>注意！</h1>
+:::danger <span style="color:#ea483f">注意！</span>
 这个地址是网页的的访问地址，不是登录地址！是填写在浏览器地址栏的地址！
 <bl-img src="../../imgs/deploy/client-url.png" width="700px"/>
-:::
-
-:::warning 提示
-由于使用场景众多，Blossom 无法全部覆盖测试，所以如果你在使用自带网页客户端时遇到问题，可以选择单独部署或使用桌面客户端。
 :::
 
 ## 单独部署网页客户端 {#independent }

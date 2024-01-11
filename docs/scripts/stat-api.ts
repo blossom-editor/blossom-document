@@ -3,5 +3,11 @@
 const isDev = import.meta.env.DEV
 
 export const info = () => {
-  if (!isDev) fetch('https://www.wangyunf.com/bl/article/open/info?id=20153').then(() => {})
+  if (!isDev) {
+    fetch('https://www.wangyunf.com/bl/article/open/info?id=20153', {
+      headers: {
+        'Blossom-User-Id': '1'
+      }
+    }).then(() => {})
+  }
 }

@@ -18,6 +18,36 @@
 
 # 版本更新记录
 
+## v1.12.0 | 2024-01-11 🔍️
+
+**🌟 新增内容**
+
+1. 全文搜索功能([#33](https://github.com/blossom-editor/blossom/issues/33))。
+2. 全新的图片访问域名与博客地址配置方式。
+3. 在客户端定制化博客样式。
+4. 网页收藏新增列表展示方式。
+5. 更改了快捷键查看页面。
+6. 新增登录地址合法校验。
+
+**🔧 修复内容**
+
+1. 创建账户和修改密码时偶现的报错([#50](https://github.com/blossom-editor/blossom/issues/50))。
+2. Markdown `- []` 的渲染问题([#64](https://github.com/blossom-editor/blossom/issues/64))。
+3. 博客切换文章时滚动条不置顶的问题([#67](https://github.com/blossom-editor/blossom/issues/67))。
+4. 修复替换图片失效的问题。
+5. 增加图片链接的字段长度。
+6. 日历计划无法重复新增的问题。
+7. 增加重复添加用户名时的校验。
+8. 修复其他已知问题。
+
+:::danger ⚠️ 重大更新
+改变了图片地址的配置方式，请查阅[升级至 v1.12.0](./deploy/breakchange-1-12-0)。
+:::
+
+> 感谢 [@Andecheal](https://github.com/Andecheal) 贡献的 PR [(#54)](https://github.com/blossom-editor/blossom/pull/54)✨
+>
+> 感谢 [@T1anjiu](https://github.com/T1anjiu) 贡献的 PR [(#73)](https://github.com/blossom-editor/blossom/pull/73)✨
+
 ## v1.11.0 | 2023-12-20
 
 **🌟 新增内容**
@@ -33,7 +63,9 @@
 4. 修复图片上传失败时可能造成的数据同步问题([#48](https://github.com/blossom-editor/blossom/pull/48))。
 5. 优化树形结构创建([#44](https://github.com/blossom-editor/blossom/pull/44))。
 
-## v1.10.0 | 2023-12-16 🚩
+> 感谢 [@Andecheal](https://github.com/Andecheal) 贡献的 PR [(#44)](https://github.com/blossom-editor/blossom/pull/44)、[(#45)](https://github.com/blossom-editor/blossom/pull/45)、[(#48)](https://github.com/blossom-editor/blossom/pull/48)✨
+
+## v1.10.0 | 2023-12-16 📖
 
 **🌟 新增内容**
 
@@ -61,6 +93,10 @@
 :::danger ⚠️ 非兼容更新 Break Change
 改变了博客的部署方式，请查阅[博客/移动端页面部署](./deploy/blog)。
 :::
+
+> 感谢 [@Acyco](https://github.com/Acyco) 贡献的 PR [(#39)](https://github.com/blossom-editor/blossom/pull/39)。
+>
+> 感谢 [@xiaowang0777](https://github.com/xiaowang0777) 等许多用户长期以来反馈的问题
 
 ## v1.9.0 | 2023-11-29
 
@@ -204,6 +240,10 @@ docker pull jasminexzzz/blossom
 2. 优化控制台 tooltip 交互方式。
 3. 修改图片大小限制为 50MB。
 4. 修复其他已知问题。
+
+> 感谢 [@li-guohao](https://github.com/li-guohao) 贡献的 PR [(#4)](https://github.com/blossom-editor/blossom/pull/4)。
+>
+> 感谢 [@nn200433](https://github.com/nn200433) 反馈的问题
 
 ## v1.4.1 | 2023-09-24
 

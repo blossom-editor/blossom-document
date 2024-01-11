@@ -49,10 +49,11 @@ export default {
         link: 'https://www.wangyunf.com/blossom-demo/#/settingindex'
       },
       {
-        text: 'v1.11.0',
+        text: 'v1.12.0',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
-          { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' }
+          { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },
+          { text: '升级至 1.12.0', link: '/guide/deploy/breakchange-1-12-0' }
         ]
       },
       {
@@ -78,7 +79,7 @@ export default {
           { text: '源码仓库', link: 'https://github.com/blossom-editor/blossom' },
           { text: '源码仓库（国内）', link: 'https://gitee.com/blossom-editor/blossom' },
           { text: '博客样例', link: 'https://www.wangyunf.com/blossom/#/home' },
-          { text: '接口 API 文档', link: '<a href="/guide/api/index.html" target="_self">Link to pure.html</a>' },
+          { text: '接口 API 文档', link: 'https://github.com/blossom-editor/blossom/tree/dev/doc/backend-api' },
           {
             items: [
               { text: '博客', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20243' },

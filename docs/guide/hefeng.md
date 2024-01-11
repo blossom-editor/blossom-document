@@ -19,17 +19,17 @@ onMounted(() => {
 
 <bl-img src="../imgs/setting/hefeng_key.png" width="700px"/>
 
-添加完成后，继续配置你所在的城市。
+添加完成后，继续配置你所在的城市，前往查找城市代码：[China-City-List-latest.csv](https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv)。
 
 <bl-img src="../imgs/weather/location.png" width="700px"/>
 
-> 查看城市代码：[China-City-List-latest.csv](https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv)
+在下图标注的搜索框中搜索你的城市名称。点击保存后，进入首页，点击天气右上角的刷新按钮即可。
 
 <bl-img src="../imgs/weather/query_location.png" width="700px"/>
 
-在上图标注的搜索框中搜索你的城市名称。点击保存后，进入首页，点击天气右上角的刷新按钮即可。
+## 天气图标
 
-Blossom 还为常见天气适配了多种图标：
+Blossom 为常见天气适配了图标：
 
 <div class="weather">
   <div class="item">
@@ -84,7 +84,7 @@ Blossom 还为常见天气适配了多种图标：
 >
 > 全国所有地区的位置文档：[China-City-List-latest.csv](https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv)
 
-下方为和风天气官网，你可以前往查看。
+下方为和风天气官网，你可以前往申请 Key。
 
 <iframe src="https://dev.qweather.com/docs/start/" width="100%" height="1000px" style="border: 1px solid #f1f1f1"></iframe>
 

@@ -47,10 +47,6 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       # 【可选修改】配置数据库密码，这个改了下方的黄色部分也要修改 // [!code warning]
       SPRING_DATASOURCE_PASSWORD: jasmine888 // [!code warning]
-      # 【需修改】配置图片上传后对应生成的访问 URL，需要以/pic/结尾。 // [!code error]
-      # 该访问域名(IP:端口)需要与访问后台的域名(IP:端口)相同 // [!code error]
-      PROJECT_IAAS_BLOS_DOMAIN: http://localhost:9999/pic/ // [!code error]
-      PROJECT_IAAS_BLOS_DEFAULT-PATH: /home/bl/img/
     ports:
       - "9999:9999"
     networks:
@@ -85,14 +81,14 @@ services:
     networks:
       - blossomnet
     healthcheck:
-      # 【可选修改】如果修改了上方的数据库密码「MYSQL_ROOT_PASSWORD」修改，下方的 -p 后的密码也要修改 // [!code warning]
+      # 【可选修改】如果修改了上方的数据库密码「MYSQL_ROOT_PASSWORD」，下方的 -p 后的密码也要修改 // [!code warning]
       test: ["CMD", "mysqladmin", "-uroot", "-pjasmine888", "ping", "-h", "localhost"]
       interval: 10s
       timeout: 3s
       retries: 12
 ```
 
-该 Docker Compose 包含 MySQL，MySQL 容器在初始化时会自动创建数据库 Blossom，但你需要挂载 MySQL 文件到宿主机，防止数据丢失。
+该 Docker Compose 包含 MySQL，MySQL 容器在初始化时会自动创建数据库 Blossom。
 
 Docker Compose 源文件可前往 [blossom-mysql8.yaml](https://github.com/blossom-editor/blossom/blob/dev/docker/compose/blossom-mysql8.yaml) 进行查看。
 

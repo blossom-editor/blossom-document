@@ -35,8 +35,6 @@ java -jar ./backend-blossom.jar \
  --server.port=9999 \// [!code error]
   #【需修改】配置图片保存的磁盘路径// [!code error]
  --project.iaas.blos.default-path="/home/bl/img" \// [!code error]
-  #【需修改】配置图片上传后对应生成的访问URL，需要以/pic/结尾。注意，该访问URL需要与访问后台的域名和端口相同 // [!code error]
- --project.iaas.blos.domain="http://192.168.31.99:9999/pic/" \// [!code error]
   #【需修改】配置数据库访问地址// [!code error]
  --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" \// [!code error]
   #【需修改】配置数据库用户名// [!code error]
@@ -51,14 +49,13 @@ java -jar ./backend-blossom.jar \
 
 参数说明：
 
-| 参数                             | 说明                                                                                                                  |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| --server.port                    | 【可修改】应用端口                                                                                                    |
-| --project.iaas.blos.domain       | 【需修改】配置图片上传后对应生成的访问 URL 前缀，需要以/pic/结尾。**注意，该访问 URL 需要与访问后台的域名和端口相同** |
-| --project.iaas.blos.default-path | 【需修改】配置图片保存的磁盘路径                                                                                      |
-| --spring.datasource.url          | 【需修改】配置数据库访问地址                                                                                          |
-| --spring.datasource.username     | 【需修改】配置数据库用户名                                                                                            |
-| --spring.datasource.password     | 【需修改】配置数据库密码                                                                                              |
+| 参数                             | 说明                             |
+| -------------------------------- | -------------------------------- |
+| --server.port                    | 【可修改】应用端口               |
+| --project.iaas.blos.default-path | 【需修改】配置图片保存的磁盘路径 |
+| --spring.datasource.url          | 【需修改】配置数据库访问地址     |
+| --spring.datasource.username     | 【需修改】配置数据库用户名       |
+| --spring.datasource.password     | 【需修改】配置数据库密码         |
 
 ## 使用脚本部署 {#use-sh}
 
@@ -75,7 +72,7 @@ kill -9 $pid
 echo "进程" $pid "已被杀死"
 echo "开始重启 backend-blossom 服务器"
 # 注意修改相关参数，与上方介绍的相同 // [!code error]
-nohup java -jar ./backend-blossom.jar --server.port=9999 --project.iaas.blos.domain="http://192.168.31.99:9999/pic/" --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" --spring.datasource.username=root --spring.datasource.password=jasmine888 &
+nohup java -jar ./backend-blossom.jar --server.port=9999 --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" --spring.datasource.username=root --spring.datasource.password=jasmine888 &
 echo "backend-blossom 正在启动,请查看日志 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓"
 ```
 

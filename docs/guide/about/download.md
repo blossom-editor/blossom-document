@@ -21,7 +21,6 @@ onMounted(() => {
 
 <bl-img src="../../imgs/deploy/download_github.png" width="200px"/>
 
-- `backend-api.zip`：后台接口文档。
 - `backend-blossom.jar`：后台 Java 包。
 - `blossom-x.y.z.dmg`：MacOS ARM 客户端。
 - `blossom-x.y.z.-setup.exe`：Windows 客户端。
@@ -38,22 +37,22 @@ onMounted(() => {
 >
 > 提取码`uksl`
 
-<bl-img src="../../imgs/deploy/download_baidu.png" width="350px"/>
+<bl-img src="../../imgs/deploy/download_baidu.png" width="300px"/>
 
 百度网盘除了包含各个客户端和后台部署文件之外，还包含 Docker 镜像文件供下载。
 
-- `backend-api.zip`：后台接口文档。
 - `backend-blossom.jar`：后台 Java 包。
 - `blossom-x.y.z.dmg`：MacOS ARM 客户端。
 - `blossom-x.y.z.-setup.exe`：Windows 客户端。
 - `blossom-x.y.z.-web-blog.zip`：博客网页部署包。
 - `blossom-x.y.z.-web-client.zip`：客户端网页部署包。
-- `jasminexzzz-blossom-arm64-x-y-z.tar`：MacOS ARM 架构 Docker 镜像。
-- `jasminexzzz-blossom-amd64-x-y-z.tar`：Windows/Linux Docker 镜像。
+- `jasminexzzz-blossom-arm64-x-y-z.tar.zip`：MacOS ARM 架构 Docker 镜像。
+- `jasminexzzz-blossom-amd64-x-y-z.tar.zip`：Windows/Linux Docker 镜像。
+- `mysql-8-0-31.zip`：MySQL 镜像。
 
 ## 群下载
 
-- [群下载](./contact)
+加群联系作者获取安装包，[查看群号](./contact)。
 
 ## 下载后试用 {#tryuse}
 
