@@ -113,6 +113,15 @@ project:
 --project.iaas.blos.default-path="/home/bl/img/" \
 ```
 
+Docker Compose 则修改
+
+```yml
+services:
+  blossom:
+    environment:
+      # 在该处增加如下两项
+      PROJECT_IAAS_BLOS_DEFAULT_PATH: /home/bl/img/
+```
 :::
 
 :::warning 注意

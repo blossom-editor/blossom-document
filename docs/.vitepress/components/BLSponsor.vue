@@ -2,7 +2,7 @@
 // prettier-ignore
 const sponsorsEspecially = [
   '支付宝匿名用户', '黑醋栗和丁香', 'Lucky', '支付宝用户-\*\*衡',
-  'Klaus'
+  'Klaus','阿呆吧'
 ]
 
 // prettier-ignore
@@ -14,7 +14,8 @@ const sponsors = [
   'Glimpse', '支付宝用户-\*\*福', '支付宝用户-\*\*盼', '何其正',
   '-A明', '开心。', 'Please', '樹梢',
   '支付宝用户-\*\*耀', 'Crius', '初五', '一巷灯火深',
-  '支付宝用户-\*\*鲲','木辰音','宁采臣','支付宝用户-\*\*雷'
+  '支付宝用户-\*\*鲲', '木辰音', '宁采臣', '支付宝用户-\*\*雷',
+  '贪吃的康','zhaowuyan','way1on',''
 ]
 </script>
 
