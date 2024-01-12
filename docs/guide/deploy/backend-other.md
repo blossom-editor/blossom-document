@@ -7,6 +7,13 @@ onMounted(() => {
 })
 </script>
 
+
+# 在 sealos 上一键部署
+
+[![](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-template%3FtemplateName%3Dblossom)
+
+# 其他部署教程
+
 Blossom 依赖 `JDK8` + `MySql8`，你可以参考其他用户所写的文章：
 
 :::tip 提示
