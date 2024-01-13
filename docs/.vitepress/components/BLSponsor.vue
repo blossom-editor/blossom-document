@@ -21,12 +21,20 @@ const sponsors = [
 
 <template>
   <div class="sponsor-list-title">
-    <p>感谢以下每一位赞助者，是你们让 Blossom 变得更好！</p>
+    <p>感谢以下每一位赞助者，是你们让 Blossom 变得更好！
+      <br/>
+      <div style="margin-top: 10px;font-size: 15px;">
+      Thank you to each and every one of our sponsors who make Blossom even better. 
+      </div>
+    </p>
   </div>
 
   <div class="sponsor-container">
     <div class="sponsor-list">
-      <div class="especially">特别感谢</div>
+      <div class="especially">
+        特别感谢<br/>
+        <div style="margin-top: 10px;font-size: 15px;">Gratitude</div>
+      </div>
       <div class="sponsor-item" v-for="name in sponsorsEspecially">{{ name }}</div>
     </div>
   </div>
