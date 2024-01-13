@@ -7,72 +7,72 @@ onMounted(() => {
 })
 </script>
 
-# 为什么使用 <span style="color:#779649;font-weight: bold;">Blossom</span>？
+# Why use <span style="color:#779649;font-weight: bold;">Blossom</span>？
 
-> Blossom：意为<span class="blossom-translate">**开花;绽放**</span>。
+> Blossom：means <span class="blossom-translate">**The blooming of flowers**</span>.
 >
-> 写作就像雨露和养料，最终会使作者的思想和知识开花、结果。
+> Writing is akin to the nourishing touch of rain, dew, and nutrients; ultimately, it unfolds the author's thoughts and knowledge into a blossoming, fruitful outcome.
 
-## Blossom 是什么？ {#what-is-blossom}
+## What is Blossom？ {#what-is-blossom}
 
-Blossom 是一个需要私有部署的笔记软件，虽然本身定位是一个云端软件，但你仍然可以在本地部署，数据和图片都将保存在你的设备，不依赖任何的图床或者对象存储。
+Blossom is a note-taking software that requires private deployment. Although it is positioned as a cloud-based application, you can still deploy it locally, ensuring that data and images are stored on your device without relying on any external image hosting or object storage.
 
-<bl-img src="../../imgs/home/device.png" :shadow="false"/>
+<bl-img src="../../public/imgs/home/device.png" :shadow="false"/>
 
-- <span style="color:#779649;font-weight: bold;">客户端</span>：支持 Windows 端和 ARM 架构的 Mac 端，以及作为网页端部署。
-- <span style="color:#EAB412;font-weight: bold;">移动端</span>：响应式网页移动端，主要为移动端设计，同时也作为博客供所有人访问。
-- <span style="color:#307DEF;font-weight: bold;">服务端</span>：服务端支持在 Docker 中进行部署。
+- <span style="color:#779649;font-weight: bold;">Client</span>：Supports deployment on Windows and ARM architecture for Mac, as well as being deployable as a web application.
+- <span style="color:#EAB412;font-weight: bold;">Mobile Client</span>：Responsive web and mobile interface primarily designed for mobile use, also serving as a blog accessible to everyone.
+- <span style="color:#307DEF;font-weight: bold;">Server</span>：The server supports deployment within Docker.
 
-::: tip 提示
-如果你想尝试一下，可以查看[试用](./tryuse)。
+::: tip 
+If you'd like to give it a try, you can check out [Demo Trial](./tryuse).
 :::
 
-## 为什么选择 Blossom？ {#why-is-blossom}
+## Why is Blossom？ {#why-is-blossom}
 
-Blossom 作为一款开源软件，无意、也无法和市面上成熟的笔记软件相竞争。仅仅是提供了一个新的选择。
+As an open-source software, Blossom has no intention, nor capability, to compete with mature note-taking software in the market. It simply offers a new choice.
 
-### 不一样的页面 {#special-page}
+### Special pages {#special-page}
 
-Blossom 并没有采用类似 Notion 那样的软件布局与页面设计，因为市面上类似界面的软件已经很多，如果你对这些软件有些审美疲劳，也许可以尝试一下。
+Blossom has not adopted a software layout and page design similar to Notion because there are already many software with similar interfaces in the market. If you're feeling aesthetically fatigued with these software, perhaps you can give Blossom a try.
 
-### 完善的文件关系 {#references}
+### Comprehensive file relationships {#references}
 
-在你使用一些软件，尤其是公有云厂商的软件时，可能会有下方这些感到苦恼的场景：
+When using certain software, especially those from public cloud providers, you may encounter the following frustrating scenarios:
 
-1. 我有很多的图片，但我不知道这些图片是否在使用，想删却不敢删。
-2. 一张图片被多篇文章使用，当图片需要更新时，每一篇文章都需要修改。
-3. 我误删了某张图片，导致我的文章显示都出现了问题，图片找回困难重重。
-4. 我究竟上传使用了哪些图片？我希望有个像相册一样的功能可以查看和管理他们。
+1. I have many images, but I don't know if they are in use. I want to delete them, but I'm afraid to do so.
+2. One image is used in multiple articles. When the image needs an update, I have to modify each article separately.
+3. I accidentally deleted an image, causing issues with the display of my articles. Retrieving the image is a difficult and cumbersome process.
+4. Which images have I uploaded and used? I wish there was a gallery-like feature to view and manage them.
 
-如果你有这些困惑，也许你可以试试 Blossom，Blossom 提供了完善的**图片管理**，**访勿删**，以及**图片和文章的双向关系绑定**。你可以轻松查看图片被哪些文章所使用，并一键替换他们。
+If you have these concerns, perhaps you can give Blossom a try. Blossom offers comprehensive **image management**，**protection against accidental deletion**，and **bidirectional linking between images and articles**.You can easily see which articles use specific images and replace them with just one click.
 
-<bl-img src="../imgs/pic/pic_reference.png" width="500px"/>
+<bl-img src="../../public/imgs/pic/pic_reference.png" width="500px"/>
 
-### 简单的迁移 {#easy-transfer}
+### Quick Migration {#easy-transfer}
 
-所有图片均不依赖任何的三方图床和存储，只保存在部署的设备上；文章是编辑基于 [Markdown 基本语法](./markdown)，没有破坏性的语法拓展。
+All images are independent of any third-party image hosting and storage. They are only stored on the deployed device ; You can write in [Markdown](./markdown) with non-destructive syntax extensions,content created here can be displayed correctly in any Markdown software.
 
-所有图片和文章都支持一键[备份和导出](./article#backup)，在你不想使用或者想要迁移笔记时，可以在几分钟内轻松转移，Blossom 不会绑架你的数据。导出的文件可以无缝使用 `VS Code` 或 `Obsidian` 等本地软件正常打开。
+All images and articles support one-click [backup and export](./article#backup),making migration easy within minutes. The exported files can seamlessly be opened with local software like VS Code or Obsidian.
 
-### 丰富的附加功能 {#multifunction}
+### Additional Features {#multifunction}
 
-- 📅 [计划安排](./plan)
-- 🏷️ [待办事项](./todo)
-- 🎫 [快捷便签](./note)
-- 🍅 [番茄钟](./article#tomato)
-- 🧰 多用户、字数统计、字数折线图、编辑热力图、天气预报、主题设置...
+- 📅 [Schedule](./plan)
+- 🏷️ [To-Do](./todo)
+- 🎫 [QuickNote](./note)
+- 🍅 [Pomodoro Timer](./article#tomato)
+- 🧰 Multi-user support, word count statistics, word count trend chart, editing heatmap, weather forecast, theme settings, and more...
 
-Blossom 拥有丰富的功能，不仅仅是知识管理，更是一个可以供多人同时使用的全面实用性工具。
+Blossom boasts a wealth of features, serving not only as a knowledge management tool but also as a comprehensive and practical utility for simultaneous multi-user usage.
 
-### 博客 & 移动客户端 {#blog}
+### Blog & Mobile Client {#blog}
 
-自带一个响应式[博客页面](./deploy/blog)，Blossom 有完善的文章上下线管理，PV/UV 访问统计，专题归类分组，可以帮你实现一个动态博客系统。
+Comes with a responsive [blog page](./deploy/blog), Blossom features comprehensive article management, PV/UV access statistics, and categorized topics. It can help you establish a dynamic blogging system.
 
-博客不仅仅是博客，在博客登录后，可以查看所有的计划安排，待办事项、便签，博客也是一个移动客户端。
+The blog is more than just a blog; upon logging in, you can view all your planned schedules, to-do lists, and notes. The blog also functions as a mobile client.
 
 ### API
 
-Blossom 还提供了后台访问接口 API 接口，如果你是开发者，也可以通过 API 来开发自己的博客。
+Blossom also provides a backend access API interface. If you are a developer, you can develop your own blog using the API.
 
 <style scoped>
 .blossom-translate {
