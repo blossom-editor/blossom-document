@@ -1,5 +1,8 @@
-# Blossom 中文文档
+# Blossom Document
 
-[Blossom 笔记软件](https://github.com/blossom-editor/blossom)的中文文档。
+[Blossom](https://github.com/blossom-editor/blossom) Document。
 
-基于 [vitepress](https://vitepress.dev/guide/getting-started) 构建。
+- 中文文档: `docs/guide`
+- English document: `docs/en/guide`
+
+Build by [vitepress](https://vitepress.dev/guide/getting-started)。
