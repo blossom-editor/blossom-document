@@ -1,22 +1,16 @@
 <script setup lang="ts">
-// prettier-ignore
-const sponsorsEspecially = [
-  '支付宝匿名用户', '黑醋栗和丁香', 'Lucky', '支付宝用户-\*\*衡',
-  'Klaus','阿呆吧'
-]
+import { ref,onMounted } from 'vue'
 
-// prettier-ignore
-const sponsors = [
-  'i just walked away🏃 * 2', 'KalyanYang', 'dsx', '熊猫不是猫',
-  '白驹过隙', '支付宝用户-*发', '支付宝用户-*琛', '疾风剑豪索隆',
-  '放羊的星星', '立冬', '给你一支烟', '林诗', '张不甜',
-  'Criesgod', '支付宝用户-*伟', 'Mr_tg000', 'egil',
-  'Glimpse', '支付宝用户-\*\*福', '支付宝用户-\*\*盼', '何其正',
-  '-A明', '开心。', 'Please', '樹梢',
-  '支付宝用户-\*\*耀', 'Crius', '初五', '一巷灯火深',
-  '支付宝用户-\*\*鲲', '木辰音', '宁采臣', '支付宝用户-\*\*雷',
-  '贪吃的康','zhaowuyan','way1on',
-]
+const sponsorsEspecially = ref([])
+const sponsors = ref([])
+onMounted(() => {
+  fetch('https://www.wangyunf.com/bladmin/sponsor/list').then(resp => {
+    resp.json().then((r) => {
+      sponsorsEspecially.value = r.data.special
+      sponsors.value = r.data.sponsors
+    })
+  })
+})
 </script>
 
 <template>
@@ -33,7 +27,7 @@ const sponsors = [
     <div class="sponsor-list">
       <div class="especially">
         特别感谢<br/>
-        <div style="margin-top: 10px;font-size: 15px;">Gratitude</div>
+        <div style="font-size: 15px;">Many thanks</div>
       </div>
       <div class="sponsor-item" v-for="name in sponsorsEspecially">{{ name }}</div>
     </div>
