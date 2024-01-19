@@ -1,62 +1,62 @@
-## 安装客户端并登录 {#install}
+## Install the Client and Log In {#install}
 
-部署成功后即可使用客户端登录，Blossom 提供了两种客户端。
+After successfully deploying, you can use the client to log in. Blossom provides two types of clients:
 
-1. [下载 PC 桌面客户端](../about/download)。
-2. 使用自带的网页客户端。
+1. [Download the PC Desktop Client](../about/download).
+2. Use the built-in web client.
 
-> 网页客户端地址为: `IP:端口(域名)/editor/#/settingindex`
+> The web client address is: `IP:Port(domain)/editor/#/settingindex`
 >
 > ---
 >
-> 例如 IP:端口为`127.0.0.1:9999`，则访问 `http://127.0.0.1:9999/editor/#/settingindex`
+> For example, if the IP:Port is `127.0.0.1:9999`, visit `http://127.0.0.1:9999/editor/#/settingindex`
 >
-> 例如域名为`http://www.abc.com`，则访问`http://www.abc.com/editor/#/settingindex`
+> For example, if the domain is `http://www.abc.com`, visit `http://www.abc.com/editor/#/settingindex`
 >
-> 如果有配置反向代理路径，如`/bl/`，则访问`http://www.abc.com/bl/editor/#/settingindex`
+> If you have configured a reverse proxy path, like `/bl/`, visit `http://www.abc.com/bl/editor/#/settingindex`
 
-:::danger <span style="color:#ea483f">注意！</span>
-这个地址是网页的的访问地址，不是登录地址！是填写在浏览器地址栏的地址！
-<bl-img src="../../../imgs/deploy/client-url.png" width="700px"/>
+:::danger <span style="color:#ea483f">Attention!</span>
+This address is for accessing the web, not the login address! Enter it in the browser's address bar!
+<bl-img src="../../imgs/deploy/client-url.png" width="700px"/>
 :::
 
-打开客户端后，会进入登录页面。
+When you open the client, you will enter the login page.
 
-<bl-img src="../../../imgs/setting/login.png" width="700px"/>
+<bl-img src="../../imgs/setting/login.png" width="700px"/>
 
-在上方输入后台的访问地址，然后使用默认用户名密码进行登录
+Enter the access address of the backend in the top, then log in using the default username and password.
 
-- 用户名为`blos`，密码为`blos`
+- Username: `blos`, Password: `blos`
 
-:::danger <span style="color:#ea483f">注意！</span>
-访问地址中不包含`/editor/#/settingindex`!!!
+:::danger <span style="color:#ea483f">Attention!</span>
+The access address does not include `/editor/#/settingindex`!!!
 :::
 
-登录后建议将默认用户修改用户名和密码后，做为你的主账号使用，**因为后台自带的博客端仅支持用户 ID 为`1`的用户**。
+After logging in, it's recommended to change the default user's username and password to use it as your main account, **because the built-in blog part of the backend only supports users with ID `1`**.
 
-> 查看[如何修改及创建用户?](../setting)
+> See [How to Modify and Create Users?](../setting)
 
-## 快速设置 {#quick-setting}
+## Quick Setup {#quick-setting}
 
-如果你是初次使用，那么在页面的右上角会看到如下提示。
+If you are a first-time user, you will see the following prompt in the upper right corner of the page.
 
-<bl-img src="../../../imgs/setting/caution.gif" width="300px"/>
+<bl-img src="../../imgs/setting/caution.gif" width="300px"/>
 
-点击黄色闪烁图标，会进入如下页面。
+Click on the flashing yellow icon to enter the following page.
 
-<bl-img src="../../../imgs/setting/caution-popover.png" width="400px"/>
+<bl-img src="../../imgs/setting/caution-popover.png" width="400px"/>
 
-点击上方任意一个红色框，即可开始快速配置。
+Click on any red box above to start quick configuration.
 
-<bl-img src="../../../imgs/setting/quick-setting-pic.png" width="650px"/>
+<bl-img src="../../imgs/setting/quick-setting-pic.png" width="650px"/>
 
-点击【是】，进入博客配置。
+Click on [Yes] to enter the blog configuration.
 
-<bl-img src="../../../imgs/setting/quick-setting-blog.png" width="650px"/>
+<bl-img src="../../imgs/setting/quick-setting-blog.png" width="650px"/>
 
-通常情况下点击【确认使用自带博客】，即可配置完成。
+Usually, clicking on [Confirm using the built-in blog] will complete the configuration.
 
-- 更多关于快速设置的功能可查阅[设置](../setting)。
-- 更多关于博客的配置信息可查阅[博客/移动端页面](./blog)。
+- For more about quick setup features, see [Settings](../setting).
+- For more information about blog configuration, see [Blog/Mobile Page](./blog).
 
-<bl-img src="../../../imgs/setting/quick-setting-completed.png" width="650px"/>
+<bl-img src="../../imgs/setting/quick-setting-completed.png" width="650px"/>

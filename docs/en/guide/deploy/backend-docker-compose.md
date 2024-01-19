@@ -1,104 +1,104 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { info } from '../../../scripts/stat-api'
+import { info } from '../../scripts/stat-api'
 
 onMounted(() => {
-  info()
+   info()
 })
 </script>
 
-<div class="docker">使用 Docker Compose</div>
+<div class="docker">Using Docker Compose</div>
 
-Blossom 依赖 `JDK8` + `MySQL8`。如果你拉取镜像缓慢，也可以通过[百度网盘下载](../about/download#baidu)镜像文件。
+Blossom depends on `JDK8` + `MySQL8`. If you are slow to pull the image, you can also download the image file through [Baidu Netdisk] (../about/download#baidu).
 
-该方式适合没有安装过 MYSQL 的场景，会连同 MySQL 一起部署，这是最简单快捷的部署方式。
+This method is suitable for scenarios where MYSQL has not been installed. It will be deployed together with MySQL. This is the simplest and fastest deployment method.
 
-## 确认是否安装 Docker Compose {#check-docker-compose}
+## Confirm whether Docker Compose is installed {#check-docker-compose}
 
-执行下方命令，查看是否安装了 Docker Compose，如果安装的较新版本的 Docker，通常会自动安装 Docker Compose。
+Execute the following command to check whether Docker Compose is installed. If a newer version of Docker is installed, Docker Compose will usually be installed automatically.
 
 ```bash
 docker-compose --version
 ```
 
-## 创建 `blossom-mysql8.yaml` 文件 {#create-yaml-file}
+## Create `blossom-mysql8.yaml` file {#create-yaml-file}
 
-下方是 docker compose 示例文件，你需要创建一个 `blossom-mysql8.yaml` 文件，然后将下列内容复制到文件中，<span style="color:red">**并且修改其中标识为红色背景的内容**</span>。
+Below is a docker compose sample file. You need to create a `blossom-mysql8.yaml` file, then copy the following content into the file, <span style="color:red">** and modify the content marked with a red background **</span>.
 
 ```yml:line-numbers
 version: "3.8"
 
 networks:
-  blossomnet:
-    driver:
-      bridge
+   blossomnet:
+     driver:
+       bridge
 
 services:
-  blossom:
-    image: jasminexzzz/blossom:latest
-    container_name: blossom-backend
-    volumes:
-      # 【需修改】 // [!code error]
-      # 将冒号(:)前的部分改成你运行 docker 的设备的某个路径，不要修改冒号后面的内容。  // [!code error]
-      # 如果是windows环境，可以使用/c/home/bl/img/来指定磁盘 // [!code error]
-      - /d/blossom/bl/:/home/bl/ // [!code error]
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://blmysql:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8
-      SPRING_DATASOURCE_USERNAME: root
-      # 【可选修改】配置数据库密码，这个改了下方的黄色部分也要修改 // [!code warning]
-      SPRING_DATASOURCE_PASSWORD: jasmine888 // [!code warning]
-    ports:
-      - "9999:9999"
-    networks:
-      - blossomnet
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9999/sys/alive"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 5s
-    restart: always
-    depends_on:
-      blmysql:
-        condition: service_healthy
-  blmysql:
-    image: mysql:8.0.31
-    container_name: blossom-mysql
-    restart: on-failure:3
-    volumes:
-      # 【需修改】将冒号(:)前的部分改成你运行 docker 的设备的某个路径，不要修改冒号后面的内容。  // [!code error]
-      - /d/blossom/Docker/mysql/data:/var/lib/mysql // [!code error]
-      - /d/blossom/Docker/mysql/log:/var/log/mysql // [!code error]
-      - /d/blossom/Docker/mysql/mysql-files/log:/var/lib/mysql-files // [!code error]
-    environment:
-      MYSQL_DATABASE: blossom
-      # 【可选修改】这个改了上方的黄色部分也要修改。需要与 services.blossom.environment.SPRING_DATASOURCE_PASSWORD 相同 // [!code warning]
-      MYSQL_ROOT_PASSWORD: jasmine888 // [!code warning]
-      LANG: C.UTF-8
-      TZ: Asia/Shanghai
-    ports:
-      - "3306:3306"
-    networks:
-      - blossomnet
-    healthcheck:
-      # 【可选修改】如果修改了上方的数据库密码「MYSQL_ROOT_PASSWORD」，下方的 -p 后的密码也要修改 // [!code warning]
-      test: ["CMD", "mysqladmin", "-uroot", "-pjasmine888", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 3s
-      retries: 12
+   blossom:
+     image: jasminexzzz/blossom:latest
+     container_name: blossom-backend
+     volumes:
+       # [Requires modification] // [!code error]
+       # Change the part before the colon (:) to a path of the device where you run docker. Do not modify the content after the colon. // [!code error]
+       # If it is a windows environment, you can use /c/home/bl/img/ to specify the disk // [!code error]
+       - /d/blossom/bl/:/home/bl/ // [!code error]
+     environment:
+       SPRING_DATASOURCE_URL: jdbc:mysql://blmysql:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8
+       SPRING_DATASOURCE_USERNAME: root
+       # [Optional modification] Configure the database password. If you change the yellow part below, you must also modify it // [!code warning]
+       SPRING_DATASOURCE_PASSWORD: jasmine888 // [!code warning]
+     ports:
+       - "9999:9999"
+     networks:
+       - blossomnet
+     healthcheck:
+       test: ["CMD", "curl", "-f", "http://localhost:9999/sys/alive"]
+       interval: 30s
+       timeout: 10s
+       retries: 3
+       start_period: 5s
+     restart: always
+     depends_on:
+       blmysql:
+         condition: service_healthy
+   blmysql:
+     image: mysql:8.0.31
+     container_name: blossom-mysql
+     restart:on-failure:3
+     volumes:
+       # [Modification required] Change the part before the colon (:) to a path of the device where you run docker. Do not modify the content after the colon. // [!code error]
+       - /d/blossom/Docker/mysql/data:/var/lib/mysql // [!code error]
+       - /d/blossom/Docker/mysql/log:/var/log/mysql // [!code error]
+       - /d/blossom/Docker/mysql/mysql-files/log:/var/lib/mysql-files // [!code error]
+     environment:
+       MYSQL_DATABASE: blossom
+       # [Optional modification] This change also needs to modify the yellow part above. Needs to be the same as services.blossom.environment.SPRING_DATASOURCE_PASSWORD // [!code warning]
+       MYSQL_ROOT_PASSWORD: jasmine888 // [!code warning]
+       LANG: C.UTF-8
+       TZ: Asia/Shanghai
+     ports:
+       - "3306:3306"
+     networks:
+       - blossomnet
+     healthcheck:
+       # [Optional modification] If the database password "MYSQL_ROOT_PASSWORD" above is modified, the password after -p below also needs to be modified // [!code warning]
+       test: ["CMD", "mysqladmin", "-uroot", "-pjasmine888", "ping", "-h", "localhost"]
+       interval: 10s
+       timeout: 3s
+       retries: 12
 ```
 
-该 Docker Compose 包含 MySQL，MySQL 容器在初始化时会自动创建数据库 Blossom。
+This Docker Compose contains MySQL, and the MySQL container automatically creates the database Blossom when it is initialized.
 
-Docker Compose 源文件可前往 [blossom-mysql8.yaml](https://github.com/blossom-editor/blossom/blob/dev/docker/compose/blossom-mysql8.yaml) 进行查看。
+Docker Compose source files can be viewed at [blossom-mysql8.yaml](https://github.com/blossom-editor/blossom/blob/dev/docker/compose/blossom-mysql8.yaml).
 
-## 启动 Docker Compose {#start-docker-compose}
+## Start Docker Compose {#start-docker-compose}
 
-在 `blossom-mysql8.yaml` 文件所在路径下执行以下命令，然后请耐心等待镜像拉取和启动。
+Execute the following command in the path where the `blossom-mysql8.yaml` file is located, and then please wait patiently for the image to be pulled and started.
 
 ```bash
 docker compose -f blossom-mysql8.yaml up -d
-# 如果命令无效，可使用下方命令尝试
+# If the command does not work, you can try the following command
 docker-compose -f blossom-mysql8.yaml up -d
 ```
 
@@ -108,13 +108,13 @@ docker-compose -f blossom-mysql8.yaml up -d
 
 <style scoped>
 .docker {
-  width:100%;
-  height:60px;
-  color: #fff;
-  background-image:linear-gradient(135deg,#1D63ED 0%,#1D62EDBA 50%,#1D62ED4F 100%);
-  font-size: 40px;
-  line-height: 60px;
-  padding-left:20px;
-  border-radius: 2px;
+   width:100%;
+   height:60px;
+   color: #fff;
+   background-image:linear-gradient(135deg,#1D63ED 0%,#1D62EDBA 50%,#1D62ED4F 100%);
+   font-size: 40px;
+   line-height: 60px;
+   padding-left:20px;
+   border-radius: 2px;
 }
 </style>
