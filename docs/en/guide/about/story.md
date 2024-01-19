@@ -1,17 +1,19 @@
-## Blossom 开发故事 📝 {#story}
+## Blossom Development Story 📝 {#story}
 
-Blossom 自 2023 年 06 月 10 日写下第一行代码，2023 年 08 月 10 日发布了 `v1.0.0` 版本，一直开发至今。
+Blossom wrote its first line of code on June 10, 2023, and released version `v1.0.0` on August 10, 2023. The development has continued since then.
 
-作者本人最初使用印象笔记，然后在 17、18 年开始使用 IntelliJ IDEA 记录笔记和代码。后在 19 年左右开始有了写博客的需求，同时因为当时正在学习一些前端知识，转而开始自己开发笔记软件，这个软件也可以认为是 Blossom 的前身。
+The author initially used Evernote and later switched to using IntelliJ IDEA to record notes and code around 2017-2018. Around 2019, the author felt the need to write blogs and, at the same time, started developing note-taking software due to learning some frontend knowledge. This software can also be considered as the predecessor of Blossom.
 
-但限于当时水平有限，并且当时使用的 [editor.md](https://github.com/pandao/editor.md) 有双屏滚动不同步的问题。所以在文章编辑上一直比较别扭。
+However, due to limited skills at that time and issues with dual-screen scrolling synchronization in [editor.md](https://github.com/pandao/editor.md), the editing of articles was always awkward.
 
-随后语雀火了起来，蚂蚁背书，玉伯带队，优秀的自研富文本编辑器都让人觉得语雀是一个难得的优秀国产笔记软件。我也开始向语雀转移自己的笔记，并且基于语雀的 API 开发了一个[博客](https://gitee.com/jasminexz/open-blog)。
+Later on, Yuque gained popularity, endorsed by Ant Financial, led by Evan You (also known as Yu), and equipped with an excellent self-developed rich-text editor, making it a rare excellent domestic note-taking software. The author started migrating their notes to Yuque and developed a [blog](https://gitee.com/jasminexz/open-blog) based on Yuque's API.
 
 <bl-img src="../imgs/blog/home_yuque.jpg" width="700px" :shadow="false"/>
 
-这个其实也是 Blossom 博客端的前身。
+This was actually the predecessor of the Blossom blog.
 
-语雀用了两三年，一切看起来那么美好，直到 22 年底，语雀开始限制免费用户文档数，限制公开分享。甚至在最初的收费标准中，暗黑模式都需要开通会员才能使用。语雀因此上了一波热搜，玉伯不得不在短时间内紧急修改语雀的收费模式。
+After using Yuque for two to three years, everything seemed perfect until the end of 2022 when Yuque started limiting the number of documents for free users and restricting public sharing. Even in the initial pricing plan, dark mode required a membership to use. This led to a wave of hot searches about Yuque, and Evan You had to urgently modify the pricing model.
 
-其实商业软件收费很正常，存储空间、网络宽带、公网访问涉及到的审核等问题都有需要企业花费巨大的成本。但语雀收费半年不到，玉伯离职了，那时候我就觉得语雀这个产品可能会被放弃了。收费就是蚂蚁给语雀的最后一次机会。
+In fact, it's normal for commercial software to charge fees as there are significant costs involved in storage space, network bandwidth, and the review process for public access. However, within less than half a year of charging, Evan You resigned, and at that time, I felt that Yuque might be abandoned. Charging seemed to be the last chance given by Ant Financial to Yuque.
+
+So, I decided to migrate my notes once again,
