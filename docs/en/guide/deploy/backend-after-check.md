@@ -1,38 +1,38 @@
-## 查看配置项是否正确 {#check-prop}
+# Check Configuration Items
 
-在启动日志的最上方会显示你配置的各项参数。
+The various parameters you configured will be displayed at the top of the startup log.
 
-<bl-img src="../../../imgs/deploy/backend-before-check.png" width="700px"/>
+<bl-img src="../../imgs/deploy/backend-before-check.png" width="700px"/>
 
-## 检查是否启动成功 {#check-start}
+## Check if the Application Has Started Successfully {#check-start}
 
-### 方法一：查看日志
+### Method One: View Logs
 
-如果日志的最底部显示以下内容，则说明应用启动成功。
+If the bottom of the log displays the following content, it means the application has started successfully.
 
-<bl-img src="../../../imgs/deploy/backend-success.png" width="700px"/>
+<bl-img src="../../imgs/deploy/backend-success.png" width="700px"/>
 
-### 方法二：直接访问
+### Method Two: Direct Access
 
-比方你部署在本地，则可以访问`127.0.0.1:9999`，如果返回以下内容，则说明部署成功。
+For example, if you deploy locally, you can access `127.0.0.1:9999`. If it returns the following content, it means the deployment was successful.
 
 ```json
 {
   "code": "AUTH-40101",
-  "msg": "无效的授权信息",
-  "ex": "无效的授权信息",
+  "msg": "Invalid authorization information",
+  "ex": "Invalid authorization information",
   "data": null
 }
 ```
 
-该提示意思是你没有登录，现在就可以使用客户端登录使用了。
+This message means you are not logged in, and you can now log in to use the client.
 
-<!-- 或者访问`localhost:9999/sys/alive`，返回以下内容则为成功。
+<!-- Or visit `localhost:9999/sys/alive`. If it returns the following content, it means success.
 
 ```json
 {
   "code": "20000",
-  "msg": "成功",
-  "data": "这里是 [blossom-backend] 服务器 [dev] 环境"
+  "msg": "Success",
+  "data": "This is the [blossom-backend] server [dev] environment"
 }
 ``` -->

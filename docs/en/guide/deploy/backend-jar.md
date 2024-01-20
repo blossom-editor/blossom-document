@@ -8,72 +8,72 @@ onMounted(() => {
 </script>
 
 <div class="jar">
-使用 Jar 包部署
+Deploying with Jar Package
 </div>
 
-该种方式适合物理机中已经有 `JDK8` + `MySQL8`，仅需要 Jar 包进行部署的场景。
+This method is suitable for scenarios where a physical machine already has `JDK8` + `MySQL8` installed, and only the Jar package is needed for deployment.
 
-## 创建数据库 {#create-database}
+## Create Database {#create-database}
 
-你需要在 MySQL 中先创建一个数据库，数据库名称需要与启动参数 `--spring.datasource.url` 配置的数据库名称相同，如果不需要自定义数据库名称，你可以直接使用如下语句创建数据库：
+You need to create a database in MySQL first. The database name needs to be the same as the one configured in the startup parameter `--spring.datasource.url`. If you don't need to customize the database name, you can directly use the following statement to create the database:
 
 ```sql
 CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 ```
 
-## 下载 Jar 包 {#dowload-jar}
+## Download Jar Package {#dowload-jar}
 
-前往下载 Jar 包：https://github.com/blossom-editor/blossom/releases
+Go to the following link to download the Jar package:https://github.com/blossom-editor/blossom/releases
 
-## 部署 Jar 包 {#deploy-jar}
+## Deploy Jar Package {#deploy-jar}
 
-将 Jar 包上传到服务器中，在 Jar 包所在路径下使用如下命令进行部署。如果使用 Windows，需要把每一行末尾的`\`删除，并将所有命令写成一行。
+Upload the Jar package to the server and use the following command in the directory where the Jar package is located. If using Windows, remove the `\` at the end of each line and write all commands in one line.
 
 ```bash
 java -jar ./backend-blossom.jar \
-  # 如果 9999 端口已被占用，注意修改// [!code warning]
+  # If port 9999 is already in use, modify it carefully// [!code warning]
  --server.port=9999 \// [!code error]
-  #【需修改】配置图片保存的磁盘路径// [!code error]
+  #【Modify Required】Configure the disk path for saving images// [!code error]
  --project.iaas.blos.default-path="/home/bl/img" \// [!code error]
-  #【需修改】配置数据库访问地址// [!code error]
+  #【Modify Required】Configure the database access address// [!code error]
  --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" \// [!code error]
-  #【需修改】配置数据库用户名// [!code error]
+  #【Modify Required】Configure the database username// [!code error]
  --spring.datasource.username=root \// [!code error]
-  #【需修改】配置数据库密码// [!code error]
+  #【Modify Required】Configure the database password// [!code error]
  --spring.datasource.password=jasmine888 &// [!code error]
 ```
 
-:::warning 注意
-如果命令错误：1. 请将命令中的注释删除。2. 将每一行后的斜杠`\`删除。3. 将所有命令写为一行。
+:::warning Caution
+If the command is incorrect: 1. Remove the comments in the command. 2. Remove the backslash `\` at the end of each line. 3. Write all commands on one line.
 :::
 
-参数说明：
+Parameter explanation:
 
-| 参数                             | 说明                             |
+| Parameter                        | Description                      |
 | -------------------------------- | -------------------------------- |
-| --server.port                    | 【可修改】应用端口               |
-| --project.iaas.blos.default-path | 【需修改】配置图片保存的磁盘路径 |
-| --spring.datasource.url          | 【需修改】配置数据库访问地址     |
-| --spring.datasource.username     | 【需修改】配置数据库用户名       |
-| --spring.datasource.password     | 【需修改】配置数据库密码         |
+| --server.port                    | 【Can be modified】Application port|
+| --project.iaas.blos.default-path | 【Modify Required】Configure the disk path for saving images|
+| --spring.datasource.url          | 【Modify Required】Configure the database access address|
+| --spring.datasource.username     | 【Modify Required】Configure the database username|
+| --spring.datasource.password     | 【Modify Required】Configure the database password|
 
-## 使用脚本部署 {#use-sh}
+## Deploy Using Script {#use-sh}
 
-除了使用上述命令启动 Jar 包之外，你也可以使用如下脚本，该脚本会自动关闭当前运行的后台程序，并重启当前路径下的 Jar 包。
+In addition to starting the Jar package with the above command, you can also use the following script. This script will automatically close the currently running background program and restart the Jar package in the current path.
 
-> 脚本地址：https://github.com/blossom-editor/blossom/blob/dev/blossom-backend/script/restart-springboot.sh
+> Script link:https://github.com/blossom-editor/blossom/blob/dev/blossom-backend/script/restart-springboot.sh
 
 ```bash
 #!/dash
-# 重启 blossom
+# Restart blossom
 pid=`ps aux | grep backend-blossom.jar | grep -v grep | awk '{print $2}'`
-echo "进程ID : " $pid
+echo "Process ID: " $pid
 kill -9 $pid
-echo "进程" $pid "已被杀死"
-echo "开始重启 backend-blossom 服务器"
-# 注意修改相关参数，与上方介绍的相同 // [!code error]
+echo "Process" $pid "has been killed"
+echo "Restarting the backend-blossom server"
+# Remember to modify related parameters, same as above introduction // [!code error]
 nohup java -jar ./backend-blossom.jar --server.port=9999 --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8" --spring.datasource.username=root --spring.datasource.password=jasmine888 &
-echo "backend-blossom 正在启动,请查看日志 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓"
+echo "backend-blossom is starting, please check the log ↓↓↓↓↓↓↓↓↓↓↓↓↓↓"
 ```
 
 <!--@include: ./backend-after-check.md-->

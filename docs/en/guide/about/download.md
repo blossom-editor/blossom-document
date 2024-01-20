@@ -1,59 +1,59 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { info } from '../../../scripts/stat-api'
+import { info } from '../../scripts/stat-api'
 
 onMounted(() => {
   info()
 })
 </script>
 
-# 下载
+# 📥 Download
 
-你可以通过以下方式下载客户端、后台应用、后台镜像。
+You can download the client, backend application, and backend image through the following methods.
 
-:::warning 提示
-如果你无法访问 Dockerhub 或链接缓慢，可以在[百度网盘](./download#baidu)中下载镜像文件。
+:::warning Note
+If you cannot access Dockerhub or experience slow connections, you can download the image files on [Baidu Cloud](./download#baidu).
 :::
 
 ## Github {#github}
 
-> 前往 Github 下载：https://github.com/blossom-editor/blossom/releases
+> Go to Github for downloads: https://github.com/blossom-editor/blossom/releases
 
-<bl-img src="../../../imgs/deploy/download_github.png" width="200px"/>
+<bl-img src="../../imgs/deploy/download_github.png" width="200px"/>
 
-- `backend-blossom.jar`：后台 Java 包。
-- `blossom-x.y.z.dmg`：MacOS ARM 客户端。
-- `blossom-x.y.z.-setup.exe`：Windows 客户端。
-- `blossom-x.y.z.-web-blog.zip`：博客网页部署包。
-- `blossom-x.y.z.-web-client.zip`：客户端网页部署包。
+- `backend-blossom.jar`: Backend Java package.
+- `blossom-x.y.z.dmg`: MacOS ARM client.
+- `blossom-x.y.z.-setup.exe`: Windows client.
+- `blossom-x.y.z.-web-blog.zip`: Blog webpage deployment package.
+- `blossom-x.y.z.-web-client.zip`: Client webpage deployment package.
 
-:::tip 提示
-如果你需要 Docker 镜像文件，请在百度网盘中下载。
+:::tip Note
+If you need Docker image files, please download them from Baidu Cloud.
 :::
 
-## 百度网盘 {#baidu}
+## Baidu Cloud {#baidu}
 
-> 前往百度网盘下载：https://pan.baidu.com/s/1X4ViDxJ2gm2w95XlcpSCTg?pwd=uksl
+> Go to Baidu Cloud for downloads: https://pan.baidu.com/s/1X4ViDxJ2gm2w95XlcpSCTg?pwd=uksl
 >
-> 提取码`uksl`
+> Extraction code `uksl`
 
-<bl-img src="../../../imgs/deploy/download_baidu.png" width="300px"/>
+<bl-img src="../../imgs/deploy/download_baidu.png" width="300px"/>
 
-百度网盘除了包含各个客户端和后台部署文件之外，还包含 Docker 镜像文件供下载。
+In addition to various client and backend deployment files, Baidu Cloud also includes Docker image files for download.
 
-- `backend-blossom.jar`：后台 Java 包。
-- `blossom-x.y.z.dmg`：MacOS ARM 客户端。
-- `blossom-x.y.z.-setup.exe`：Windows 客户端。
-- `blossom-x.y.z.-web-blog.zip`：博客网页部署包。
-- `blossom-x.y.z.-web-client.zip`：客户端网页部署包。
-- `jasminexzzz-blossom-arm64-x-y-z.tar.zip`：MacOS ARM 架构 Docker 镜像。
-- `jasminexzzz-blossom-amd64-x-y-z.tar.zip`：Windows/Linux Docker 镜像。
-- `mysql-8-0-31.zip`：MySQL 镜像。
+- `backend-blossom.jar`: Backend Java package.
+- `blossom-x.y.z.dmg`: MacOS ARM client.
+- `blossom-x.y.z.-setup.exe`: Windows client.
+- `blossom-x.y.z.-web-blog.zip`: Blog webpage deployment package.
+- `blossom-x.y.z.-web-client.zip`: Client webpage deployment package.
+- `jasminexzzz-blossom-arm64-x-y-z.tar.zip`: MacOS ARM architecture Docker image.
+- `jasminexzzz-blossom-amd64-x-y-z.tar.zip`: Windows/Linux Docker image.
+- `mysql-8-0-31.zip`: MySQL image.
 
-## 群下载
+## Group Download
 
-加群联系作者获取安装包，[查看群号](./contact)。
+Join the group to contact the author for installation packages, [view group number](./contact).
 
-## 下载后试用 {#tryuse}
+## Try After Downloading {#tryuse}
 
-[如何试用？](../tryuse)
+[How to try it out?](../tryuse)

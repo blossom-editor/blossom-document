@@ -15,69 +15,70 @@ const toRoute = (route) => {
 
 </script>
 
-# 部署 Blossom
+# Deploy Blossom
 
-:::danger 在阅读如何部署前，请你务必先阅读下面内容：
+:::danger Before learning how to deploy, please make sure to read the following content:
 
-由于独立部署服务器需要一些简单的专业知识，所以如果你不了解如何在机器或 Docker 中部署项目，那么建议你先[试用](../tryuse)本应用，若觉得符合你的需求，可以[进群或咨询作者](../about/contact)如何进行安装部署。
+Due to the need for some simple professional knowledge in deploying an independent server, if you do not understand how to deploy the project on a machine or Docker, it is recommended to [try](../tryuse) the application first. If you find it suitable for your needs, you can [join the group or consult the author](../about/contact) on how to install and deploy.
+
 :::
 
-作者建议使用 https + 域名来访问你的服务器，域名价格通常在 20~40 元/年，Https 证书可以免费申请，这样访问图片时将使用域名而不是 IP，在你更换服务器时，就不需要再修改图片路径了。
+The author recommends using HTTPS + domain name to access your server. Domain name prices are usually between 20~40 CNY per year, and HTTPS certificates can be obtained for free. This way, when accessing images, the domain name will be used instead of the IP address. When you change servers, you don't need to modify the image paths again.
 
-Blossom 使用 2 核 2G，2M ~ 3M 带宽的服务器即可流畅使用。所以服务器+域名的总成本大约在 100 ~ 200 元/年上下。这样和其他笔记软件的会员费用相差不大，并且数据更加安全可控。在不想作为云端笔记使用时，也可以接着作为本地应用部署使用<span style="color:#A9A9A9">(_Blossom 提供了一个全量导出功能，可以将笔记图片链接修改为本地图片路径_)。</span>
+Blossom runs smoothly on a server with 2 cores, 2GB of RAM, and 2M~3M bandwidth. So the total cost of a server + domain name is approximately 100~200 CNY per year. This is not much different from the membership fees of other note-taking software, and the data is more secure and controllable. When you don't want to use it as a cloud note, you can still use it as a locally deployed application<span style="color:#A9A9A9">(_Blossom provides a full export function, which can modify the note image links to local image paths_).</span>
 
-## 如何部署后台？ {#how-to-deploy-backend}
+## How to Deploy Backend? {#how-to-deploy-backend}
 
-Blossom 依赖 `JDK8` + `Mysql8`，你可以从下方选择适合自己的部署方式。也可以参考其他用户所写的文章：
+Blossom depends on `JDK8` + `Mysql8`. You can choose a deployment method that suits you from below. You can also refer to articles written by other users:
 
-> [前往查看 Nas 等环境的部署方式](./backend-other)
+> [Go to view the deployment methods for environments like Nas](./backend-other)
 
 <div class="deploy-type">
-  <div class="item docker" @click="toRoute('/en/guide/deploy/backend-docker')">
-    <div class="title">使用 Dockerhub 公共镜像</div>
-    <p class="desc">不包含数据库的后台应用镜像, 适用于已经安装了 MySQL 的情况。</p>
+  <div class="item docker" @click="toRoute('/guide/deploy/backend-docker')">
+    <div class="title">Use Dockerhub Public Image</div>
+    <p class="desc">Backend application image without a database, suitable for situations where MySQL is already installed.</p>
   </div>
-  <div class="item docker" @click="toRoute('/en/guide/deploy/backend-docker-compose')">
-    <div class="title">使用 Docker Compose 构建</div>
-    <p class="desc">适用于未安装 MySQL，可以连同 MySQL 镜像一起拉取并部署。</p>
-    <div class="tag">推荐</div>
+  <div class="item docker" @click="toRoute('/guide/deploy/backend-docker-compose')">
+    <div class="title">Build with Docker Compose</div>
+    <p class="desc">Suitable for situations where MySQL is not installed. Can pull and deploy the MySQL image together.</p>
+    <div class="tag">Recommended</div>
   </div>
 </div>
 
 <div class="deploy-type">
-  <div class="item idea" @click="toRoute('/en/guide/deploy/backend-jar')">
-    <div class="title">使用 Jar 包部署</div>
-    <p class="desc">适用与已有 JDK + MySQL 环境，仅用命令或脚本就可部署后台应用的场景。</p>
+  <div class="item idea" @click="toRoute('/guide/deploy/backend-jar')">
+    <div class="title">Deploy with Jar Package</div>
+    <p class="desc">Suitable for environments with existing JDK + MySQL. The backend application can be deployed with just a command or script.</p>
   </div>
-  <div class="item idea" @click="toRoute('/en/guide/deploy/backend-idea')">
-    <div class="title">使用 Idea 插件部署</div>
-    <p class="desc">适用于开发者更改源码后部署到服务器中。</p>
+  <div class="item idea" @click="toRoute('/guide/deploy/backend-idea')">
+    <div class="title">Deploy with Idea Plugin</div>
+    <p class="desc">Suitable for developers who modify the source code and deploy it to the server.</p>
   </div>
 </div>
 
 <div class="deploy-type">
 </div>
 
-## 如何部署页面？{#how-to-deploy-web}
+## How to Deploy Web? {#how-to-deploy-web}
 
 <div class="deploy-type">
-  <div class="item client" @click="toRoute('/en/guide/deploy/client')">
-    <div class="title">客户端网页版</div>
-    <p class="desc">查看如何部署网页版客户端。</p>
+  <div class="item client" @click="toRoute('/guide/deploy/client')">
+    <div class="title">Web Version of the Client</div>
+    <p class="desc">Learn how to deploy the web version of the client.</p>
   </div>
-  <div class="item blog" @click="toRoute('/en/guide/deploy/blog')">
-    <div class="title">博客页面</div>
-    <p class="desc">查看如何部署博客，以及如何进行自定义配置。</p>
+  <div class="item blog" @click="toRoute('/guide/deploy/blog')">
+    <div class="title">Blog Page</div>
+    <p class="desc">Learn how to deploy a blog and how to customize the configuration.</p>
   </div>
 </div>
 
-## 后台配置参数 {#backend-props}
+## Backend Configuration Parameters {#backend-props}
 
-请前往 [后台配置项](./backend-props) 查看。
+Please go to [Backend Configuration Items](./backend-props) for details.
 
-## 常见问题 {#faq}
+## Frequently Asked Questions {#faq}
 
-请前往 [FAQ](./faq) 查看。
+Please go to [FAQ](./faq) for details.
 
 <style scoped>
 .deploy-type {
