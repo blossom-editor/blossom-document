@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { VPTeamMembers } from 'vitepress/theme'
 import { onMounted } from 'vue'
-import { info } from '../../scripts/stat-api'
-import sponsors from '../../scripts/sponsors'
+import { info } from '../../../scripts/stat-api'
+import sponsors from '../../../scripts/sponsors'
 
 onMounted(() => {
   info()
@@ -24,7 +24,7 @@ const members = [
 
 <br/>
 <br/>
-<bl-img src="../../imgs/blossom/logo.svg" width="150px" :shadow="false" :drop-shadow="true"/>
+<bl-img src="../../../imgs/blossom/logo.svg" width="150px" :shadow="false" :drop-shadow="true"/>
 
 Hello! I am the author of Blossom note-taking software, a full-time independent developer exploring new possibilities. You can call me Little Thief.
 
@@ -40,17 +40,17 @@ You can sponsor Blossom in several ways.
 
 <div class="sponsor-channel">
   <div class="item">
-    <bl-img src="../../imgs/blossom/wechat.png" />
+    <bl-img src="../../../imgs/blossom/wechat.png" />
     <div class="name">WeChat</div>
   </div>
 
   <div class="item middle">
-    <bl-img src="../../imgs/blossom/ali.png" />
+    <bl-img src="../../../imgs/blossom/ali.png" />
     <div class="name">Alipay<br/>Suggest including a nickname</div>
   </div>
   
   <div class="item">
-    <bl-img src="../../imgs/blossom/aifadian.png" />
+    <bl-img src="../../../imgs/blossom/aifadian.png" />
     <div class="name">Aifadian</div>
   </div>
 </div>

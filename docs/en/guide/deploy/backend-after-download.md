@@ -17,12 +17,12 @@ After successfully deploying, you can use the client to log in. Blossom provides
 
 :::danger <span style="color:#ea483f">Attention!</span>
 This address is for accessing the web, not the login address! Enter it in the browser's address bar!
-<bl-img src="../../imgs/deploy/client-url.png" width="700px"/>
+<bl-img src="../../../imgs/deploy/client-url.png" width="700px"/>
 :::
 
 When you open the client, you will enter the login page.
 
-<bl-img src="../../imgs/setting/login.png" width="700px"/>
+<bl-img src="../../../imgs/setting/login.png" width="700px"/>
 
 Enter the access address of the backend in the top, then log in using the default username and password.
 
@@ -40,23 +40,23 @@ After logging in, it's recommended to change the default user's username and pas
 
 If you are a first-time user, you will see the following prompt in the upper right corner of the page.
 
-<bl-img src="../../imgs/setting/caution.gif" width="300px"/>
+<bl-img src="../../../imgs/setting/caution.gif" width="300px"/>
 
 Click on the flashing yellow icon to enter the following page.
 
-<bl-img src="../../imgs/setting/caution-popover.png" width="400px"/>
+<bl-img src="../../../imgs/setting/caution-popover.png" width="400px"/>
 
 Click on any red box above to start quick configuration.
 
-<bl-img src="../../imgs/setting/quick-setting-pic.png" width="650px"/>
+<bl-img src="../../../imgs/setting/quick-setting-pic.png" width="650px"/>
 
 Click on [Yes] to enter the blog configuration.
 
-<bl-img src="../../imgs/setting/quick-setting-blog.png" width="650px"/>
+<bl-img src="../../../imgs/setting/quick-setting-blog.png" width="650px"/>
 
 Usually, clicking on [Confirm using the built-in blog] will complete the configuration.
 
 - For more about quick setup features, see [Settings](../setting).
 - For more information about blog configuration, see [Blog/Mobile Page](./blog).
 
-<bl-img src="../../imgs/setting/quick-setting-completed.png" width="650px"/>
+<bl-img src="../../../imgs/setting/quick-setting-completed.png" width="650px"/>

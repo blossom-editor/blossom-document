@@ -8,7 +8,7 @@ docker logs blossom-backend
 
 The various parameters you configured will be displayed at the top of the startup log.
 
-<bl-img src="../../imgs/deploy/backend-before-check.png" width="700px"/>
+<bl-img src="../../../imgs/deploy/backend-before-check.png" width="700px"/>
 
 ## Check if the Application Has Started Successfully {#check-start}
 
@@ -22,7 +22,7 @@ docker logs blossom-backend
 
 If the bottom of the log displays the following content, it means the container has started successfully.
 
-<bl-img src="../../imgs/deploy/backend-success.png" width="700px"/>
+<bl-img src="../../../imgs/deploy/backend-success.png" width="700px"/>
 
 ### Method Two: Direct Access
 

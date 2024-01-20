@@ -18,24 +18,24 @@ export const en = {
       {
         text: 'v1.12.0',
         items: [
-          { text: '更新日志', link: '/en/guide/changelog' },
-          { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },
-          { text: '升级至 1.12.0', link: '/en/guide/deploy/breakchange-1-12-0' }
+          { text: 'Change Log', link: '/en/guide/changelog' },
+          { text: 'Development Log', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },
+          { text: 'Upgrade to 1.12.0', link: '/en/guide/deploy/breakchange-1-12-0' }
         ]
       },
       {
         text: 'Deployment',
         items: [
-          { text: '使用 Docker 公共镜像', link: '/en/guide/deploy/backend-docker' },
-          { text: '使用 Docker Compose', link: '/en/guide/deploy/backend-docker-compose' },
-          { text: 'Jar 包部署', link: '/en/guide/deploy/backend-jar' },
-          { text: 'Idea 源码部署', link: '/en/guide/deploy/backend-idea' },
-          { text: '更多教程(Nas)', link: '/en/guide/deploy/backend-other' },
+          { text: 'Docker Image', link: '/en/guide/deploy/backend-docker' },
+          { text: 'Docker Compose', link: '/en/guide/deploy/backend-docker-compose' },
+          { text: 'Jar Package ', link: '/en/guide/deploy/backend-jar' },
+          { text: 'Idea Plugin', link: '/en/guide/deploy/backend-idea' },
+          { text: 'More', link: '/en/guide/deploy/backend-other' },
           {
-            items: [{ text: '客户端部署', link: '/en/guide/deploy/client' }]
+            items: [{ text: 'Deploy Client', link: '/en/guide/deploy/client' }]
           },
           {
-            items: [{ text: '博客部署', link: '/en/guide/deploy/blog' }]
+            items: [{ text: 'Deploy Blog', link: '/en/guide/deploy/blog' }]
           }
         ]
       },
@@ -89,29 +89,29 @@ export const en = {
       {
         text: 'How to deploy?',
         items: [
-          { text: '所有部署方式', link: '/en/guide/deploy/backend' },
+          { text: 'Backend', link: '/en/guide/deploy/backend' },
           {
             items: [
-              { text: '使用 Docker 公共镜像', link: '/en/guide/deploy/backend-docker' },
-              { text: '使用 Docker Compose', link: '/en/guide/deploy/backend-docker-compose' },
-              { text: 'Jar 包部署', link: '/en/guide/deploy/backend-jar' },
+              { text: 'Docker Image', link: '/en/guide/deploy/backend-docker' },
+              { text: 'Docker Compose', link: '/en/guide/deploy/backend-docker-compose' },
+              { text: 'Jar Plackage', link: '/en/guide/deploy/backend-jar' },
               // { text: 'Idea 源码部署', link: '/guide/deploy/backend-idea' },
-              { text: '后台配置项', link: '/en/guide/deploy/backend-props' }
+              { text: 'Configuration ', link: '/en/guide/deploy/backend-props' }
             ]
           },
-          { text: '网页客户端部署', link: '/en/guide/deploy/client' },
-          { text: '博客/移动端页面部署', link: '/en/guide/deploy/blog' },
-          { text: 'Mac OS 安装客户端', link: '/en/guide/deploy/macos' },
-          { text: 'FAQ 常见问题', link: '/en/guide/deploy/faq' }
+          { text: 'Client', link: '/en/guide/deploy/client' },
+          { text: 'Blog', link: '/en/guide/deploy/blog' },
+          { text: 'How to work on MacOS', link: '/en/guide/deploy/macos' },
+          { text: 'FAQ', link: '/en/guide/deploy/faq' }
         ]
       },
       {
         text: 'Other',
         items: [
-          { text: '版本发布', link: '/en/guide/changelog' },
-          { text: '开发计划', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },
+          { text: 'Change Log', link: '/en/guide/changelog' },
+          { text: 'Development Log', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },
           {
-            text: '❤ 项目与作者',
+            text: '❤ About',
             link: '/en/guide/about/all'
           }
         ]

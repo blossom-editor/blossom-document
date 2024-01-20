@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { info } from '../../scripts/stat-api'
+import { info } from '../../../scripts/stat-api'
 
 onMounted(() => {
   info()
@@ -19,7 +19,7 @@ If you cannot access Dockerhub or experience slow connections, you can download 
 
 > Go to Github for downloads: https://github.com/blossom-editor/blossom/releases
 
-<bl-img src="../../imgs/deploy/download_github.png" width="200px"/>
+<bl-img src="../../../imgs/deploy/download_github.png" width="200px"/>
 
 - `backend-blossom.jar`: Backend Java package.
 - `blossom-x.y.z.dmg`: MacOS ARM client.
@@ -37,7 +37,7 @@ If you need Docker image files, please download them from Baidu Cloud.
 >
 > Extraction code `uksl`
 
-<bl-img src="../../imgs/deploy/download_baidu.png" width="300px"/>
+<bl-img src="../../../imgs/deploy/download_baidu.png" width="300px"/>
 
 In addition to various client and backend deployment files, Baidu Cloud also includes Docker image files for download.
 

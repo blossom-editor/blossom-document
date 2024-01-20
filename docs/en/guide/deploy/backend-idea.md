@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { info } from '../../scripts/stat-api'
+import { info } from '../../../scripts/stat-api'
 
 onMounted(() => {
   info()
@@ -17,21 +17,21 @@ This deployment method is suitable for deploying on physical machines after modi
 
 Install the plugin in IntelliJ IDEA.
 
-<bl-img src="../../imgs/deploy/idea_plugin1.png" width="400px"/>
+<bl-img src="../../../imgs/deploy/idea_plugin1.png" width="400px"/>
 
 Configure the target machine address.
 
-<bl-img src="../../imgs/deploy/idea_plugin2.png" width="700px"/>
+<bl-img src="../../../imgs/deploy/idea_plugin2.png" width="700px"/>
 
-<bl-img src="../../imgs/deploy/idea_plugin3.png" width="700px" style="margin-top:10px;"/>
+<bl-img src="../../../imgs/deploy/idea_plugin3.png" width="700px" style="margin-top:10px;"/>
 
 Add a new startup item.
 
-<bl-img src="../../imgs/deploy/idea_plugin4.png" width="400px"/>
+<bl-img src="../../../imgs/deploy/idea_plugin4.png" width="400px"/>
 
 Configure the startup item.
 
-<bl-img src="../../imgs/deploy/idea_plugin5.png" width="700px"/>
+<bl-img src="../../../imgs/deploy/idea_plugin5.png" width="700px"/>
 
 1. Path to the `jar` file to be uploaded.
 2. IP address of the target machine, add using the + button on the right.
