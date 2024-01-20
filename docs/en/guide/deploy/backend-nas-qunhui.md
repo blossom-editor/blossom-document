@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { info } from '../../scripts/stat-api'
+import { info } from '../../../scripts/stat-api'
 
 onMounted(() => {
    info()

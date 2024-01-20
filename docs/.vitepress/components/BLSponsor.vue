@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref,onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const sponsorsEspecially = ref([])
 const sponsors = ref([])
 onMounted(() => {
-  fetch('https://www.wangyunf.com/bladmin/sponsor/list').then(resp => {
+  fetch('https://www.wangyunf.com/bladmin/sponsor/list').then((resp) => {
     resp.json().then((r) => {
       sponsorsEspecially.value = r.data.special
       sponsors.value = r.data.sponsors
@@ -14,20 +14,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="sponsor-list-title">
-    <p>感谢以下每一位赞助者，是你们让 Blossom 变得更好！
-      <br/>
-      <div style="margin-top: 10px;font-size: 15px;">
-      Thank you to each and every one of our sponsors who make Blossom even better. 
-      </div>
-    </p>
+  <div class="sponsor-list-title" style="margin-top: 80px;">感谢以下每一位赞助者，是你们让 Blossom 变得更好！</div>
+  <div class="sponsor-list-title" style="font-size: 15px; margin-top: 15px; margin-bottom: 50px">
+    Thank you to each and every one of our sponsors who make Blossom even better.
   </div>
 
   <div class="sponsor-container">
     <div class="sponsor-list">
       <div class="especially">
-        特别感谢<br/>
-        <div style="font-size: 15px;">Many thanks</div>
+        特别感谢<br />
+        <div style="font-size: 15px">Many thanks</div>
       </div>
       <div class="sponsor-item" v-for="name in sponsorsEspecially">{{ name }}</div>
     </div>
@@ -46,7 +42,6 @@ onMounted(() => {
   width: 100%;
   text-align: center;
   font-size: 20px;
-  height: 150px;
   color: var(--bl-preview-blockquote-color);
   font-weight: 300;
   display: flex;

@@ -1,6 +1,5 @@
 export const zh = {
   description: 'Blossom 云端双链笔记软件,全权掌握,不再宕机。',
-
   themeConfig: {
     /*
      * 右侧文件索引
