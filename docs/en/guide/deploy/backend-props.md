@@ -7,70 +7,71 @@ onMounted(() => {
 })
 </script>
 
-# 配置项说明
+# Configuration Description
 
-> 文本介绍一些其他配置项，这些配置使用默认项也不影响应用使用。
+> The text introduces some other configuration items, which use default items and do not affect application usage.
 
 <br/><br/><br/>
 
-# 一、系统参数配置 {#sys}
+# 1.System parameter configuration {#sys}
 
-## 默认用户 {#sys-user}
+## Default User {#sys-user}
 
-系统启动后，会自动初始化用户，用户表 `base_user` 会带有一个管理员用户，用户名密码为：`blos/blos`。你可以通过该用户登录后，修改用户名及各类信息，或者创建其他用户。
+After the system starts up, it will automatically initialize a user. The user table `base_user` will have an administrator user with the username and password: `blos/blos`. You can log in with this user to modify the username and various information, or create other users.
 
-## 配置用户所在的地理位置 {#sys-user-location}
+## Configure the geographical location of the user {#sys-user-location}
 
-用户表 `base_user.location` 字段代表该用户所处的地区位置，该位置会用来查询该用户所属地区的天气，如果你要使用天气功能，那么你需要为用户配置该字段信息。更具体的文档可见: 和风天气
+The user table's `base_user.location` field represents the geographical location of the user. This location is used to query the weather of the user's region. If you intend to use the weather functionality, you need to configure this field for the user. For more detailed documentation, please refer to HeWeather.
 
-> 全国所有地区的位置文档：[China-City-List-latest.csv](https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv)
+> Location documents for all regions across the country : [China-City-List-latest.csv](https://github.com/qwd/LocationList/blob/master/China-City-List-latest.csv)
 
-## 配置系统参数 {#sys-params}
+> World cities list : [countries-states-cities-database](https://github.com/dr5hn/countries-states-cities-database) (To be honest, I don't know if global weather queries are feasible in this program)
 
-系统参数表 `base_sys_param` 用于配置系统相关参数。要变更这些参数，你需要修改 `base_sys_param.param_value` 字段，下面是参数的详细说明：
+## Configure system parameters {#sys-params}
+
+The system parameter table `base_sys_param` is used to configure system-related parameters. To change these parameters, you need to modify the `base_sys_param.param_value` field. Below is a detailed explanation of the parameters:
 
 :::tip 提示
-大部分配置可以在客户端的[服务器配置](../setting#server)页面中进行设置，无需修改数据库。如果在数据库中修改，需要重启应用才会生效。
+Most configurations can be set on the [Server Configuration](../setting#server)page of the client without modifying the database. If you make modifications in the database, you need to restart the application for the changes to take effect.
 :::
 
-| 参数                                 | 说明                                                                                                              |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| ARTICLE_LOG_EXP_DAYS                 | 文章编辑历史记录的过期天数，超过该天数的历史记录将被删除。                                                        |
-| ARTICLE_RECYCLE_EXP_DAYS             | 文章回收站过期天数, 超过该天数将被删除                                                                            |
-| HEFENG_KEY                           | 如果你需要使用天气功能，需要在此处配置和风天气的 KEY，具体方式见：[和风天气](../hefeng)                           |
-| BACKUP_PATH                          | 文章和图片的备份路径, 参考格式: `/home/bl/backup/`                                                                |
-| BACKUP_EXP_DAYS                      | 文章备份压缩包的过期天数，超过该时限的压缩包会被删除。                                                            |
-| BLOSSOM_OBJECT_STORAGE_DOMAIN        | Blossom 自带文件存储地址前缀。                                                                                    |
-| SERVER_MACHINE_EXPIRE                | 服务器到期日期，仅用于提醒。 YYYY-MM-DD 格式。                                                                    |
-| SERVER_DOMAIN_EXPIRE                 | 域名到期日期，仅用于提醒。 YYYY-MM-DD 格式。                                                                      |
-| SERVER_HTTPS_EXPIRE                  | HTTPS 证书到期日期，仅用于提醒。 YYYY-MM-DD 格式。                                                                |
-| SERVER_DATABASE_EXPIRE               | 数据库到期日期，仅用于提醒。 YYYY-MM-DD 格式。                                                                    |
-| 【已废弃】<br/>~~SERVER_JWT_SECRET~~ | JWT 授权的加密字符串，如果你使用 JWT 作为授权令牌，那么强烈建议修改该值！**JWT 方式的授权方式已经不再建议使用**。 |
-| 【已废弃】<br/>~~WEB_ARTICLE_URL~~   | 配置你博客的访问地址。通常你只需要替换域名部分。默认值`https://www.domain.com/blossom/#/articles?articleId=`      |
+| Parameter                           | Description                                                                                                        |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| ARTICLE_LOG_EXP_DAYS                | Number of days until the expiration of article editing history records. Historical records older than this will be deleted. |
+| ARTICLE_RECYCLE_EXP_DAYS            | Number of days until articles in the recycle bin expire and are deleted.                                           |
+| HEFENG_KEY                          | Configuration key for using the weather feature. You need to configure the key for HeFeng Weather here. Refer to: [HeFeng Weather](../hefeng) |
+| BACKUP_PATH                         | Backup path for articles and images, in the format: `/home/bl/backup/`                                              |
+| BACKUP_EXP_DAYS                     | Number of days until the expiration of article backup compression packages. Compressed packages older than this will be deleted. |
+| BLOSSOM_OBJECT_STORAGE_DOMAIN       | Prefix for Blossom's built-in file storage address.                                                                |
+| SERVER_MACHINE_EXPIRE               | Expiration date of the server, for reminder purposes only. Format: YYYY-MM-DD                                       |
+| SERVER_DOMAIN_EXPIRE                | Expiration date of the domain, for reminder purposes only. Format: YYYY-MM-DD                                       |
+| SERVER_HTTPS_EXPIRE                 | Expiration date of the HTTPS certificate, for reminder purposes only. Format: YYYY-MM-DD                             |
+| SERVER_DATABASE_EXPIRE              | Expiration date of the database, for reminder purposes only. Format: YYYY-MM-DD                                     |
+| **[Deprecated]**<br/>~~SERVER_JWT_SECRET~~ | Encryption string for JWT authorization. If you use JWT as an authorization token, it is strongly recommended to change this value! **JWT authorization is no longer recommended.** |
+| **[Deprecated]**<br/>~~WEB_ARTICLE_URL~~   | Configuration for the access address of your blog. Typically, you only need to replace the domain part. Default value: `https://www.domain.com/blossom/#/articles?articleId=`      |
 
-:::warning 关于 BACKUP_PATH 配置项
-如果你使用 Docker 进行部署，那么需要注意将该值挂载到宿主机，防止备份文件丢失。
+:::warning About the BACKUP_PATH Configuration Item
+If you deploy using Docker, make sure to mount this value to the host machine to prevent backup file loss.
 :::
 
-:::warning 关于 BLOSSOM_OBJECT_STORAGE_DOMAIN 配置项
-在 v1.12.0 版本中，原配置文件的`project.iaas.blos.domain`参数移入到了系统参数的`BLOSSOM_OBJECT_STORAGE_DOMAIN`配置项中。
-
-但配置文件中的配置方式仍然有效，如果自定义了`project.iaas.blos.domain`参数，则`BLOSSOM_OBJECT_STORAGE_DOMAIN`配置项会被忽略。同时在客户端配置文件访问地址也会被忽略。
+:::warning About the BLOSSOM_OBJECT_STORAGE_DOMAIN Configuration Item
+In version v1.12.0, the original `project.iaas.blos.domain` parameter from the configuration file has been moved to the `BLOSSOM_OBJECT_STORAGE_DOMAIN` configuration item in system parameters.
+However, the configuration method in the configuration file remains valid. If you have customized the `project.iaas.blos.domain` parameter, the `BLOSSOM_OBJECT_STORAGE_DOMAIN` configuration item will be ignored. Additionally, the access address in the client configuration file will also be ignored.
 :::
 
 <br/><br/><br/>
 
-# 后台配置项 {#props}
+# Backend Configuration Items {#props}
 
-## 数据库脚本初始化 {#props-sql-schema}
+## Database Script Initialization {#props-sql-schema}
 
-系统启动时，会自动初始化数据库相关脚本和参数，无需手动初始化数据库。
+The system automatically initializes database-related scripts and parameters during startup, eliminating the need for manual database initialization.
 
-数据库脚本文件路径：`blossom-backend/backend/src/main/resources/schema-mysql.sql`
+Database script file path: `blossom-backend/backend/src/main/resources/schema-mysql.sql`
 
-## 数据库连接配置 {#props-sql-url}
+## Database Connection Configuration {#props-sql-url}
 
-默认的连接地址为 `127.0.0.1:3306/blossom`，你可以在 `application-prod.yml` 中修改此配置。
+The default connection address is `127.0.0.1:3306/blossom`, and you can modify this configuration in `application-prod.yml`.
 
 <bl-img src="../../../imgs/deploy/backend_application_prod.jpg" width="400px"/>
 
@@ -80,7 +81,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/xzzz-blossom
 ```
 
-:::tip Docker 部署，该配置通常在启动命令中配置。例如：
+:::tip Docker deployment, which is typically configured in the startup command. For example:
 
 ```bash
 --spring.datasource.url="jdbc:mysql://192.168.31.99:3306/blossom?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&allowMultiQueries=true&useSSL=false&&serverTimezone=GMT%2B8"
@@ -88,155 +89,155 @@ spring:
 
 :::
 
-## 文件存储路径 {#props-iaas-blos}
+## File storage path {#props-iaas-blos}
 
-你可以在 `application-prod.yml` 中修改 `default-path` 配置来更改文件的实际存储路径。
+You can modify the 'default path' configuration in 'application prod. yml' to change the actual storage path of the file.
 
 ```yml
 project:
   iaas:
-    # 对象存储的类型为 blossom 提供的本地存储方式
+    # The type of object storage provided by Blossom is local storage.
     os-type: blossom
     blos:
-      # 已不建议在配置文件中修改该值。
+      # It is not recommended to modify this value in the configuration file.
       domain: 'http://www.xxx.com/'
-      # 请以 / 开头, / 结尾, 简短的路径在文章中有更好的显示效果, 过长一定程度会使文章内容混乱
+      # Please start with /, end with /, and short paths have better display effects in articles. Excessively long paths may confuse the content of the article.
       default-path: '/home/bl/img/'
 ```
 
-:::tip Docker 部署
-**如果你通过 Docker 部署，那么并不建议你修改该值，而是修改对应的挂载路径。**
+:::tip Docker deployment
+**If you deploy through Docker, it is not recommended to modify the value, but to modify the corresponding mounting path**
 
-该配置通常在启动命令中配置，并且文件存储 `default-path` 建议使用默认值。
+This configuration is usually configured in the startup command, and it is recommended to use default values for file storage 'default path'.
 
 ```bash
 --project.iaas.blos.default-path="/home/bl/img/" \
 ```
 
-Docker Compose 则修改
+For Docker Compose, make the following modifications:
 
 ```yml
 services:
   blossom:
     environment:
-      # 在该处增加如下两项
+      # Add the following two lines here
       PROJECT_IAAS_BLOS_DEFAULT_PATH: /home/bl/img/
 ```
 :::
 
-:::warning 注意
-目前暂不支持其他公有云对象存储。
+:::warning Attention!
+Currently, other public cloud object storage is not supported.
 :::
 
-:::warning 关于 project.iaas.blos.domain 配置项
-在 v1.12.0 版本中，配置文件的`project.iaas.blos.domain`参数移入到了系统参数的`BLOSSOM_OBJECT_STORAGE_DOMAIN`配置项中。
+:::warning About the project.iaas.blos.domain configuration item
+In version 1.12.0, the 'project. iaas. blos. domain' parameter in the configuration file was moved to the 'BLOSSOM' parameter in the system parameter_ OBJECT_ STORAGE_ In the DOMAIN ` configuration item.
 
-但配置文件中的配置方式仍然有效，如果自定义了`project.iaas.blos.domain`参数，则`BLOSSOM_OBJECT_STORAGE_DOMAIN`配置项会被忽略。同时在客户端配置文件访问地址也会被忽略。
+But the configuration method in the configuration file is still valid. If the 'project. iaas. blos. domain' parameter is customized, then 'BLOSSOM'_ OBJECT_ STORAGE_ The DOMAIN ` configuration item will be ignored. At the same time, the access address in the client configuration file will also be ignored.
 :::
 
-## 修改应用端口 {#props-port}
+## Modify application port {#props-port}
 
-在 `application.yml` 配置文件中，可以修改应用的访问端口。
+In the 'application. yml' configuration file, the access port of the application can be modified.
 
 ```yml
 server:
-  # 修改该值来改变你的端口
+  # Change this value to modify your port
   port: 9999
 ```
 
-:::tip Docker 部署
-该配置通常不需要修改，而是在启动命令中进行端口映射。
+:::tip Docker Deployment
+This configuration typically does not need to be modified but rather port mapping is done in the startup command.
 
 ```bash
 -p 9999:9999 \
 ```
 
-Docker Compose 则修改
+For Docker Compose, modify:
 
 ```yml
 services:
   blossom:
     ports:
-      # 修改冒号前的值
+      # Modify the value before the colon
       - '9999:9999'
 ```
 
 :::
 
-## 修改授权时长 {#props-auth}
+## Modify Authorization Duration {#props-auth}
 
-默认的授权时长为 6 小时，超过 6 小时没有使用则必须重新登录。你可以修改 `application-prod.yml` 中的以下配置来更改这个设置。
+The default authorization duration is 6 hours. If there is no activity for more than 6 hours, re-login is required. You can modify the following configuration in `application-prod.yml` to change this setting.
 
 ```yml
 project:
   auth:
     clients:
       - client-id: blossom
-        # 修改该值来改变你的授权时间，单位秒
+        # Change this value to modify your authorization time, in seconds
         duration: 21600
 ```
 
-:::tip Docker 部署
-需要在启动命令中配置。
+:::tip Docker Deployment
+Configuration is required in the startup command.
 
 ```bash
 --project.auth.clients[0].client-id=blossom
-# 修改该值来改变你的授权时间，单位秒
+# Modify this value to change your authorization time, in seconds
 --project.auth.clients[0].duration=99999
 ```
 
-Docker Compose 则增加如下配置
+For Docker Compose, add the following configuration:
 
 ```yml
 services:
   blossom:
     environment:
-      # 在该处增加如下两项
+      # Add the following two items here
       PROJECT_AUTH_CLIENTS_0_CLIENT_ID: blossom
       PROJECT_AUTH_CLIENTS_0_DURATION: 99999
 ```
 
 :::
 
-## 重置用户密码 {#reset-password}
+## Resetting User Password {#reset-password}
 
-你可以在启动时重置用户名与密码, 只需要修改如下配置项：
+You can reset the username and password at startup by modifying the following configuration:
 
 ```yml
 project:
   auth:
-    default-password: 123456 # 默认密码
-    password-reset: false # 启动时重置密码
+    default-password: 123456 # Default password
+    password-reset: false # Reset password at startup
 ```
 
-:::tip Docker 部署
-需要在启动命令中配置。
+:::tip Docker Deployment
+Configuration is required in the startup command.
 
 ```bash
---project.auth.default-password=123456 # 该值为重置后的用户密码
+--project.auth.default-password=123456 # The value for the reset user password
 --project.auth.password-reset=true
 ```
 
-Docker Compose 则增加如下配置
+For Docker Compose, add the following configuration:
 
 ```yml
 services:
   blossom:
     environment:
-      # 在该处增加如下两项
+      # Add the following two items here
       PROJECT_AUTH_DEFAULT_PASSWORD: 123456
       PROJECT_AUTH_PASSWORD_RESET: true
 ```
 
 :::
 
-:::danger 注意！
-在重置后, 你需要将配置`project.auth.password-reset=`改为`false`，否则每次启动都会重置密码！
+:::danger Warning!
+After resetting, you need to change the configuration `project.auth.password-reset=` to `false`, otherwise the password will be reset every time you start!
 :::
 
-## 修改上传文件大小限制 {#props-filesize}
+## Modifying Upload File Size Limit {#props-filesize}
 
-默认的上传大小限制是 `50MB`，主要是考虑到服务器带宽和存储空间限制。如果你是本地部署，可能会需要更大的文件存储。那么你可以修改 `application-prod.yml` 中的以下配置来更改这个设置。
+The default upload size limit is `50MB`, mainly considering server bandwidth and storage space limitations. If you are deploying locally and may need a larger file storage, you can modify the following configuration in `application-prod.yml` to change this setting.
 
 ```yml
 spring:
@@ -246,27 +247,27 @@ spring:
       max-request-size: 50MB
 ```
 
-:::tip Docker 部署
-该配置通常在启动命令中配置。
+:::tip Docker Deployment
+This configuration is usually configured in the startup command.
 
 ```bash
 --spring.servlet.multipart.max-file-size="50MB"
 --spring.servlet.multipart.max-request-size="50MB"
 ```
 
-Docker Compose 则增加如下配置
+For Docker Compose, add the following configuration:
 
 ```yml
 services:
   blossom:
     environment:
-      # 在该处增加如下两项
+      # Add the following two items here
       SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 100MB
       SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 100MB
 ```
 
 :::
 
-:::danger 警告
-目前上传并没有实现分片上传，如果你上传超大文件，可能会因为网络抖动，页面切换等原因出现上传失败的情况。
+:::danger Warning!
+Currently, chunked uploading is not implemented. If you upload a very large file, uploading may fail due to network jitter, page switching, and other reasons.
 :::

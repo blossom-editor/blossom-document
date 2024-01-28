@@ -34,11 +34,11 @@ Blossom depends on `JDK8` + `Mysql8`. You can choose a deployment method that su
 > [Go to view the deployment methods for environments like Nas](./backend-other)
 
 <div class="deploy-type">
-  <div class="item docker" @click="toRoute('/guide/deploy/backend-docker')">
+  <div class="item docker" @click="toRoute('/en/guide/deploy/backend-docker')">
     <div class="title">Use Dockerhub Public Image</div>
     <p class="desc">Backend application image without a database, suitable for situations where MySQL is already installed.</p>
   </div>
-  <div class="item docker" @click="toRoute('/guide/deploy/backend-docker-compose')">
+  <div class="item docker" @click="toRoute('/en/guide/deploy/backend-docker-compose')">
     <div class="title">Build with Docker Compose</div>
     <p class="desc">Suitable for situations where MySQL is not installed. Can pull and deploy the MySQL image together.</p>
     <div class="tag">Recommended</div>
@@ -46,11 +46,11 @@ Blossom depends on `JDK8` + `Mysql8`. You can choose a deployment method that su
 </div>
 
 <div class="deploy-type">
-  <div class="item idea" @click="toRoute('/guide/deploy/backend-jar')">
+  <div class="item idea" @click="toRoute('/en/guide/deploy/backend-jar')">
     <div class="title">Deploy with Jar Package</div>
     <p class="desc">Suitable for environments with existing JDK + MySQL. The backend application can be deployed with just a command or script.</p>
   </div>
-  <div class="item idea" @click="toRoute('/guide/deploy/backend-idea')">
+  <div class="item idea" @click="toRoute('/en/guide/deploy/backend-idea')">
     <div class="title">Deploy with Idea Plugin</div>
     <p class="desc">Suitable for developers who modify the source code and deploy it to the server.</p>
   </div>
@@ -62,11 +62,11 @@ Blossom depends on `JDK8` + `Mysql8`. You can choose a deployment method that su
 ## How to Deploy Web? {#how-to-deploy-web}
 
 <div class="deploy-type">
-  <div class="item client" @click="toRoute('/guide/deploy/client')">
+  <div class="item client" @click="toRoute('/en/guide/deploy/client')">
     <div class="title">Web Version of the Client</div>
     <p class="desc">Learn how to deploy the web version of the client.</p>
   </div>
-  <div class="item blog" @click="toRoute('/guide/deploy/blog')">
+  <div class="item blog" @click="toRoute('/en/guide/deploy/blog')">
     <div class="title">Blog Page</div>
     <p class="desc">Learn how to deploy a blog and how to customize the configuration.</p>
   </div>

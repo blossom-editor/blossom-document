@@ -1,56 +1,56 @@
-# 网页版客户端
+# Web Client
 
-如果不想使用桌面客户端，也可以使用网页端客户端，可查看[在线示例](https://www.wangyunf.com/blossom-demo/#/settingIndex)。
+If you prefer not to use the desktop client, you can also utilize the web-based client. You can check the [online demo](https://www.wangyunf.com/blossom-demo/#/settingIndex)for reference.
 
-## 自带网页客户端 {#backstage}
+## Built-in Web Client {#backstage}
 
-自`1.10.0`版本开始，部署后台时会自带网页客户端，客户端在浏览器的访问地址为
+Starting from version 1.10.0, deploying the backend will include a built-in web client. The client can be accessed in the browser using the following address:
 
 ```bash
-IP:端口(域名)/editor/#/settingindex
+IP:Port(Domain)/editor/#/settingindex
 ```
 
 ---
 
-例如 IP:端口为：`192.168.11.11:9999`，则访问
+For example, if the IP address and port are '192.168.11.11:9999', then you can access the blog at:
 
 ```bash
 http://192.168.11.11:9999/editor/#/settingindex
 ```
 
-例如域名为`http://www.abc.com`，则访问
+If the domain name is 'http://www.abc.com', then you can access the blog at:
 
 ```bash
 http://www.abc.com/editor/#/settingindex
 ```
 
-如果有配置反向代理路径，如`/bl/`，则访问
+If there is a reverse proxy configured with a path such as /bl/, then you would access the blog using the following URL:
 
 ```bash
 http://www.abc.com/bl/editor/#/settingindex
 ```
 
-:::danger <span style="color:#ea483f">注意！</span>
-这个地址是网页的的访问地址，不是登录地址！是填写在浏览器地址栏的地址！
+:::danger <span style="color:#ea483f">Attention!</span>
+This address is the access address for the webpage, not the login address! It is the address filled in the browser address bar!
 <bl-img src="../../../imgs/deploy/client-url.png" width="700px"/>
 :::
 
-## 单独部署网页客户端 {#independent }
+## Deploy web client separately {#independent }
 
-### 文件下载
+### Download
 
-前往[下载地址](../about/download)中下载`blossom-x.y.z-web-client.zip`文件。
+Go to [download address](../about/download) to download the file 'blossom x.y.z web client. zip'.
 
-### 部署方式
+### Deployment method
 
-解压 `blossom-x.y.z-web-client.zip` 到服务器目录，本例中文件解压在 `/usr/local/xzzz/blossom/demo/` 路径下。
+Extract 'blossom x.y.z web client. zip' to the server directory. In this case, the file is extracted in the path '/usr/local/xzzz/blossom/demo/'.
 
-配置 Nginx，下方是一个配置示例：
+Configure Nginx, below is an example configuration:
 
 ```bash
-# 【需修改】配置客户端资源访问路径 // [!code error]
+# [To be modified] Configure client resource access path // [!code error]
 location /blossom-demo/ {
-        # 【需修改】配置资源所在的路径 // [!code error]
+        # [To be modified] Path where configuration resources are located // [!code error]
         alias                   /usr/local/xzzz/blossom/demo/; // [!code error]
         try_files               $uri $uri/ /index.html;
         index                   index.html index.htm;
@@ -65,6 +65,6 @@ location /blossom-demo/ {
 
 ```
 
-:::tip 提示
-完整的 Nginx 例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
+:::tip Prompt
+The complete Nginx example can be viewed: [How to configure Nginx](./faq#how-config-nginx)
 :::
