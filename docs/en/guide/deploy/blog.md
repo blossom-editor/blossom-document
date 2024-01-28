@@ -7,7 +7,7 @@ onMounted(() => {
 })
 </script>
 
-# 博客部署
+# Blog Deployment
 
 <br/>
 <bl-img src="../../../imgs/blog/home.png"/>
@@ -20,61 +20,61 @@ onMounted(() => {
 <div style="min-width:33%;margin-right:10px;"><bl-img src="../../../imgs/note/note_m.png" width="230px" /></div>
 </div>
 
-博客除了可以访问公开文章之外，更提供了各项功能的移动端访问入口。
+In addition to accessing public articles, the blog also provides access to various functions on mobile devices.
 
-## 自带博客 {#backstage}
+## Built-in Blog {#backstage}
 
-自`1.10.0`版本开始，部署后台时会自带博客页面，访问地址为：
+Starting from version `1.10.0`, the backend deployment comes with a built-in blog page, accessible at: 
 
 ```bash
-IP:端口(域名)/blog/#/home
+IP:Port(Domain)/blog/#/home
 ```
 
 ---
 
-例如 IP:端口为：`192.168.11.11:9999`，则访问
+For example, if the IP address and port are '192.168.11.11:9999', then you can access the blog at:
 
 ```bash
 http://192.168.11.11:9999/blog/#/home
 ```
 
-例如域名为`http://www.abc.com`，则访问
+If the domain name is 'http://www.abc.com', then you can access the blog at:
 
 ```bash
 http://www.abc.com/blog/#/home
 ```
 
-如果有配置反向代理路径，如`/bl/`，则访问
+If there is a reverse proxy configured with a path such as `/bl/`, then you would access the blog using the following URL:
 
 ```bash
 http://www.abc.com/bl/blog/#/home
 ```
 
-:::danger 注意！
-自带博客默认展示 ID 为 1 的用户的公开文章信息。但允许所有用户在博客端登录。如果你需要修改默认展示用户，请查看下方[修改博客配置](./blog#update-config)。
+:::danger Attention!
+The default blog displays public article information for user ID 1, but allows all users to log in to the blog. If you need to modify the default display user, please refer to [Modify Blog Configuration](./blog#update-config) below.
 
-<!-- 由于使用场景众多，Blossom 无法全部覆盖测试，所以如果你在使用自带博客时遇到问题，可以选择单独部署。 -->
+<!-- Due to the wide range of usage scenarios, Blossom cannot cover all testing, so if you encounter problems when using the built-in blog, you can choose to deploy it separately. -->
 
 :::
 
-## 单独部署博客 {#independent }
+## Independent Blog Deployment {#independent }
 
-如果有多个用户需要使用博客功能，则需要单独部署，每个用户的博客配置是独立的，可以拥有不同的 Logo，博客名称，IPC 备案号等信息。
+If multiple users need to use the blog function, separate deployment is required. The blog configuration for each user is independent and can have different logos, blog names, IPC record numbers, and other information.
 
-### 文件下载
+### File Download
 
-前往[下载地址](../about/download)中下载`blossom-x.y.z-web-blog.zip`文件。
+Go to the [download page](../about/download) to download the `blossom-x.y.z-web-blog.zip` file.
 
-### 部署代理
+### Proxy Deployment
 
-解压 `blossom-x.y.z-web-blog.zip` 到服务器目录，本例中文件解压在 `/usr/local/xzzz/blossom/blog/` 路径下。
+Unzip `blossom-x.y.z-web-blog.zip` to the server directory. In this example, the files are extracted to the `/usr/local/xzzz/blossom/blog/` path.
 
-以 Nginx 为例：
+Taking Nginx as an example:
 
 ```bash
-# 【需修改】配置客户端资源访问路径 // [!code error]
+# [To be modified] Configure client resource access path // [!code error]
 location /blossom-blog/ {
-        # 【需修改】配置资源所在的路径 // [!code error]
+        # [To be modified] Path where configuration resources are located // [!code error]
         alias                   /usr/local/xzzz/blossom/blog/; // [!code error]
         try_files               $uri $uri/ /index.html;
         index                   index.html index.htm;
@@ -89,23 +89,23 @@ location /blossom-blog/ {
 
 ```
 
-:::tip 提示
-完整的 Nginx 例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
+:::tip Prompt
+The complete Nginx example can be viewed: [How to configure Nginx](./faq#how-config-nginx)
 :::
 
-## 修改博客配置 {#update-config}
+## Modifying Blog Configuration {#update-config}
 
-在解压文件后，解压路径下会有一个`config.js`文件，修改该文件可以进行个性化配置。
+After decompressing the file, there will be a 'config. js' file under the decompression path, which can be modified for personalized configuration.
 
-:::tip 提示
-如果通过 Docker 部署，你可以使用挂载文件的方式进行修改，你需要在 docker run 命令中添加如下配置：
+:::tip Prompt
+If deployed through Docker, you can make modifications by mounting files. You need to add the following configuration in the Docker run command:
 
 ```bash
-# 将冒号(:)前的部分改成你运行 docker 的设备的某个路径，不要修改冒号后面的内容。 // [!code error]
+# Change the section before the colon (:) to a path on the device where you are running Docker, without modifying the content after the colon. // [!code error]
 -v /d/blossom/dev/config.js:/application/BOOT-INF/classes/static/blog/config.js
 ```
 
-如果使用 docker compose 部署，需要添加在下方所示位置：
+If using Docker Compose deployment, it needs to be added at the location shown below:
 
 ```yaml
 services:
@@ -114,66 +114,66 @@ services:
     container_name: blossom-backend
     volumes:
       - /d/blossom/bl/:/home/bl/
-      # 添加到该位置// [!code error]
+      # Add to this location// [!code error]
       - /d/blossom/dev/config.js:/application/BOOT-INF/classes/static/blog/config.js
 ```
 
-然后在对应目录下创建 config.js 文件，接着将下方[配置文件内容](./blog#config-centent)复制到该文件中。
+Then create the config.js file in the corresponding directory, and then copy the [Configuration File Content] (./blog#config-content) below to the file.
 :::
 
-### 配置文件内容{#config-content}
+### Configuration file content{#config-content}
 
 <!--
 // [!code warning]
 // [!code error]
  -->
 
-<span style="color:red">**修改下方标识为红色背景的内容**。</span>如果你需要在 Docker 中挂载 config.js 文件，请将以下内容复制到文件中。
+<span style="color:red">**Modify the content marked with a red background below**。</span>If you need to mount the config.js file in Docker, please copy the following content into the file.
 
-:::danger 重要变更
-在`v1.12.0`版本中，已经支持通过客户端进行博客的各项配置，[前往查看](../setting#blog)。
+:::danger Important changes
+In version v1.12.0, various blog configurations are already supported through the client. [Go to View] (../setting#blog).
 
-在后续版本中，会逐步移除配置文件中的配置项，建议使用客户端配置的方式。
+In future versions, the configuration items in the configuration file will be gradually removed, and it is recommended to use client configuration.
 :::
 
 ```javascript
 window.blconfig = {
   SYS: {
-    // 修改该值可以改变网页左上角名称
+    // Modifying this value can change the name of the top left corner of the webpage
     NAME: 'Blossom',
-    // 公网安备号
+    // Public network security number(only Chinese need)
     GONG_WANG_AN_BEI: '',
-    // ICP 备案号
+    // ICP Record number(only Chinese need)
     ICP_BEI_AN_HAO: '',
-    // 邮箱
+    // E-mail
     EMAIL: ''
   },
   THEME: {
     LOGO_STYLE: {
-      // 左上角 LOGO 的圆角设置
+      // Rounding settings for the logo in the upper left corner
       'border-radius': '50%'
     },
-    // 是否以特殊样式显示专题文件夹
+    // Is the theme folder displayed in a special style
     SUBJECT_TITLE: true
   },
   DOMAIN: {
-    // 如果单独部署博客，必须修改该项// [!code error]
-    // 如果挂载为后台自带博客配置文件，则无需修改// [!code error]
-    // 将该值填写为你的后台访问地址, 与 blossom 客户端登录页面填写的地址相同// [!code error]
+    // You must modify this item if you deploy the blog independently // [!code error]
+    // No need to modify if mounted as the built-in blog configuration for the backend // [!code error]
+    // Fill this value with your backend access address, which should be the same as the address entered on the Blossom client login page // [!code error]
     PRD: 'http://localhost:9999', // [!code error]
-    // 将该值填写你开放为博客的用户ID // [!code error]
+    // Fill this value with the user ID that you want to open the blog for // [!code error]
     USER_ID: 1 // [!code error]
   },
   /**
-   * 可以填写你自己的网站，该信息会展示在右上角的【更多】按钮中，以及首页的【所有文章】下
-   * NAME: 网站名称
-   * URL: 网站地址
-   * LOGO: 网站LOGO地址
+   * You can fill in your own website information, which will be displayed in the 'More' button at the top right corner, and under 'All Articles' on the homepage
+   * NAME: Website name
+   * URL: Website address
+   * LOGO: Website logo address
    */
   LINKS: [
-    // 下方是一个示例
+    // Below is an example
     // {
-    //   NAME: 'Blossom 双链笔记软件',
+    //   NAME: 'Blossom Dual-Chain Note Software',
     //   URL: 'https://www.wangyunf.com/blossom-doc/index.html',
     //   LOGO: 'https://www.wangyunf.com/bl/pic/home/bl/img/U1/head/blossom_logo.png'
     // }
@@ -181,14 +181,14 @@ window.blconfig = {
 }
 ```
 
-## 登录博客 {#login}
+## Log in to the Blog {#login}
 
-可以在左上角 logo 上连续点击 7 次以上，即会跳转至博客的登录页面。博客中的各项功能和交互逻辑大多是用来适配移动端页面。
+You can navigate to the blog's login page by clicking on the logo at the top left corner more than 7 times consecutively. Most of the functionalities and interaction logic in the blog are designed to adapt to mobile device screens.
 
-:::tip 提示
-完整的 Nginx 例子可以查看：[如何配置 Nginx](./faq#how-config-nginx)
+:::tip Prompt
+The complete Nginx example can be viewed: [How to configure Nginx](./faq#how-config-nginx)
 :::
 
-## 客户端配置博客地址 {#client}
+## Configure the Blog Address on the Client Side {#client}
 
-可查阅[快速配置](../setting#quick)。
+You can refer to the [Quick Configuration](../setting#quick).

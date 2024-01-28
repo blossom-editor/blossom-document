@@ -7,20 +7,20 @@ onMounted(() => {
 })
 </script>
 
-# 关于 `v1.12.0` 的重要改动
+# Important changes regarding v1.12.0
 
-如果你从`v1.12.0`之前的版本进行升级，那么需要了解以下的改动内容。
+If you are upgrading from a version before v1.12.0, you need to understand the following changes.
 
-## 修改文件访问地址配置
+## Modify file access address configuration
 
-在 `v1.12.0` 之前的版本中，需要在启动命令或 Docker 脚本中配置如下参数：
+In versions before v1.12.0, the following parameters need to be configured in the startup command or Docker script:
 
 ```bash
 docker run -d \
-  #【需修改】配置图片上传后对应生成的访问URL，需要以/pic/结尾。注意，该访问URL需要与访问后台的域名和端口相同
+  # [To be modified] The access URL generated after uploading the configuration image should end with/pic/. Note that the access URL needs to be the same as the domain name and port for accessing the backend
   --project.iaas.blos.domain="http://127.0.0.1:9999/pic/" \
 
-# 如果是 Docker compose，则需要配置以下内容
+# If it is a Docker composite, the following content needs to be configured
 services:
   blossom:
     environment:
@@ -29,24 +29,24 @@ services:
 
 ---
 
-而在 `v1.12.0` 版本中，可以直接在客户端的【设置】-> 【服务器配置】->【文件访问地址】中进行配置。
+In version v1.12.0, configuration can be directly performed in the client's Settings ->Server Configuration ->File Access Address.
 
-:::tip 提示
-旧的配置方式仍然有效，如果你添加了命令，则优先使用命令中的内容。
+:::tip Prompt
+The old configuration method is still valid. If you add a command, the content in the command will be used first.
 :::
 
 <bl-img src="../../../imgs/setting/server.png" width="550px"/>
 
-## 修改了博客的各项配置方式
+## Changing Blog Configuration Methods
 
-在 `v1.12.0` 之前的版本中，博客的 IPC 备案号，公网安备号，博客名称，博客 Logo 等信息都需要通过修改`config.js`配置文件的方式进行定制。
+Before version `v1.12.0`, details such as the IPC record number, public network security record number, blog name, and blog logo needed to be customized by modifying the `config.js` configuration file.
 
-而在 `v1.12.0` 版本中，可以直接在客户端的【设置】-> 【博客配置】中进行配置。
+However, starting from version `v1.12.0`, you can directly configure these settings in the client's **Settings** -> **Blog Configuration**.
 
-:::tip 提示
-config.js 中的配置方式仍然有效，但会优先使用客户端的配置内容。
+:::tip Note
+The configuration method in `config.js` remains valid but will prioritize the content configured in the client.
 
-config.js 中的配置项会在后续版本中删除。
+Configuration items in `config.js` will be removed in future versions.
 :::
 
 <bl-img src="../../../imgs/setting/blog.png" width="550px"/>

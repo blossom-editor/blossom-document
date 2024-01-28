@@ -23,7 +23,7 @@ docker-compose --version
 
 ## Create `blossom-mysql8.yaml` file {#create-yaml-file}
 
-Below is a docker compose sample file. You need to create a `blossom-mysql8.yaml` file, then copy the following content into the file, <span style="color:red">** and modify the content marked with a red background **</span>.
+Below is a docker compose sample file. You need to create a `blossom-mysql8.yaml` file, then copy the following content into the file, <span style="color:red"> **and modify the content marked with a red background** </span>.
 
 ```yml:line-numbers
 version: "3.8"

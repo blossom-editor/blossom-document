@@ -7,38 +7,38 @@ onMounted(() => {
 })
 </script>
 
-# 常见问题
+# Common Issues
 
-## 部署时常见问题
+## Common Deployment Issues
 
-## Q: 数据库容器中如何创建数据库? {#how-create-database}
+## Q: How to create a database in a database container? {#how-create-database}
 
 ```bash
-# 一、进入容器，如果你的容器不叫 mysql，需要把下方的 mysql 改为你的容器名
+# 1. Enter the container. If your container is not named 'mysql', replace 'mysql' with your container name.
 docker exec -it mysql /bin/bash
 
-# 二、登录 mysql，将下方 -p 后的 xzzz 修改为你的数据库密码
+# 2. Log in to MySQL. Replace 'xzzz' after -p with your database password.
 mysql -uroot -pxzzz
 
-# 三、创建数据库
+# 3. Create the database.
 CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
-# 提示以下内容则创建成功
+# If you see the following message, the database is created successfully:
 Query OK, 1 row affected
 ```
 
-## Q: 项目启动时出现 `Unknown database blossom` 错误 {#unknown-database}
+## Q: Error `Unknown database blossom` occurs during project startup {#unknown-database}
 
-查看 MySQL 中是否创建了对应数据库，若未创建数据库，可以使用如下语句创建数据库。
+Check if the corresponding database 'blossom' is created in MySQL. If the database is not created, you can use the following statement to create it.
 
 ```
 CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 ```
 
-## Q: 后台启动时出现 `Host xxx is not allowed to connect to this MariaDB server` {#mariadb-not-allowed}
+## Q: Error `Host xxx is not allowed to connect to this MariaDB server` occurs during backend startup {#mariadb-not-allowed}
 
-该问题出现在使用`MariaDB`时，你需要登录到数据库执行以下语句打开数据库的远程访问权限。
+This issue occurs when using MariaDB. You need to log in to the database and execute the following statement to grant remote access permission to the database.
 
 ```sql
 use mysql;
@@ -50,9 +50,9 @@ update user set host = '%' where user = 'root';
 flush privileges;
 ```
 
-## Q: 如何配置 Nginx？{#how-config-nginx}
+## Q: How to configure Nginx? {#how-config-nginx}
 
-下方是一个 Nginx 服务端反向代理以及网页静态代理完整实例供你参考：
+Below is a complete example of Nginx server reverse proxy and web static proxy for your reference:
 
 ```bash
 user www-data;
@@ -82,15 +82,14 @@ http {
 
   gzip on;
 
-  # 监听 80 端口，本例中转发至了 https
+  # Listen on port 80, redirect to HTTPS
   server {
     listen                      80;
     server_name                 www.wangyunf.com;
     return                      301 https://$host$request_uri;
   }
 
-  # 本例中使用 https
-  # 如果你使用 http，将下方 location 开头的配置都写到上方的 80 端口监听中
+  # HTTPS configuration
   server {
     listen                      443 ssl;
     server_name                 www.wangyunf.com;
@@ -101,17 +100,15 @@ http {
     ssl_ciphers                 ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
     ssl_prefer_server_ciphers   on;
 
-    # 后台的反向代理，代理到指定端口
+    # Reverse proxy for backend, redirect to specified port
     location /bl/ {
-      # 改为你的后台端口，或者 docker 的端口映射
       proxy_pass                http://127.0.0.1:9999/;
       client_max_body_size      50m;
       proxy_set_header          x-forwarded-for $remote_addr;
     }
 
-    # blossom 博客
+    # Blossom blog
     location /blossom/ {
-      # 改为你解压博客/移动端的路径
       alias                     /usr/local/xzzz/blossom/blog/;
       try_files                 $uri $uri/ /index.html;
       index                     index.html index.htm;
@@ -124,9 +121,8 @@ http {
       gzip_vary                 on;
     }
 
-    # blossom 网页版客户端
+    # Blossom web client
     location /blossom-demo/ {
-      # 改为你解压网页客户端的路径
       alias                     /usr/local/xzzz/blossom/demo/;
       try_files                 $uri $uri/ /index.html;
       index                     index.html index.htm;
@@ -144,31 +140,30 @@ http {
 
 <br/><br/><br/><br/>
 
-## 使用中常见问题
+## Common Issues During Usage
 
-## Q: 后台启动成功，但客户端连接不上 {#client-cant-connect-server}
+### Q: Backend started successfully, but the client cannot connect to the server {#client-cant-connect-server}
 
-排查以下问题：
+Check the following issues:
 
-1. 如果登录页填写的后台地址为 https，则后台必须能通过 https 访问到。
-2. 如果访问客户端为 https，则登录页填写的后台地址也必须为 https。
-3. 登录地址中不能包含`editor/#/settingindex`。
+1. If the backend address filled in the login page is https, then the backend must be accessible via https.
+2. If the client access is via https, then the backend address filled in the login page must also be https.
+3. The login address should not include `editor/#/settingindex`.
 
-## Q: 图片上传后在照片墙中无法显示 {#cant-shwo-pic}
+### Q: Uploaded images cannot be displayed in the photo wall {#cant-shwo-pic}
 
-在设置中将文件访问地址已修改为【登录地址+`/pic`】，也可点击右侧自动配置按钮，会自动修改为【登录地址+`/pic`】。
+In the settings, modify the file access address to [login address + `/pic`], or click the automatic configuration button on the right, which will automatically change it to [login address + `/pic`].
 
-<bl-img src="../../../imgs/setting/setting-picurl.png" width="700px"/>
+![Setting Picture URL](../../../imgs/setting/setting-picurl.png)
 
-## Q: 图片上传时提示图片已存在 {#pic-exist}
+### Q: Prompted that the image already exists when uploading an image {#pic-exist}
 
-<br/>
-<bl-img src="../../../imgs/pic/upload_error.png" width="300px"/>
+![Upload Error](../../../imgs/pic/upload_error.png)
 
-该配置是为了防止误传重复文件，你可以在设置中忽略该校验。
+This configuration is to prevent the accidental upload of duplicate files. You can ignore this validation in the settings.
 
-<bl-img src="../../../imgs/pic/pic_repeat_upload.png" width="700px"/>
+![Ignore Duplicate Upload](../../../imgs/pic/pic_repeat_upload.png)
 
-## Q: 使用 Docker 部署时，备份或导出文件未在配置的文件夹目录中 {#notfind-backup-file}
+### Q: When deploying with Docker, backup or export files are not found in the configured folder directory {#notfind-backup-file}
 
-检查 [备份文件路径 - BACKUP_PATH](./backend-props#sys-params) 是否挂载到了宿主机中。
+Check if the [backup file path - BACKUP_PATH](./backend-props#sys-params) is mounted to the host machine.

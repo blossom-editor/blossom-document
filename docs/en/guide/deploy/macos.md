@@ -7,50 +7,50 @@ onMounted(() => {
 })
 </script>
 
-# MacOS 安装客户端
+# MacOS Installation
 
-解决 Mac 安装软件的已损坏，无法打开。 您应该将它移到废纸篓问题。
+Resolve that the Mac installation software is damaged and cannot be opened. You should move it to the wastebasket issue.
 
-## 允许任何来源开启
+## Allow any source to open
 
-苹果从 MacOS Sierra 10.12 开始，已经去除了允许【**任何来源**】的选项，如果不开启任何来源的选项，会直接影响到无法运行的第三方应用。
+Starting from MacOS Sierra 10.12, Apple has removed the option to allow 【**any source**】. If the option for any source is not enabled, it will directly affect third-party applications that cannot run.
 
-打开【**启动台**】，选择【**终端**】，输入如下内容：
+Open the【**System Preferences**】，select 【**Security and Privacy**】，and enter the following information:
 
 ```bash
 sudo spctl  --master-disable
 ```
 
-然后回车，继续输入密码（密码输入时是不可见的），然后回车。
+Then press enter, continue entering the password (which is not visible when entering), and then press enter.
 
-接着打开【**系统偏好设置**】，选择【**安全性与隐私**】，选择【**通用**】，可以看到【**任何来源**】已经选定。
+After opening 【**System Preferences**】，select【**Security & Privacy**】，then choose【**General**】，You will see that 【**Any source**】is already selected.
 
 <bl-img src="../../../imgs/mac/any_source.png" width="700px"/>
 
-然后打开文件进行安装。
+Then proceed to open the file for installation.
 
-## 仍然提示已损坏，无法打开
+## Still Getting "Damaged" Error and Unable to Open?
 
-如果仍然出现该错误，接下来用这种方法：
+If you continue to encounter this error, try the following method:
 
-在终端粘贴复制输入命令（注意最后有一个空格）：
+Copy and paste the following command into the terminal (note the space at the end):
 
 ```bash
 sudo xattr -r -d com.apple.quarantine
 ```
 
-然后将安装包拖入到终端中，会得到如下：
+Then drag the installation package into the terminal. You will get something like this:
 
 ```bash
 sudo xattr -r -d com.apple.quarantine /Users/xzzz/Downloads/blossom-1.6.0.dmg
 
 ```
 
-然后按回车，如果提示输入密码，则输入密码。然后重新打开安装软件进行安装，安装好后就可以正常使用了。
+Press Enter. If prompted for a password, enter it. Then reopen the installation software for installation. After installation, you should be able to use it normally.
 
-## 如果仍然提示，请继续尝试
+## If You Still Encounter Issues, Please Continue Trying
 
-如果提示命令错误，可以继续尝试一下方式
+If you still encounter errors, you can try the following:
 
-- 把命令中的 `-r` 删除后再尝试。
-- 把命令中的 `-r -d` 改为 `-rd`。
+- Remove the  `-r` from the command and try again.
+- Remove the  `-r -d`  in the command to `-rd`。
