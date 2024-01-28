@@ -40,7 +40,7 @@ The homepage will display different content based on different window sizes.
 <bl-img src="../../imgs/weather/weather.png" width="400px" :shadow="false"/>
 <bl-img src="../../imgs/blossom/luban.png" width="150px" />
 
-1. Weather forecast feature, utilizing the free API from [和风天气](https://www.qweather.com/),For specific details, refer to the [和风天气](./hefeng),also you can use other weather API。
+1. Weather forecast feature, utilizing the free API from [HeFeng Weather](https://www.qweather.com/),For specific details, refer to the [HeFeng Weather](./hefeng),also you can use other weather API。
 2. Avatar of the currently logged-in user.
 
 ## Word Count {#stat-word}
