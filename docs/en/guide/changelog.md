@@ -18,6 +18,31 @@ If you are using a client and blog integrated with the backend, you need to rede
 
 # Version Update Log
 
+## v1.12.0 | developing
+
+**🌟 New Features**
+
+1. Article sync scroll switch.
+2. Always bottom out when editing.
+3. Article jumps to bottom.
+4. Customize the duration of temporary article access.
+5. Drag the document menu list left and right.
+6. The article toolbar displays functional prompts.
+7. Blog topic style configuration.
+8. Blog font adjustment.
+9. Customize the information at the bottom of the blog.
+10. Milestones Indicates the number of tasks in each phase.
+11. User Manage, delete, disable, and modify user types.
+
+**🔧 Fixes**
+
+1. base64 images are supported.
+2. Count words when importing articles.
+3. Effects of article renaming and deletion on double-linked charts.
+4. Optimized the way the directory is constructed.
+5. Menu items with secondary menus do not close when clicked.
+6. Fix other known issues.
+
 ## v1.12.0 | 2024-01-11 🔍️
 
 **🌟 New Features**
@@ -369,4 +394,3 @@ The first packaged release of Blossom.
 4. Unlimited device synchronization.
 5. Unlimited storage space.
 6. Website bookmarking.
-

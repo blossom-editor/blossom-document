@@ -121,8 +121,8 @@ export const en = {
      * 底部页脚
      */
     footer: {
-      message: 'Blossom 官方文档',
-      copyright: '在 MIT 许可下发布'
+      message: 'Blossom Document',
+      copyright: 'Released MIT license'
     },
     /**
      * 修改本页

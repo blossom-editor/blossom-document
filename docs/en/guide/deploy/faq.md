@@ -154,15 +154,17 @@ Check the following issues:
 
 In the settings, modify the file access address to [login address + `/pic`], or click the automatic configuration button on the right, which will automatically change it to [login address + `/pic`].
 
-![Setting Picture URL](../../../imgs/setting/setting-picurl.png)
+<bl-img src="../../../imgs/setting/setting-picurl.png" width="700px"/>
+
 
 ### Q: Prompted that the image already exists when uploading an image {#pic-exist}
 
-![Upload Error](../../../imgs/pic/upload_error.png)
+<br/>
+<bl-img src="../../../imgs/pic/upload_error.png" width="300px"/>
 
 This configuration is to prevent the accidental upload of duplicate files. You can ignore this validation in the settings.
 
-![Ignore Duplicate Upload](../../../imgs/pic/pic_repeat_upload.png)
+<bl-img src="../../../imgs/pic/pic_repeat_upload.png" width="700px"/>
 
 ### Q: When deploying with Docker, backup or export files are not found in the configured folder directory {#notfind-backup-file}
 

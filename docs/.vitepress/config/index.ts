@@ -20,12 +20,12 @@ export default {
       lang: 'zh-CN',
       ...zh
     },
-    // en: {
-    //   label: 'English',
-    //   lang: 'en',
-    //   link: '/en/',
-    //   ...en
-    // }
+    en: {
+      label: 'English',
+      lang: 'en',
+      link: '/en/',
+      ...en
+    }
   },
 
   themeConfig: {

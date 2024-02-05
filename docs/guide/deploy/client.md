@@ -37,11 +37,11 @@ http://www.abc.com/bl/editor/#/settingindex
 
 ## 单独部署网页客户端 {#independent }
 
-### 文件下载
+### 文件下载 {#download }
 
 前往[下载地址](../about/download)中下载`blossom-x.y.z-web-client.zip`文件。
 
-### 部署方式
+### 部署方式 {#deploy }
 
 解压 `blossom-x.y.z-web-client.zip` 到服务器目录，本例中文件解压在 `/usr/local/xzzz/blossom/demo/` 路径下。
 
