@@ -17,7 +17,7 @@ onMounted(() => {
 
 Blossom is a note-taking software that requires private deployment. Although it is positioned as a cloud-based application, you can still deploy it locally, ensuring that data and images are stored on your device without relying on any external image hosting or object storage.
 
-<bl-img src="../../public/imgs/home/device.png" :shadow="false"/>
+<bl-img src="../../imgs/home/device.png" :shadow="false"/>
 
 - <span style="color:#779649;font-weight: bold;">Client</span>：Supports deployment on Windows and ARM architecture for Mac, as well as being deployable as a web application.
 - <span style="color:#EAB412;font-weight: bold;">Mobile Client</span>：Responsive web and mobile interface primarily designed for mobile use, also serving as a blog accessible to everyone.
@@ -46,7 +46,7 @@ When using certain software, especially those from public cloud providers, you m
 
 If you have these concerns, perhaps you can give Blossom a try. Blossom offers comprehensive **image management**，**protection against accidental deletion**，and **bidirectional linking between images and articles**.You can easily see which articles use specific images and replace them with just one click.
 
-<bl-img src="../../public/imgs/pic/pic_reference.png" width="500px"/>
+<bl-img src="../../imgs/pic/pic_reference.png" width="500px"/>
 
 ### Quick Migration {#easy-transfer}
 
