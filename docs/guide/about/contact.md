@@ -7,7 +7,3 @@
   <bl-img src="../../imgs/blossom/qq1.png" width="250px" :shadow="false"/>
   <bl-img src="../../imgs/blossom/qq2.png" width="250px" :shadow="false"/>
 </div>
-
-## 联系作者
-
-- QQ: 491548320

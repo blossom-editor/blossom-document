@@ -17,11 +17,11 @@ export const zh = {
         link: 'https://www.wangyunf.com/blossom-demo/#/settingindex'
       },
       {
-        text: 'v1.12.0',
+        text: 'v1.13.0',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
           { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },
-          { text: '升级至 1.12.0', link: '/guide/deploy/breakchange-1-12-0' }
+          { text: '从 1.12.0 版本之前升级', link: '/guide/deploy/breakchange-1-12-0' }
         ]
       },
       {
@@ -52,6 +52,7 @@ export const zh = {
             items: [
               { text: '博客', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20243' },
               { text: '赞助者们', link: '/guide/about/sponsor-list' },
+              // { text: '项目成员', link: '/guide/about/team' },
               { text: '加入群聊', link: '/guide/about/contact' }
             ]
           }
@@ -113,10 +114,8 @@ export const zh = {
         items: [
           { text: '版本发布', link: '/guide/changelog' },
           { text: '开发计划', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },
-          {
-            text: '❤ 项目与作者',
-            link: '/guide/about/all'
-          }
+          // { text: '项目成员', link: '/guide/about/team' },
+          { text: '❤ 项目赞助', link: '/guide/about/all' }
         ]
       }
     ],

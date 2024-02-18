@@ -16,11 +16,11 @@ export const en = {
         link: 'https://www.wangyunf.com/blossom-demo/#/settingindex'
       },
       {
-        text: 'v1.12.0',
+        text: 'v1.13.0',
         items: [
           { text: 'Change Log', link: '/en/guide/changelog' },
           { text: 'Development Log', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },
-          { text: 'Upgrade to 1.12.0', link: '/en/guide/deploy/breakchange-1-12-0' }
+          { text: 'Upgrade from before 1.12.0', link: '/en/guide/deploy/breakchange-1-12-0' }
         ]
       },
       {
@@ -57,7 +57,7 @@ export const en = {
       },
       {
         text: 'Sponsor',
-        link: '/guide/about/sponsor'
+        link: '/en/guide/about/sponsor'
       }
     ],
     /**

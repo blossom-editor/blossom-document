@@ -18,7 +18,7 @@ If you are using a client and blog integrated with the backend, you need to rede
 
 # Version Update Log
 
-## v1.12.0 | developing
+## v1.13.0 | 2024-02-08
 
 **🌟 New Features**
 
@@ -28,11 +28,12 @@ If you are using a client and blog integrated with the backend, you need to rede
 4. Customize the duration of temporary article access.
 5. Drag the document menu list left and right.
 6. The article toolbar displays functional prompts.
-7. Blog topic style configuration.
-8. Blog font adjustment.
+7. Blog topic style configuration([#83](https://github.com/blossom-editor/blossom/issues/83))。.
+8. Blog font adjustment([#80](https://github.com/blossom-editor/blossom/issues/80)).
 9. Customize the information at the bottom of the blog.
 10. Milestones Indicates the number of tasks in each phase.
 11. User Manage, delete, disable, and modify user types.
+12. Multiple client Settings.
 
 **🔧 Fixes**
 
