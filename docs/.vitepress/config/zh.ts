@@ -52,7 +52,7 @@ export const zh = {
             items: [
               { text: '博客', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20243' },
               { text: '赞助者们', link: '/guide/about/sponsor-list' },
-              // { text: '项目成员', link: '/guide/about/team' },
+              { text: '项目成员', link: '/guide/about/team' },
               { text: '加入群聊', link: '/guide/about/contact' }
             ]
           }

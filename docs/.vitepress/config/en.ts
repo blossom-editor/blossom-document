@@ -50,6 +50,7 @@ export const en = {
             items: [
               { text: 'Chinese blog', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20243' },
               { text: 'Sponsors', link: '/en/guide/about/sponsor-list' },
+              { text: 'Our Team', link: '/en/guide/about/team' },
               { text: 'Join us', link: '/en/guide/about/contact' }
             ]
           }
