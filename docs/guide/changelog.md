@@ -29,8 +29,8 @@
 5. 文档列表左右拖动。
 6. 文章工具栏显示功能提示。
 7. 博客专题样式配置。
-8. 博客字体调整([#83](https://github.com/blossom-editor/blossom/issues/83))。
-9. 博客底部自定义信息([#80](https://github.com/blossom-editor/blossom/issues/80))。
+8. 博客字体调整([#80](https://github.com/blossom-editor/blossom/issues/80))。
+9. 博客底部自定义信息([#83](https://github.com/blossom-editor/blossom/issues/83))。
 10. 阶段性事项显示各阶段任务数量。
 11. 用户管理，删除，禁用，修改类型。
 12. 多项客户端设置。

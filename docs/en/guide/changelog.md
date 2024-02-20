@@ -28,8 +28,8 @@ If you are using a client and blog integrated with the backend, you need to rede
 4. Customize the duration of temporary article access.
 5. Drag the document menu list left and right.
 6. The article toolbar displays functional prompts.
-7. Blog topic style configuration([#83](https://github.com/blossom-editor/blossom/issues/83))。.
-8. Blog font adjustment([#80](https://github.com/blossom-editor/blossom/issues/80)).
+7. Blog topic style configuration([#80](https://github.com/blossom-editor/blossom/issues/80))。.
+8. Blog font adjustment([#83](https://github.com/blossom-editor/blossom/issues/83)).
 9. Customize the information at the bottom of the blog.
 10. Milestones Indicates the number of tasks in each phase.
 11. User Manage, delete, disable, and modify user types.
