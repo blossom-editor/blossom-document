@@ -17,7 +17,7 @@ export const zh = {
         link: 'https://www.wangyunf.com/blossom-demo/#/settingindex'
       },
       {
-        text: 'v1.13.0',
+        text: 'v1.14.0',
         items: [
           { text: '更新日志', link: '/guide/changelog' },
           { text: '开发计划与进度', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },
@@ -106,6 +106,7 @@ export const zh = {
           { text: '网页客户端部署', link: '/guide/deploy/client' },
           { text: '博客/移动端页面部署', link: '/guide/deploy/blog' },
           { text: 'Mac OS 安装客户端', link: '/guide/deploy/macos' },
+          { text: '数据迁移', link: '/guide/deploy/data-migration' },
           { text: 'FAQ 常见问题', link: '/guide/deploy/faq' }
         ]
       },

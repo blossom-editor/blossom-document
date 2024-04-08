@@ -16,7 +16,7 @@ export const en = {
         link: 'https://www.wangyunf.com/blossom-demo/#/settingindex'
       },
       {
-        text: 'v1.13.0',
+        text: 'v1.14.0',
         items: [
           { text: 'Change Log', link: '/en/guide/changelog' },
           { text: 'Development Log', link: 'https://www.wangyunf.com/blossom/#/articles?articleId=20156' },

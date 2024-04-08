@@ -18,6 +18,32 @@ If you are using a client and blog integrated with the backend, you need to rede
 
 # Version Update Log
 
+## v1.14.0 | 2024-04-08
+
+**🌟 New Features**
+
+1. Reconstructed the document tree menu, supporting drag-and-drop sorting and many other functions.
+2. Special collection function.
+3. Add a dynamic page title on the Web client.
+4. Batch disclosure/undisclosure.
+5. Drag and drop the photo wall menu width.
+
+**🔧 Fixes**
+
+1. Optimized the style of home article collection card.
+2. The image does not cause interruption when exporting local articles.
+3. Safari can't drag and drop to-do items.
+4. Slightly increase the background color of the Todo selection.
+5. The problem of rendering errors when the title contains links.
+6. The problem of incorrect construction when the title contains HTML tags.
+7. Optimize the style of the code block in the line of the table title.
+
+:::danger ⚠️ Major update
+In order to implement drag-and-drop sorting, you need to make sure that your article sorting is not duplicated.
+
+If there are documents with repeated sorting, you can change the sorting in the right-click edit and then drag and drop.
+:::
+
 ## v1.13.0 | 2024-02-08
 
 **🌟 New Features**
