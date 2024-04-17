@@ -27,25 +27,25 @@ onMounted(() => {
 ## 文档操作台 {#workbench}
 
 <bl-img src="../imgs/article/workbench_1.png" width="200px"/>
-<bl-img src="../imgs/article/workbench_2.png" width="200px" style="margin-top: 10px"/>
 
-操作台位于页面左上角，分为两页，第一页从左向右分别为：
+操作台位于页面左上角，上方的功能分别为：
 
-1.  显示文章的排序。
-2.  全文搜索。
-3.  刷新文章列表。
-4.  添加文档。
-5.  查看知识网络。
+1.  文章回收站。
+2.  备份记录。
+3.  全文搜索。
+4.  查看知识网络。
 
-第二页为
+下方的功能为：
 
-1.  只显示公开文章。
-2.  只显示专题文章。
-3.  只显示收藏文章。
-4.  文章回收站。
-5.  文章备份记录。
+1. 显示文章排序。
+2. 在根目录添加文章。
+3. 在根目录添加文件夹。
+4. 搜索文档。
+5. 刷新文档列表。
+6. 聚焦到当前打开的文件。
+7. 折叠文档列表。
 
-其中添加[添加文档](./article#folder-article)与[查看知识网络](./article#references)将在下文中详细说明。
+其中添加[查看知识网络](./article#references)将在下文中详细说明。
 
 ## 文档菜单 {#tree-menu}
 
@@ -76,8 +76,6 @@ onMounted(() => {
 - <span style="color:#B72929;font-weight: bold;">红色</span>：该文章版本与公开版本有差异，可以点击右键同步，或在文章详细信息中同步。
 - <span style="color:#779649;font-weight: bold;">绿色</span>：该文章是一个公开文章。
 - <span style="color:#E3A300;font-weight: bold;">黄色</span>：该文章已被收藏。
-
----
 
 ## 文档右键菜单 {#tree-menu-right-menu}
 
@@ -200,7 +198,9 @@ onMounted(() => {
 
 文章临时访问是一个简易的网页端访问方式，可以用于分享非公开的文章供他人通过网页访问。临时访问仅能通过客户端生成的链接访问，每个链接的有效期为 3 个小时。
 
-链接可以有右键点击文章生成。
+链接可以有右键点击文章生成。你也可以设置临时访问的有效时间，同样在右键菜单的创建链接选项中。
+
+<bl-img src="../imgs/article/temp_visit.png" width="350px" :shadow="true"/>
 
 ## 临时内容 {#linshi}
 
@@ -246,9 +246,9 @@ onMounted(() => {
 
 ## 笔记备份 {#backup}
 
-笔记会每日进行备份，并压缩为 zip 文件保存在你配置的路径下。你可以在操作台的第二页找到查看备份文件的按钮。
+笔记会每日进行备份，并压缩为 zip 文件保存在你配置的路径下。你可以在操作台的找到查看备份文件的按钮。
 
-<bl-img src="../imgs/article/workbench_2.png" width="200px" style="margin-top: 10px"/>
+<bl-img src="../imgs/article/workbench_1.png" width="200px" style="margin-top: 10px"/>
 
 笔记备份有多种格式
 

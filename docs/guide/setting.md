@@ -78,9 +78,6 @@ onMounted(() => info())
 
 ## 博客配置 {#blog}
 
-<br/>
-<bl-img src="../imgs/setting/blog.png" width="550px"/>
-
 在客户端进行博客的各项配置。如果配置后不生效，建议刷新缓存后查看。
 
 :::tip 如何刷新缓存？
@@ -101,3 +98,19 @@ onMounted(() => info())
 ## 添加使用账号 {#add-user}
 
 添加使用账号，只有管理员可以进行添加，如果添加的用户为只读用户，则该用户只有查询权限。
+
+管理员还可以查看所有用户的账号信息。
+
+## 主题设置 {#theme }
+
+在页面的右上角，可以进入主题设置:
+
+<bl-img src="../imgs/setting/theme.png" width="350px"/>
+
+在此你可以对软件进行主题风格相关的设置，如下：
+
+<bl-img src="../imgs/setting/theme1.png" width="400px"/>
+<br/>
+<bl-img src="../imgs/setting/theme2.png" width="400px"/>
+<br/>
+<bl-img src="../imgs/setting/theme3.png" width="400px"/>

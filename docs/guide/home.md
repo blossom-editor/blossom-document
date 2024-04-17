@@ -80,7 +80,7 @@ onMounted(() => {
 
 最近 6 个月，每日文章编辑的数量，每 5 分钟更新一次。
 
-## 收藏的文章 {#star}
+## 文章收藏 {#star}
 
 <bl-img src="../imgs/home/star.png" width="450px" :shadow="false"  />
 
@@ -102,9 +102,9 @@ onMounted(() => {
 
 <bl-img src="../imgs/home/star1.png" width="450px" :shadow="false"  />
 
-## 文章专题 {#subject}
+## 专题收藏 {#subject}
 
-<bl-img src="../imgs/home/subjects.png" width="430px" :shadow="false"  />
+<bl-img src="../imgs/home/subjects.png" width="430px" :shadow="true"  />
 
 专题文章，通常针对同一主题的文章可以归为专题。
 
@@ -114,7 +114,7 @@ onMounted(() => {
 
 点击右上角按钮可以切换收藏的显示样式，如下图：
 
-<bl-img src="../imgs/home/subjects1.png" width="430px" :shadow="false"  />
+<bl-img src="../imgs/home/subjects1.png" width="430px" :shadow="true"  />
 
 ## 待办事项 {#todos}
 
@@ -126,7 +126,7 @@ onMounted(() => {
 
 <bl-img src="../imgs/home/web.png" width="350px" :shadow="false"  />
 
-网站收藏顶部的可以对收藏进行添加和刷新操作。
+网站收藏顶部的可以对收藏进行添加和刷新操作，以及收起网页模块和切换显示风格。
 
 <bl-img src="../imgs/home/web_title.png" width="350px" />
 

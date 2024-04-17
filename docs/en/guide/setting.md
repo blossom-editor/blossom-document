@@ -78,9 +78,6 @@ If you need to use the weather function, after obtaining the weather key, you ca
 
 ## Blog Configuration {#blog}
 
-<br/>
-<bl-img src="../../imgs/setting/blog.png" width="550px"/>
-
 Various configurations of the blog are performed on the client. If the configuration does not take effect after configuration, it is recommended to refresh the cache and view it.
 
 :::tip How to refresh the cache?
@@ -101,3 +98,19 @@ Change the password of the currently logged-in user.
 ## Add User {#add-user}
 
 You can add a user account, and only administrators can add it. If the added user is a read-only user, the user only has query permissions.
+
+The administrator can also view the account information of all users.
+
+## Theme setting {#theme }
+
+In the top right corner of the page, you can go to the theme Settings:
+
+<bl-img src="../../imgs/setting/theme.png" width="350px"/>
+
+Here you can set the theme style of the software, as follows:
+
+<bl-img src="../../imgs/setting/theme1.png" width="400px"/>
+<br/>
+<bl-img src="../../imgs/setting/theme2.png" width="400px"/>
+<br/>
+<bl-img src="../../imgs/setting/theme3.png" width="400px"/>

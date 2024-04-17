@@ -104,7 +104,7 @@ Clicking the button in the upper right corner allows you to switch between diffe
 
 ## Article Topics {#subject}
 
-<bl-img src="../../imgs/home/subjects.png" width="430px" :shadow="false"  />
+<bl-img src="../../imgs/home/subjects.png" width="430px" :shadow="true"  />
 
 Topic-specific articles, usually grouped under a common theme.
 
@@ -114,7 +114,7 @@ At the top of the topic is the name of the topic, which is the name of the folde
 
 Clicking the button in the upper right corner allows you to switch between different styles for displaying bookmarks, as shown in the image below:
 
-<bl-img src="../../imgs/home/subjects1.png" width="430px" :shadow="false"  />
+<bl-img src="../../imgs/home/subjects1.png" width="430px" :shadow="true"  />
 
 ## To-Do {#todos}
 
@@ -126,7 +126,7 @@ Quick View of [To-Do List](./todo) on the Homepage.
 
 <bl-img src="../../imgs/home/web.png" width="350px" :shadow="false"  />
 
-At the top of the Website Bookmarks section, you can perform operations such as adding and refreshing bookmarks.
+At the top of the Website Bookmarks section, you can perform operations such as adding and refreshing bookmarks. As well as folding web modules and switching display styles.
 
 <bl-img src="../../imgs/home/web_title.png" width="350px" />
 

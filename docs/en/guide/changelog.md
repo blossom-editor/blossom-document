@@ -18,6 +18,35 @@ If you are using a client and blog integrated with the backend, you need to rede
 
 # Version Update Log
 
+## v1.16.0 | 2024-04-17
+
+**🌟 New Features**
+
+1. The blog theme and watermark Settings will also be effective for temporary access to posts.
+
+**🔧 Fixes**
+
+1. The access record IP address supports IPV6
+2. Fixed an issue where the Recycle bin articles could not be restored.
+3. Unified temporary access and article directory style in the new window of the client.
+4. Fix other known issues.
+
+## v1.15.0 | 2024-04-12
+
+**🌟 New Features**
+
+1. Blog theme color configuration.
+2. Configure blog watermark.
+3. Configure the blog post title switch.
+
+**🔧 Fixes**
+
+1. Fix the block line number style of blog code.
+2. Fix the home word edit date style.
+3. Fixed an issue where modified article meta information was also counted as the number of articles edited per day.
+4. Fix the topic query logic.
+5. Optimize article favorites icon.
+
 ## v1.14.0 | 2024-04-08
 
 **🌟 New Features**

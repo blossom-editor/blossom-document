@@ -131,9 +131,9 @@ Then create the config.js file in the corresponding directory, and then copy the
 <span style="color:red">**Modify the content marked with a red background below**。</span>If you need to mount the config.js file in Docker, please copy the following content into the file.
 
 :::danger Important changes
-In version v1.12.0, various blog configurations are already supported through the client. [Go to View] (../setting#blog).
+In version `v1.12.0`, various blog configurations are already supported through the client. [Go to View] (../setting#blog).
 
-In future versions, the configuration items in the configuration file will be gradually removed, and it is recommended to use client configuration.
+In version `v2.0.0`, the configuration items in the configuration file will be removed, so it is recommended that you use the client configuration method early.
 :::
 
 ```javascript

@@ -11,7 +11,7 @@ onMounted(() => {
 
 ## Common Deployment Issues
 
-## Q: How to create a database in a database container? {#how-create-database}
+## Q: How do I create a database in a container? {#how-create-database}
 
 ```bash
 # 1. Enter the container. If your container is not named 'mysql', replace 'mysql' with your container name.
@@ -142,7 +142,7 @@ http {
 
 ## Common Issues During Usage
 
-### Q: Backend started successfully, but the client cannot connect to the server {#client-cant-connect-server}
+## Q: Backend started successfully, but the client cannot connect to the server {#client-cant-connect-server}
 
 Check the following issues:
 
@@ -150,14 +150,14 @@ Check the following issues:
 2. If the client access is via https, then the backend address filled in the login page must also be https.
 3. The login address should not include `editor/#/settingindex`.
 
-### Q: Uploaded images cannot be displayed in the photo wall {#cant-shwo-pic}
+## Q: Uploaded images cannot be displayed in the photo wall {#cant-shwo-pic}
 
 In the settings, modify the file access address to [login address + `/pic`], or click the automatic configuration button on the right, which will automatically change it to [login address + `/pic`].
 
 <bl-img src="../../../imgs/setting/setting-picurl.png" width="700px"/>
 
 
-### Q: Prompted that the image already exists when uploading an image {#pic-exist}
+## Q: Prompted that the image already exists when uploading an image {#pic-exist}
 
 <br/>
 <bl-img src="../../../imgs/pic/upload_error.png" width="300px"/>
@@ -166,6 +166,6 @@ This configuration is to prevent the accidental upload of duplicate files. You c
 
 <bl-img src="../../../imgs/pic/pic_repeat_upload.png" width="700px"/>
 
-### Q: When deploying with Docker, backup or export files are not found in the configured folder directory {#notfind-backup-file}
+## Q: When deploying with Docker, backup or export files are not found in the configured folder directory {#notfind-backup-file}
 
 Check if the [backup file path - BACKUP_PATH](./backend-props#sys-params) is mounted to the host machine.

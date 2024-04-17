@@ -11,7 +11,7 @@ onMounted(() => {
 
 ## 部署时常见问题
 
-## Q: 数据库容器中如何创建数据库? {#how-create-database}
+## Q: 如何在容器中创建数据库? {#how-create-database}
 
 ```bash
 # 一、进入容器，如果你的容器不叫 mysql，需要把下方的 mysql 改为你的容器名
@@ -27,7 +27,7 @@ CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 Query OK, 1 row affected
 ```
 
-## Q: 项目启动时出现 `Unknown database blossom` 错误 {#unknown-database}
+## Q: 启动时出现 `Unknown database blossom` 错误 {#unknown-database}
 
 查看 MySQL 中是否创建了对应数据库，若未创建数据库，可以使用如下语句创建数据库。
 
@@ -36,7 +36,7 @@ CREATE DATABASE `blossom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 ```
 
-## Q: 后台启动时出现 `Host xxx is not allowed to connect to this MariaDB server` {#mariadb-not-allowed}
+## Q: 启动时出现 `Host xxx is not allowed to connect to this MariaDB server` {#mariadb-not-allowed}
 
 该问题出现在使用`MariaDB`时，你需要登录到数据库执行以下语句打开数据库的远程访问权限。
 
